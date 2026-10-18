@@ -13,7 +13,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 40-40 Desolace
 #next 40-40 Razorfen Downs
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 
 step << !Warlock
@@ -186,7 +186,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 40-40 Razorfen Downs
 #next 40-41 Scarlet Monastery
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 
 step
@@ -260,7 +260,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 40-41 Scarlet Monastery
 #next 41-42 Riverglades
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 
 step
@@ -348,7 +348,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 41-42 Riverglades
 #next 42-43 Badlands
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 
 step
@@ -369,7 +369,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 42-43 Badlands
 #next 43-44 Riverglades
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 
 step
@@ -1012,7 +1012,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 43-44 Riverglades
 #next 44-45 Drowned City
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 
 step
@@ -1033,7 +1033,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 44-45 Drowned City
 #next 45-46 Uldaman
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 
 step
@@ -1422,7 +1422,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 45-46 Uldaman
 #next 46-47 Tanaris/Feralas
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 
 step
@@ -1587,7 +1587,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 46-47 Tanaris/Feralas
 #next 47-48 Hinterlands
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 
 step
@@ -2282,28 +2282,6 @@ step
     .target Marin Noggenfogger
     >>Talk to |cRXP_FRIENDLY_Marin Noggenfogger|r
     .accept 2605 >> Accept The Thirsty Goblin
--- step << skip
---     .goto Tanaris,51.05,26.87
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sprinkle|r
---     .turnin 2641 >> Turn in Sprinkle's Secret Ingredient
---     .target Sprinkle
---     .accept 2661 >> Accept Delivery for Marin
--- step << skip
---     .goto Tanaris,51.80,28.66
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marin Noggenfogger|r
---     .turnin 2661 >> Turn in Delivery for Marin
---     .target Marin Noggenfogger
---     .accept 2662 >> Accept Noggenfogger Elixir
---     .turnin 2662 >> Turn in Noggenfogger Elixir
--- step << skip
---     #completewith tStart
---     + Make sure you carry 1 stack of noggenfogger with you at all times, buy 2 extra stacks and bank it
--- step << skip
---     .goto Tanaris,51.56,26.75
---     .target Tran'rek
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tran'rek|r
---     .turnin 3362 >> Turn in Thistleshrub Valley
---     .isQuestComplete 3362
 step
     #label tStart
     .goto Tanaris,52.707,45.923
@@ -2553,27 +2531,10 @@ step
     .accept 3527 >> Accept The Prophecy of Mosh'aru
     .target Yeh'kinya
 step
-    .goto Tanaris,51.808,28.662
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marin Noggenfogger|r
-    .turnin 2605 >> Turn in The Thirsty Goblin
-    .accept 2606 >> Accept In Good Taste
-    .target Marin Noggenfogger
-step
     .goto Tanaris,52.819,27.401
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andi Lynn|r
     .turnin 5863 >> Turn in The Dunemaul Compound
     .target Andi Lynn
-step
-    .goto Tanaris,51.566,26.759
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tran'rek|r
-    .turnin 3362 >> Turn in Thistleshrub Valley
-    .target Tran'rek
-step
-    .goto Tanaris,51.059,26.873
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sprinkle|r
-    .turnin 2606 >> Turn in In Good Taste
-    .accept 2641 >> Accept Sprinkle's Secret Ingredient
-    .target Sprinkle
 step
     .goto Tanaris,50.210,27.483
     .target Senior Surveyor Fizzledowser
@@ -2595,19 +2556,6 @@ step
     >>Talk to |cRXP_FRIENDLY_Bera|r
     .fly Thalanaar >> Fly to Feralas
     .target Bera Stonehammer
-step
-    +Do feralas quests
-    .accept 3445 >> Pick up The Sunken Temple
-    .complete 3520,1
-    .complete 1452,2
-    .complete 1452,3
-    .xp 47
-step
-    +Do tanaris quests
-    .accept 3446 >> ST prequests
-    .complete 3527,1 >> Do the ZF tablet quest, ideally with a little deathrun
-    .complete 1452,1
-    .xp 48
 ]])
 
 
@@ -2620,7 +2568,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 47-48 Hinterlands
 #next 48-49 Krol'Dok Stronghold
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 
 step
@@ -2693,10 +2641,9 @@ step
     .goto The Hinterlands,48.814,68.387
     >>|cRXP_WARN_Clear your way to the top of The Altar of Zul. Ensure you are on full HP before you reach the top!|r
     >>|cRXP_WARN_Run to the exploration location, then jump off to the side to evade the Elites at the top. Wait on the ledge until you have dropped Combat. Watch the video below for an example|r
-    .complete 2989,1 
-    .link https://www.youtube.com/watch?v=FtTS3K7T7Tw >> |cRXP_WARN_Click here for video reference|r
+    .complete 2989,1
 step
-    #label FinishFeathers
+    #requires FinishFeathers
     .goto The Hinterlands,46.56,40.60,60,0
     .goto The Hinterlands,46.24,39.85,60,0
     .goto The Hinterlands,57.65,42.83
@@ -2811,6 +2758,7 @@ step
     .goto The Hinterlands,9.752,44.473
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryphon Master Talonaxe|r
     .turnin 2989 >> Turn in The Altar of Zul
+    .accept 2990 >> Accept Thadius Grimshade
     .target Gryphon Master Talonaxe
 step
     .goto The Hinterlands,14.834,44.567
@@ -2818,18 +2766,18 @@ step
     .target Fraggar Thundermantle
     .turnin 2877 >> Turn in Skulk Rock Clean-up
 step
-    #label Tragan
-    .goto The Hinterlands,40.63,59.65
-    >>Loot the |cRXP_LOOT_Violet Tragan|r underwater
-    .complete 2641,1 
-step
+    -- TURNIN BLOCK
     .turnin 3661
     .turnin 1469
-    .turnin 2641
     .turnin 836
     .turnin 580
-    .accept 2944
-    .turnin 2944
+step
+    .goto Teldrassil,55.09,91.67,10,0
+    .goto Teldrassil,55.414,92.230
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daryn Lightwind|r upstairs
+    .turnin 2944 >> Turn in The Super Snapper FX
+    .accept 2943 >> Accept Return to Troyas
+    .target Daryn Lightwind
 
 step << Warlock
     .goto 1455/0,-1117.60,-4615.14,15,0
@@ -2864,7 +2812,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 48-49 Krol'dok Stronghold
 #next 49-50 STV / ZF
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 
 step
@@ -2872,16 +2820,11 @@ step
     .goto 16591,60,80,200 >> Travel to the Riverglades
 step
     +Finish all good quests in the zone as well as completing Krol'dok Stronghold, more xp is good
-    .xp 44
+    .xp 49
 step
     #completewith next
     >>Travel to Steamwheedle Port
     .goto Tanaris,66.56,22.27,50
-step
-    .goto Tanaris,66.989,22.354
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yeh'kinya|r
-    .accept 3520 >> Accept Screecher Spirits
-    .target Yeh'kinya
 ]])
 
 
@@ -2894,7 +2837,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 49-50 STV / ZF
 #next 50-51 Searing Gorge
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 
 step
@@ -3073,19 +3016,16 @@ step
     .turnin 608 >> Turn in The Bloodsail Buccaneers
     .target Fleet Master Seahorn
 step
-    .requires quest,2994
     .goto Stormwind City,66.2,62.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
     .fly Nethergarde Keep >> Fly to Nethergarde Keep in Blasted Lands
     .target Dungar Longdrink
 step
-    .requires quest,2994
     .goto Blasted Lands,66.898,19.469
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thadius Grimshade|r atop the Tower
     .turnin 2990 >> Turn in Thadius Grimshade
     .target Thadius Grimshade
 step
-    .requires quest,2994
     .isQuestTurnedIn 2990
     .goto Blasted Lands,66.898,19.469
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thadius Grimshade|r atop the Tower
@@ -3095,6 +3035,7 @@ step
     #completewith next
     .goto Tanaris,50,31,100 >> Return to Gadgetzan
 step
+    -- TURNIN BLOCK
     .accept 3042 >> Accept Troll Temper, should likely roll for completion in the dungeon
     .accept 2865 >> Accept Scarab Shells
     .accept 2768 >> Accept Divino-matic Rod
@@ -3103,12 +3044,14 @@ step
 step
     +Do ZF get big xp and loot
 step
-    .turnin -3042 >> Turn in Troll Temper
-    .turnin 2865 >> Turn in Scarab Shells
-    .turnin 2768 >> Turn in Divino-matic Rod
-    .turnin 2770 >> Turn in Gahz'rilla
-    .turnin 2846 >> Turn in Tiara of the Deep
-    .turnin 3527 >> Turn in The Prophecy of Mosh'aru
+    #completewith next
+    >>Don't go out of your way to kill |cRXP_LOOT_Thistleshrub|r mobs for this quest, you'll have another opportunity to do it later, focus on killing |cRXP_LOOT_Dew Collectors|r
+    .complete 3362,1
+    .complete 3362,2
+step
+    .goto Tanaris,28.70,64.06
+    >> Kill |cRXP_LOOT_Dew Collectors|r. Loot them for the |cRXP_LOOT_Dew Gland|r
+    .complete 2605,1
 step
     .goto Un'Goro Crater,63.02,68.60
     >>Click on the |cRXP_PICK_Wrecked Raft|r
@@ -3118,10 +3061,6 @@ step
     >>Click the |cRXP_PICK_Small Pack|r underwater
     .turnin 3844 >> Turn in It's a Secret to Everybody
     .accept 3845 >> Accept It's a Secret to Everybody
-step
-    .goto Un'Goro Crater,68.73,56.70
-    >>Loot the |cRXP_LOOT_Piece of Threshadon Carcass|r
-    .complete 4290,1 
 step
     #completewith ungoroFP
     .subzone 541 >> Travel to Marshal's Refuge
@@ -3143,5 +3082,36 @@ step
     .goto Un'Goro Crater,45.234,5.831
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryfe|r
     .fp Un'Goro >> Get the Un'Goro Crater Flight Path
+    .fly Gadgetzan >> Fly to Gadgetzan
     .target Gryfe
+step
+    -- TURNIN BLOCK
+    .turnin -3042 >> Turn in Troll Temper
+    .turnin 2865 >> Turn in Scarab Shells
+    .turnin 2768 >> Turn in Divino-matic Rod
+    .turnin 2770 >> Turn in Gahz'rilla
+    .turnin 2846 >> Turn in Tiara of the Deep
+step
+    .goto Tanaris,51.566,26.759
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tran'rek|r
+    .turnin 3362 >> Turn in Thistleshrub Valley
+    .target Tran'rek
+step
+    .goto Tanaris,51.808,28.662
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marin Noggenfogger|r
+    .turnin 2605 >> Turn in The Thirsty Goblin
+    .accept 2606 >> Accept In Good Taste
+    .target Marin Noggenfogger
+step
+    .goto Tanaris,51.059,26.873
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sprinkle|r
+    .turnin 2606 >> Turn in In Good Taste
+    .accept 2641 >> Accept Sprinkle's Secret Ingredient
+    .target Sprinkle
+step
+    .goto Tanaris,66.989,22.354
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yeh'kinya|r
+    .turnin 3527 >> Turn in The Prophecy of Mosh'aru
+    .accept 4787 >> Accept The Ancient Egg
+    .target Yeh'kinya
 ]])

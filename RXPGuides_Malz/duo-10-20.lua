@@ -11,10 +11,17 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 14-15 Westfall
 #next 15-17 Darkshore
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
+
 
 step
-    >> Only first one there should fly to westfall, other can just head to redridge
+    .goto 1453/0,490.03,-8835.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
+    .turnin 6261 >> Turn in Dungar Longdrink
+    .accept 6285 >> Accept Return to Lewis
+    .target Dungar Longdrink
+step
+    >> Only first one there should fly to westfall, other can just skip step and head to redridge
     .goto 1453/0,490.03,-8835.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
     .fly Westfall >> Fly to Westfall
@@ -52,6 +59,11 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
 	.target Ariena Stormfeather
     .fly Westfall >> Fly to Westfall
+step << Human
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quartermaster Lewis|r
+    .target Quartermaster Lewis
+    .goto Westfall,57.00,47.17
+    .turnin 6285 >> Turn in Return to Lewis
 step
     .goto 1436/0,1045.29,-10508.78
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
@@ -211,7 +223,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 15-17 Darkshore
 #next 17-18 Hall of Thanes
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 step
     .goto 1453,55.148,69.606
@@ -1164,7 +1176,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 17-18 Hall of Thanes
 #next 18-20 Darkshore
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 step
     .goto 1455,18.564,51.558
@@ -1278,7 +1290,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 18-20 Darkshore
 #next 20-21 Redridge/Duskwood
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 
 step << Rogue
@@ -1363,26 +1375,6 @@ step
     .use 12346 >>|cRXP_WARN_Use the|r |T133748:0|t[Empty Cleansing Bowl] |cRXP_WARN_at the|r |cRXP_PICK_Auberdine Moonwell|r
     .collect 12347,1,4763,1
     .isOnQuest 4763
-step
-    .goto 1439,42.017,58.866,0 --NE spawn
-    .goto 1439,43.222,59.693,0 --NE spawn
-    .goto 1439,43.069,62.448,0 --SE spawn
-    .goto 1439,42.489,60.677,0 --Middle spawn
-    .waypoint 1439,42.017,58.866,50,0 --NE spawn
-    .waypoint 1439,42.311,58.645,50,0
-    .waypoint 1439,42.448,58.236,50,0
-    .waypoint 1439,43.222,59.693,50,0 --NE spawn
-    .waypoint 1439,43.447,60.131,50,0
-    .waypoint 1439,43.780,60.275,50,0
-    .waypoint 1439,43.069,62.448,50,0 --SE spawn
-    .waypoint 1439,43.104,62.563,50,0
-    .waypoint 1439,42.794,62.166,50,0
-    .waypoint 1439,42.489,60.677,50,0 --Middle spawn
-    >>Kill |cRXP_ENEMY_Anaya Dawnrunner|r. Loot her for her |cRXP_LOOT_Pendant|r
-    -->>|cRXP_WARN_Be aware that she has a 7-8 minute spawn time and 4 different spawnpoints across Ameth'Aran|r
-    --much faster spawn time now on forever
-    .complete 963,1 --Anaya's Pendant (1)
-    .unitscan Anaya Dawnrunner
 step
     #loop
     .waypoint 1439/1,385.20,5393.69,0
@@ -1596,10 +1588,6 @@ step
     .goto 1439,35.968,70.807
     >>Click the |cRXP_PICK_Beached Sea Creature|r
     .accept 4728 >> Accept Beached Sea Creature
-step
-    #optional
-    #completewith CleansingTharnariun
-    .abandon 963 >> Abandon For Love Eternal
 step
     #label BeachedTurnins
     .goto 1439,36.701,45.122,8,0

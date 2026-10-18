@@ -9,6 +9,921 @@ RXPGuides.RegisterGuide([[
 #group MalzXP Forever Duo Guide
 #subgroup Duo 1-20
 --#groupid RXP-SRGCE-A1
+#name 1-5 Northshire
+#next 5-11 Dun Morogh
+#defaultfor Human
+
+step << !Human
+    #completewith next
+    +You have selected a guide meant for Humans. You should choose the same starter zone that you start in
+step << Mage
+    #completewith next
+    +Note that you have selected the single target Mage guide. Single target is a lot safer than AoE Mage, but a LOT slower
+step << !Human Mage
+    #season 2
+    #completewith next
+    +In Season of Discovery, you should NOT start outside of your race's starter zone as a Mage, as you will be unable to get your first rune here (|T135844:0|t[Ice Lance])
+step << Warlock
+    #optional
+    #sticky
+    +|cRXP_WARN_Equip |r |T132609:0|t[Frayed Bracers] if found
+    .use 3365,1
+    .collect 3365,1
+step
+    #softcore << Warlock
+    #optional
+    #completewith Within
+    .destroy 6948 >> Delete the |T134414:0|t[Hearthstone] from your bags, as it's no longer needed
+step
+    .goto 1429/0,-136.48,-8933.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r
+    .accept 783 >> Accept A Threat Within
+    .target Deputy Willem
+step << Warrior
+    .goto 1429/0,-75.05,-8872.36,35,0
+    >>Kill |cRXP_ENEMY_Young Wolves|r until you have 10c+ worth of vendor trash
+    >>|cRXP_WARN_You will train|r |T132333:0|t[Battle Shout] |cRXP_WARN_which increases early leveling speeds|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Danil|r
+    .vendor >> |cRXP_WARN_Vendor trash|r
+    .target +Brother Danil
+    .goto 1429/0,-112.74,-8901.66
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Llane Beshere|r inside downstairs
+    .train 6673 >>Train |T132333:0|t[Battle Shout]
+    .target +Llane Beshere
+    .goto 1429/0,-208.40,-8918.35
+    .mob Young Wolf
+step
+    #label Within
+    .goto 1429/0,-162.62,-8902.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r
+    .turnin 783 >> Turn in A Threat Within
+    .accept 7 >> Accept Kobold Camp Cleanup
+    .target Marshal McBride
+step
+    .goto 1429/0,-136.52,-8933.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r
+    .accept 5261 >> Accept Eagan Peltskinner
+    .target Deputy Willem
+step
+    #label EaganWolves
+    .goto 1429/0,-163.24,-8869.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eagan Peltskinner|r
+    .turnin 5261 >> Turn in Eagan Peltskinner
+    .accept 33 >> Accept Wolves Across The Border
+    .target Eagan Peltskinner
+step << Priest/Mage/Warlock
+    #completewith next
+    .goto 1429/0,-68.11,-8874.67,40,0
+    .goto 1429/0,-112.74,-8901.66
+    >>|cRXP_WARN_Once you have 50c worth of vendor trash:|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Danil|r
+    >>Vendor Trash
+    >>|cRXP_BUY_Buy 10|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r
+    .collect 159,10 --Collect Refreshing Spring Water (x10)
+    .target Brother Danil
+step
+    #sticky
+    #label WolfMeatEnd
+    .goto 1429,49.052,38.270,0
+    .goto 1429,45.708,38.720,0
+    .goto 1429,47.976,39.422,0
+    .waypoint 1429,49.052,38.270,45,0
+    .waypoint 1429,48.362,37.582,45,0
+    .waypoint 1429,47.136,37.636,45,0
+    .waypoint 1429,46.870,36.906,45,0
+    .waypoint 1429,46.476,37.034,45,0
+    .waypoint 1429,46.465,38.272,45,0
+    .waypoint 1429,45.896,38.013,45,0
+    .waypoint 1429,45.708,38.720,45,0
+    .waypoint 1429,46.302,39.994,45,0
+    .waypoint 1429,45.718,40.733,45,0
+    .waypoint 1429,46.399,41.838,45,0
+    .waypoint 1429,46.741,40.987,45,0
+    .waypoint 1429,47.703,40.299,45,0
+    .waypoint 1429,47.976,39.422,45,0
+    >>Kill |cRXP_ENEMY_Young Wolves|r and |cRXP_ENEMY_Timber Wolves|r. Loot them for their |cRXP_LOOT_Tough Wolf Meat|r
+    .complete 33,1 --Collect Tough Wolf Meat (x8)
+	.mob Young Wolf
+	.mob Timber Wolf
+step
+    #loop
+    .goto 1429,47.601,36.720,0
+    .goto 1429,49.215,37.010,0
+    .goto 1429,47.569,34.967,0
+    .goto 1429,47.601,36.720,45,0
+    .goto 1429,47.381,36.314,45,0
+    .goto 1429,47.611,35.863,45,0
+    .goto 1429,48.314,36.487,45,0
+    .goto 1429,49.070,36.438,45,0
+    .goto 1429,49.215,37.010,45,0
+    .goto 1429,49.838,36.413,45,0
+    .goto 1429,50.105,35.668,45,0
+    .goto 1429,49.823,35.161,45,0
+    .goto 1429,48.845,35.066,45,0
+    .goto 1429,47.569,34.967,45,0
+    >>Kill |cRXP_ENEMY_Kobold Vermins|r. Loot them for the |T133736:0|t[|cRXP_LOOT_Nibbled-On Book|r]
+    .use 247834 >> |cRXP_WARN_Use the|r |T133736:0|t[|cRXP_LOOT_Nibbled-On Book|r] |cRXP_WARN_to start the quest|r
+    >>|cRXP_WARN_It is important to turn in this quest as soon as you get the|r |T133736:0|t[|cRXP_LOOT_Nibbled-On Book|r] |cRXP_WARN_drop|r
+    .collect 247834,1,91741,1 -- Nibbled-On Book (1)
+    .accept 91741 >> Accept Nibbled-On Book
+    .complete 7,1 --Kill Kobold Vermin (x10)
+    .disablecheckbox
+    .mob Kobold Vermin
+step
+    #completewith next
+    .goto 1429/0,-136.900,-8913.800,10,0
+    .goto 1429/0,-176.000,-8880.900,10 >> |cRXP_WARN_Travel toward |cRXP_FRIENDLY_Brother Paxton|r in Northshire Abbey. Don't worry about completing |cRXP_ENEMY_Vermins|r or |cRXP_ENEMY_Wolves|r straight away|r
+step
+    .goto 1429/0,-186.12,-8874.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton|r
+    .turnin 91741 >> Turn in Nibbled-On Book
+    .accept 92124 >> Accept Book Inventory
+    .target Brother Paxton
+step
+    .goto 1429/0,-182.65,-8881.62
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daniel|r
+    .turnin 92124 >> Turn in Book Inventory
+    .target Daniel
+step
+    .goto 1429/0,-186.12,-8874.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton|r
+    .accept 91743 >> Accept Rascally Rodents
+    .target Brother Paxton
+step
+    #loop
+    .goto 1429,47.601,36.720,0
+    .goto 1429,49.215,37.010,0
+    .goto 1429,47.569,34.967,0
+    .goto 1429,47.601,36.720,45,0
+    .goto 1429,47.381,36.314,45,0
+    .goto 1429,47.611,35.863,45,0
+    .goto 1429,48.314,36.487,45,0
+    .goto 1429,49.070,36.438,45,0
+    .goto 1429,49.215,37.010,45,0
+    .goto 1429,49.838,36.413,45,0
+    .goto 1429,50.105,35.668,45,0
+    .goto 1429,49.823,35.161,45,0
+    .goto 1429,48.845,35.066,45,0
+    .goto 1429,47.569,34.967,45,0
+    >>Kill |cRXP_ENEMY_Kobold Vermins|r. Loot them for their |cRXP_LOOT_Stolen Books|r
+    >>|cRXP_WARN_Don't go out of your way to loot all |cRXP_LOOT_Stolen Books|r yet|r
+    .complete 7,1 --Kill Kobold Vermin (x10)
+    .complete 91743,1 -- Stolen Book (8)
+    .disablecheckbox
+    .mob Kobold Vermin
+step
+    #requires WolfMeatEnd
+    .goto 1429/0,-163.24,-8869.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eagan Peltskinner|r
+    .turnin 33,2 >> Turn in Wolves Across The Border << Warrior/Paladin/Rogue
+    .turnin 33,1 >> Turn in Wolves Across The Border << !Warrior !Paladin !Rogue
+    .target Eagan Peltskinner
+step << Priest/Mage/Warlock
+    .goto 1429/0,-112.74,-8901.66
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Danil|r
+    >>Vendor Trash
+    >>|cRXP_BUY_Buy 10 more|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r
+    >>|cRXP_WARN_Make sure you save 10c or more for later|r << Priest/Mage
+    .collect 159,10 --Collect Refreshing Spring Water (x10)
+    .target Brother Danil
+step << !Priest !Mage !Warlock !Rogue
+    .goto 1429/0,-119.86,-8898.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Godric Rothgar|r
+    .vendor >>Vendor Trash
+    .target Godric Rothgar
+step << Rogue
+    #season 0,1
+    .goto 1429/0,-104.21,-8909.39--c:Elwynn Forest,47.240,41.900
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Janos Hammerknuckle|r
+    .vendor 78 >>|cRXP_BUY_Buy a|r |T135650:0|t[Dirk] |cRXP_BUY_or|r |T132410:0|t[Hand Axe] |cRXP_BUY_from him if you can afford it|r
+    --.collect 2139,1 -- Dirk (1)
+    --.disablecheckbox
+    .target Janos Hammerknuckle
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.5
+step << Rogue
+    #season 0,1
+    #completewith CleanupEnd
+    +|cRXP_WARN_Equip the|r |T135650:0|t[Dirk]
+    .use 2139
+    .itemcount 2139,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.5
+step << Rogue
+    #season 0,1
+    #completewith CleanupEnd
+    +|cRXP_WARN_Equip the|r |T132410:0|t[Hand Axe]
+    .use 2134
+    .itemcount 2134,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.5
+step
+    #label CleanupEnd
+    .goto 1429/0,-162.62,-8902.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r
+    .turnin 7 >> Turn in Kobold Camp Cleanup
+    .accept 15 >> Accept Investigate Echo Ridge
+    .accept 3100 >> Accept Simple Letter << Human Warrior
+    .accept 3101 >> Accept Consecrated Letter << Human Paladin
+    .accept 3102 >> Accept Encrypted Letter << Human Rogue
+    .accept 3103 >> Accept Hallowed Letter << Human Priest
+    .accept 3104 >> Accept Glyphic Letter << Human Mage
+    .accept 3105 >> Accept Tainted Letter << Human Warlock
+    .accept 92479 >>Accept A Scribbled Letter << Human Hunter
+    .target Marshal McBride
+
+step << Warlock
+    .goto 1429/0,-136.52,-8933.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r outside
+    .accept 18 >> Accept Brotherhood of Thieves
+    .target Deputy Willem
+step << Warlock
+    .goto 1429/0,-195.59,-8926.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drusilla La Salle|r
+    .turnin 3105 >> Turn in Tainted Letter
+    .accept 1598 >> Accept The Stolen Tome
+    .train 348 >> Train |T135817:0|t[Immolate]
+    .target Drusilla La Salle
+
+
+step << Warlock
+    #hardcore
+--   .goto 1429/0,-300.65,-8964.94,60,0
+    .goto 1429/0,-432.55,-8958.00
+    >>Open the |cRXP_PICK_Stolen Books|r. Loot it for the |cRXP_LOOT_Powers of the Void|r
+    .complete 1598,1 --Collect Powers of the Void (x1)
+step << Warlock
+    #softcore
+--  .goto 1429/0,-300.65,-8964.94,60,0
+    .goto 1429/0,-432.55,-8958.00
+    >>Open the |cRXP_PICK_Stolen Books|r. Loot it for the |cRXP_LOOT_Powers of the Void|r
+    .complete 1598,1 --Collect Powers of the Void (x1)
+step << Warlock
+    #softcore
+    #completewith next
+    .goto 1429,49.527,43.491,0
+    .deathskip >> Die and respawn at the Spirit Healer
+    >>|cRXP_WARN_If there are no |cRXP_ENEMY_Defias|r nearby, run back instead|r
+    .target Spirit Healer
+step << Warlock
+    #season 0,1
+    .goto 1429/0,-195.59,-8926.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drusilla La Salle|r
+    .turnin 1598 >> Turn in The Stolen Tome
+    .target Drusilla La Salle
+step << Warlock
+    #optional
+    #completewith next
+    .cast 688 >> |cRXP_WARN_Cast|r |T136218:0|t[Summon Imp]
+    .usespell 688
+
+step
+    #completewith next
+    >>Kill |cRXP_ENEMY_Kobolds|r. Loot them for their |cRXP_LOOT_Stolen Books|r
+    .complete 91743,1 -- Stolen Book (8)
+step
+    #season 0,1 << Priest/Warrior
+    #loop
+    .goto 1429,47.468,36.298,0
+    .goto 1429,50.224,34.125,0
+    .goto 1429,50.835,38.046,0
+    .goto 1429,47.468,36.298,45,0
+    .goto 1429,47.247,35.164,45,0
+    .goto 1429,47.012,33.828,45,0
+    .goto 1429,46.774,33.271,45,0
+    .goto 1429,46.271,32.489,45,0
+    .goto 1429,47.663,32.058,45,0
+    .goto 1429,48.038,33.075,45,0
+    .goto 1429,48.795,33.815,45,0
+    .goto 1429,49.278,34.610,45,0
+    .goto 1429,50.224,34.125,45,0
+    .goto 1429,50.245,34.884,45,0
+    .goto 1429,51.058,35.582,45,0
+    .goto 1429,52.062,35.801,45,0
+    .goto 1429,51.505,38.064,45,0
+    .goto 1429,50.835,38.046,45,0
+    >>Kill |cRXP_ENEMY_Kobold Workers|r
+    .complete 15,1 --Kill Kobold Worker (x10)
+    .mob Kobold Worker
+
+----Start of 1x train section----
+
+
+
+
+step
+    #label xp3
+    #loop
+    .goto 1429,47.468,36.298,0
+    .goto 1429,50.224,34.125,0
+    .goto 1429,50.835,38.046,0
+    .goto 1429,47.468,36.298,45,0
+    .goto 1429,47.247,35.164,45,0
+    .goto 1429,47.012,33.828,45,0
+    .goto 1429,46.774,33.271,45,0
+    .goto 1429,46.271,32.489,45,0
+    .goto 1429,47.663,32.058,45,0
+    .goto 1429,48.038,33.075,45,0
+    .goto 1429,48.795,33.815,45,0
+    .goto 1429,49.278,34.610,45,0
+    .goto 1429,50.224,34.125,45,0
+    .goto 1429,50.245,34.884,45,0
+    .goto 1429,51.058,35.582,45,0
+    .goto 1429,52.062,35.801,45,0
+    .goto 1429,51.505,38.064,45,0
+    .goto 1429,50.835,38.046,45,0
+    .xp 3+1110 >>|cRXP_WARN_Grind to 1110+/1400xp|r
+    >>Kill |cRXP_ENEMY_Kobold Workers|r for |cRXP_LOOT_Stolen Books|r if you still need them
+    .complete 91743,1 -- Stolen Book (8)
+    .disablecheckbox
+    .mob Kobold Worker
+step << !Hunter
+    #season 0,1 << Warrior
+    #completewith next
+    .goto 1429/0,-119.86,-8898.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Godric Rothgar|r
+    .vendor >> |cRXP_WARN_Vendor trash|r
+    .target Godric Rothgar
+step << Hunter
+    .goto 1429/0,-112.800,-8901.601
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Danil|r
+    .vendor >> |cRXP_BUY_Buy 2 stacks of|r |T132382:0|t[Rough Arrows]
+    .target Brother Danil
+step
+    #requires xp3
+    #label Investigate
+    .goto 1429/0,-162.62,-8902.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r
+    .turnin 15 >> Turn in Investigate Echo Ridge
+    .accept 21 >> Accept Skirmish at Echo Ridge
+    .target Marshal McBride
+step
+    .goto 1429/0,-186.12,-8874.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton|r
+    .turnin 91743 >> Turn in Rascally Rodents
+    .accept 91745 >>Accept Mining Consultant
+    .target Brother Paxton
+step
+    .isQuestTurnedIn 91743
+    .goto 1429/0,-186.12,-8874.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton|r
+    .accept 91745 >>Accept Mining Consultant
+    .target Brother Paxton
+
+step << Mage
+    #optional
+    #completewith next
+    .goto 1429,48.79,41.58,12,0
+    .goto 1429,48.975,41.146,12,0
+    .goto 1429,49.262,40.633,12,0
+    .goto 1429,49.510,40.095,6,0
+    .goto 1429,49.691,40.230,6,0
+    .goto 1429,49.595,40.673,6,0
+    .goto 1429,49.324,40.492,6,0
+    .goto 1429,49.436,39.881,10,0
+    .goto 1429/0,-188.23,-8851.58,12 >>Travel toward |cRXP_FRIENDLY_Khelden Bremen|r upstairs
+step << Mage
+    #season 0,1
+    .goto 1429/0,-188.23,-8851.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khelden Bremen|r inside upstairs
+    .turnin 3104 >> Turn in Glyphic Letter
+    .trainer >> Train your class spells
+    .target Khelden Bremen
+step << Priest
+    #optional
+    #completewith next
+    .goto 1429/0,-175.70,-8881.62,15,0
+    .goto 1429/0,-193.06,-8870.05,10 >> Travel toward |cRXP_FRIENDLY_Priestess Anetta|r inside downstairs
+step << Priest
+    .goto 1429/0,-193.34,-8853.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Anetta|r inside downstairs
+    .turnin 3103 >> Turn in Hallowed Letter
+    .trainer >> Train your class spells
+    .target Priestess Anetta
+step << Warrior/Paladin
+    #optional
+    #completewith next
+    .goto 1429/0,-186.12,-8907.08,15 >> Travel toward |cRXP_FRIENDLY_Llane Beshere|r inside downstairs << Warrior
+    .goto 1429/0,-186.12,-8907.08,15 >> Travel toward |cRXP_FRIENDLY_Brother Sammuel|r inside downstairs << Paladin
+step << Warrior
+    #season 0,1
+    .goto 1429/0,-208.40,-8918.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Llane Beshere|r inside downstairs
+    .turnin 3100 >> Turn in Simple Letter
+    .trainer >> Train your class spells
+    .target Llane Beshere
+step << Paladin
+    #season 0,1
+    .goto 1429/0,-215.03,-8914.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Sammuel|r
+    .turnin 3101 >> Turn in Consecrated Letter
+    .trainer >> Train your class spells
+    .target Brother Sammuel
+step
+    #season 0,1 << Warrior
+    .goto 1429/0,-136.52,-8933.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r outside
+    .accept 18 >> Accept Brotherhood of Thieves
+    .target Deputy Willem
+step << Hunter
+    .goto 1429/0,-242.100,-8884.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tordrin Sternblade::248415|r
+    .target Tordrin Sternblade::248415
+    .turnin 92479 >>Turn in A Scribbled Letter
+    .trainer >> Train your class spells
+step << Warlock
+    .goto 1429/0,-195.59,-8926.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drusilla La Salle|r
+    .train 172 >>Train |T136118:0|t[Corruption]
+    .target Drusilla La Salle
+
+
+
+----End of 1x train section----
+
+
+
+
+step
+    #season 0,1
+    #loop
+    .goto 1429/0,-288.51,-9068.87,0
+    .goto 1429/0,-388.47,-9001.28,0
+    .goto 1429/0,-288.51,-9068.87,30,0
+    .goto 1429/0,-335.02,-9108.91,30,0
+    .goto 1429/0,-376.67,-9073.73,30,0
+    .goto 1429/0,-388.47,-9001.28,30,0
+    .goto 1429/0,-333.97,-9028.59,30,0
+    >>Kill |cRXP_ENEMY_Defias Thugs|r. Loot them for their |cRXP_LOOT_Red Burlap Bandanas|r
+    .complete 18,1 --Collect Red Burlap Bandana (x12)
+    .mob Defias Thug
+step << Rogue
+    #optional
+    #loop
+    .goto 1429/0,-288.51,-9068.87,0
+    .goto 1429/0,-388.47,-9001.28,0
+    .goto 1429/0,-288.51,-9068.87,30,0
+    .goto 1429/0,-335.02,-9108.91,30,0
+    .goto 1429/0,-376.67,-9073.73,30,0
+    .goto 1429/0,-388.47,-9001.28,30,0
+    .goto 1429/0,-333.97,-9028.59,30,0
+    .xp 4 >> Grind to level 4
+step
+    #season 0,1
+    .goto 1429/0,-136.48,-8933.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r
+    .turnin 18,1 >> Turn in Brotherhood of Thieves << Rogue/Warlock
+    .turnin 18,2 >> Turn in Brotherhood of Thieves << Priest
+    .turnin 18,3 >> Turn in Brotherhood of Thieves << Warrior
+    .turnin 18,4 >> Turn in Brotherhood of Thieves << Paladin
+    .turnin 18,5 >> Turn in Brotherhood of Thieves << Mage
+    .turnin 18 >> Turn in Brotherhood of Thieves << !Warrior !Priest !Mage !Rogue !Warlock !Paladin
+    .accept 3903 >> Accept Milly Osworth
+    .accept 6 >> Accept Bounty on Garrick Padfoot
+    .target Deputy Willem
+step << Paladin
+    #season 0,1
+    #completewith RestandR
+    .equip 16,5579 >> |cRXP_WARN_Equip the|r |T133052:0|t[Militia Warhammer]
+    .use 5579
+    .itemcount 5579,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.6
+step << Rogue
+    #season 0,1
+    #completewith RestandR
+    .equip 16,2224 >> Equip the |T135641:0|t[Militia Dagger]
+    .use 2224
+    .itemcount 2224,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.0
+step << Warrior
+    #completewith RestandR
+    .equip 16,1161 >> Equip the |T135274:0|t[Militia Shortsword]
+    .use 1161
+    .itemcount 1161,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.0
+step
+    .isOnQuest 91745
+    .goto 1429/0,-102.300,-8684.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kelsey Fargo::247226|r
+    .target Kelsey Fargo::247226
+    .turnin 91745 >>Turn in Mining Consultant
+    .accept 91752 >>Accept The Big Picture
+step
+    .isQuestTurnedIn 91745
+    .goto 1429/0,-102.300,-8684.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kelsey Fargo::247226|r
+    .target Kelsey Fargo::247226
+    .accept 91752 >>Accept The Big Picture
+step
+    #optional
+    #completewith KoboldLaborers
+    .goto 1429/0,-117.74,-8681.87,20 >> Enter the Echo Ridge Mine
+step
+    #completewith KoboldLaborers
+    .isOnQuest 91752
+    .goto 1429/0,-172.700,-8587.601
+    >>Kill |cRXP_ENEMY_Shinyfinder Narf|r. Loot him for the |cRXP_LOOT_Sack of "Picture" Books|r
+    .complete 91752,1 --|1/1 Sack of "Picture" Books
+    .target Shinyfinder Narf
+step
+    #completewith KoboldLaborers
+    .isOnQuest 91743
+    >>Kill |cRXP_ENEMY_Kobold Laborers|r and |cRXP_ENEMY_Kobold Workers|r. Loot them for their |cRXP_LOOT_Stolen Books|r
+    .complete 91743,1 -- Stolen Book (8)
+step
+    #label KoboldLaborers
+    #loop
+    .goto 1429,47.784,31.540,0
+    .goto 1429,48.659,29.161,0
+    .goto 1429,50.491,26.867,0
+    .goto 1429,47.784,31.540,30,0
+    .goto 1429,47.909,30.850,30,0
+    .goto 1429,48.107,30.271,30,0
+    .goto 1429,48.428,30.248,30,0
+    .goto 1429,48.398,29.842,30,0
+    .goto 1429,48.659,29.161,30,0
+    .goto 1429,48.245,28.598,30,0
+    .goto 1429,48.637,27.354,30,0
+    .goto 1429,48.501,26.700,30,0
+    .goto 1429,49.979,25.620,30,0
+    .goto 1429,50.491,26.867,30,0
+    >>Kill |cRXP_ENEMY_Kobold Laborers|r inside Echo Ridge Mine
+    .complete 21,1 --Kill Kobold Laborer (x12)
+    .mob Kobold Laborer
+step
+    .isOnQuest 91743
+    #loop
+    .goto 1429,47.784,31.540,0
+    .goto 1429,48.659,29.161,0
+    .goto 1429,50.491,26.867,0
+    .goto 1429,47.784,31.540,30,0
+    .goto 1429,47.909,30.850,30,0
+    .goto 1429,48.107,30.271,30,0
+    .goto 1429,48.428,30.248,30,0
+    .goto 1429,48.398,29.842,30,0
+    .goto 1429,48.659,29.161,30,0
+    .goto 1429,48.245,28.598,30,0
+    .goto 1429,48.637,27.354,30,0
+    .goto 1429,48.501,26.700,30,0
+    .goto 1429,49.979,25.620,30,0
+    .goto 1429,50.491,26.867,30,0
+    >>Kill |cRXP_ENEMY_Kobold Laborers|r and |cRXP_ENEMY_Kobold Workers|r. Loot them for their |cRXP_LOOT_Stolen Books|r
+    .complete 91743,1 -- Stolen Book (8)
+    .mob Kobold Laborer
+    .mob Kobold Worker
+step
+    .isOnQuest 91752
+    .goto 1429/0,-172.700,-8587.601
+    >>Kill |cRXP_ENEMY_Shinyfinder Narf|r. Loot him for the |cRXP_LOOT_Sack of "Picture" Books|r
+    .complete 91752,1 --|1/1 Sack of "Picture" Books
+    .target Shinyfinder Narf
+
+step
+    .goto 1429/0,-224.02,-8850.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Milly Osworth|r
+    >>|cRXP_WARN_Skip the followup|r << !Priest !Mage
+    .turnin 3903 >> Turn in Milly Osworth
+    .accept 3904 >> Accept Milly's Harvest << Priest/Mage
+    .target Milly Osworth
+step << Rogue
+    #season 0,1
+    .goto 1429/0,-210.90,-8863.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorik Kerridan|r
+    .turnin 3102 >> Turn in Encrypted Letter
+    .train 1784 >>Train |T132320:0|t[Stealth]
+    .train 921 >>Train |T133644:0|t[Pick Pocket]
+    .target Jorik Kerridan
+step << Priest/Mage
+    #loop
+    .goto 1429/0,-288.51,-9068.87,0
+    .goto 1429/0,-388.47,-9001.28,0
+    .goto 1429/0,-288.51,-9068.87,30,0
+    .goto 1429/0,-335.02,-9108.91,30,0
+    .goto 1429/0,-376.67,-9073.73,30,0
+    .goto 1429/0,-388.47,-9001.28,30,0
+    .goto 1429/0,-333.97,-9028.59,30,0
+    >>Loot |cRXP_PICK_Milly's Harvest|r on the ground
+    .complete 3904,1 --Collect Milly's Harvest (x8)
+step
+    .goto 1429,57.518,48.253
+    >>Kill |cRXP_ENEMY_Garrick Padfoot|r. Loot him for his |cRXP_LOOT_Head|r
+    .complete 6,1 --Collect Garrick's Head (x1)
+    .mob Garrick Padfoot
+step
+    #requires CuttyNote << Rogue --Season 2
+    #optional
+    #loop
+    .goto 1429/0,-288.51,-9068.87,0
+    .goto 1429/0,-388.47,-9001.28,0
+    .goto 1429/0,-288.51,-9068.87,30,0
+    .goto 1429/0,-335.02,-9108.91,30,0
+    .goto 1429/0,-376.67,-9073.73,30,0
+    .goto 1429/0,-388.47,-9001.28,30,0
+    .goto 1429/0,-333.97,-9028.59,30,0
+    .xp 5 >> Grind to level 5
+    .mob Defias Thug
+    --no need for extra grinding. being level 5 and doing the kobold quest chain will get you 6 once you arrive in goldshire
+step
+    #optional
+    #softcore
+    #completewith next
+    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .target Spirit Healer
+-- .subzoneskip 59,1
+step << Priest/Mage
+    .goto 1429/0,-224.02,-8850.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Milly Osworth|r
+    .turnin 3904 >>Turn in Milly's Harvest
+    .accept 3905 >>Accept Grape Manifest
+    .target Milly Osworth
+step
+    .goto 1429/0,-136.48,-8933.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r
+    .turnin 6,2 >> Turn in Bounty on Garrick Padfoot << Warrior/Rogue/Paladin
+    .turnin 6,1 >> Turn in Bounty on Garrick Padfoot << !Warrior !Rogue !Paladin
+    .target Deputy Willem
+step
+    #optional
+    .goto 1429/0,-162.62,-8902.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r inside
+    .turnin 91752 >>Turn in The Big Picture
+    .accept 91758 >>Accept Follow That Kobold!
+    .target Marshal McBride
+    .isOnQuest 91752
+step
+    #optional
+    .goto 1429/0,-162.62,-8902.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r inside
+    .accept 91758 >>Accept Follow That Kobold!
+    .target Marshal McBride
+    .isQuestTurnedIn 91752
+step
+    #label RestandR
+    .goto 1429/0,-162.62,-8902.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r inside
+    .turnin 21,1 >> Turn in Skirmish at Echo Ridge << Rogue
+    .turnin 21,2 >> Turn in Skirmish at Echo Ridge << Warrior/Paladin
+    .turnin 21,3 >> Turn in Skirmish at Echo Ridge << !Warrior !Paladin !Rogue
+    .accept 54 >> Accept Report to Goldshire
+    .accept 96627 >> Accept The Adventurer
+    .target Marshal McBride
+step
+    .goto 1429/0,-186.12,-8874.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton|r
+    .turnin 91743 >> Turn in Rascally Rodents
+    .accept 91745 >>Accept Mining Consultant
+    .target Brother Paxton
+step
+    #optional
+    .isQuestTurnedIn 91743
+    .goto 1429/0,-186.12,-8874.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton|r
+    .accept 91745 >>Accept Mining Consultant
+    .target Brother Paxton
+step << Priest/Mage
+    #optional
+    #completewith next
+    .goto 1429/0,-186.12,-8902.45,15,0
+    .goto 1429/0,-161.82,-8895.51,10 >>Travel upstairs
+step << Priest/Mage
+    .goto 1429/0,-181.64,-8902.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Neals|r upstairs
+    .turnin 3905,1 >>Turn in Grape Manifest
+    .target Brother Neals
+step << Priest
+    #season 0,1
+    .goto 1429/0,-193.34,-8853.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Anetta|r inside
+    .accept 5623 >> Accept In Favor of the Light
+    .target Priestess Anetta
+step
+    .isOnQuest 91745
+    .goto 1429/0,-102.300,-8684.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kelsey Fargo::247226|r
+    .target Kelsey Fargo::247226
+    .turnin 91745 >>Turn in Mining Consultant
+    .accept 91752 >>Accept The Big Picture
+step
+    #optional
+    .isQuestTurnedIn 91745
+    .goto 1429/0,-102.300,-8684.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kelsey Fargo::247226|r
+    .target Kelsey Fargo::247226
+    .accept 91752 >>Accept The Big Picture
+step
+    #optional
+    #completewith KoboldLaborers
+    .goto 1429/0,-117.74,-8681.87,20 >> Enter the Echo Ridge Mine
+step
+    .isOnQuest 91752
+    .goto 1429/0,-172.700,-8587.601
+    >>Kill |cRXP_ENEMY_Shinyfinder Narf|r. Loot him for the |cRXP_LOOT_Sack of "Picture" Books|r
+    .complete 91752,1 --|1/1 Sack of "Picture" Books
+    .target Shinyfinder Narf
+step
+    #completewith next
+    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .target Spirit Healer
+step
+    .goto 1429/0,-162.62,-8902.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r inside
+    .turnin 91752 >>Turn in The Big Picture
+    .accept 91758 >>Accept Follow That Kobold!
+    .target Marshal McBride
+    .isOnQuest 91752
+step
+    .goto 1429/0,-162.62,-8902.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r inside
+    .accept 91758 >>Accept Follow That Kobold!
+    .target Marshal McBride
+    .isQuestTurnedIn 91752
+step
+    .isOnQuest 91758
+    .goto 1429/0,-242.000,-8884.300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tordrin Sternblade::248415|r outside the Abbey
+    .target Tordrin Sternblade::248415
+    .turnin 91758 >>Turn in Follow That Kobold!
+    .accept 91772 >>Accept Shhh! We're Hunting Kobolds
+step
+    .isQuestTurnedIn 91758
+    .goto 1429/0,-242.000,-8884.300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tordrin Sternblade::248415|r outside the Abbey
+    .target Tordrin Sternblade::248415
+    .accept 91772 >>Accept Shhh! We're Hunting Kobolds
+step
+    #completewith RnR
+    .cast 1246031 >> |cRXP_WARN_Use the|r |T132995:0|t[Kobold Tracking Kit] |cRXP_WARN_to see the |cRXP_PICK_Kobold Tracks|r on your minimap|r
+    .use 247970
+step
+    #completewith RnR
+    .isOnQuest 91772
+    .goto 1429/0,-46.00,-9044.61,5 >>Click the green |cRXP_PICK_Kobold Tracks|r on the ground as you travel toward Goldshire
+    .use 247970
+    .complete 91772,1 -- Followed Kobold Tracks 6/6
+    .disablecheckbox
+step
+    #label RnR
+    .goto 1429/0,-46.00,-9044.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falkhaan Isenstrider|r
+    .accept 2158 >> Accept Rest and Relaxation
+    .target Falkhaan Isenstrider
+
+step
+    #completewith CampQuest
+    .isOnQuest 91772
+    >>Click the green |cRXP_PICK_Kobold Tracks|r on the ground as you travel toward Goldshire
+    .use 247970 >> |cRXP_WARN_Use the|r |T132995:0|t[Kobold Tracking Kit] |cRXP_WARN_to track them on your minimap|r
+    .complete 91772,1 -- Followed Kobold Tracks 6/6
+
+step
+    #label CampQuest
+    .goto 1429/0,-22.99,-9404.71
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sam Sarsaparilla|r
+    .turnin 96627 >> Turn in The Adventurer
+    .target Sam Sarsaparilla
+step
+    .isOnQuest 91772
+    #loop
+    .goto 1429/0,-77.600,-9140.900,55,0
+    .goto 1429/0,-44.100,-9246.500,55,0
+    .goto 1429/0,8.800,-9327.900,55,0
+    .goto 1429/0,66.000,-9374.000,55,0
+    >>Click the green |cRXP_PICK_Kobold Tracks|r on the ground
+    .use 247970 >> |cRXP_WARN_Use the|r |T132995:0|t[Kobold Tracking Kit] |cRXP_WARN_to track them on your minimap|r
+    .complete 91772,1 -- Followed Kobold Tracks 6/6
+step << Warrior/Rogue/Paladin
+    .goto 1429/0,87.87,-9456.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smith Argus|r
+    >>|cRXP_WARN_This will allow you to make|r |T135248:0|t[Rough Sharpening Stones] |cRXP_WARN_which increase your melee damage by 2|r << Warrior/Rogue
+    >>|cRXP_WARN_This will allow you to make|r |T135255:0|t[Rough Weightstones] |cRXP_WARN_which increase your melee damage by 2|r << Paladin
+    >>|cRXP_WARN_If you don't want to do this, skip this step|r
+    .train 2018 >> Train |T136241:0|t[Blacksmithing]
+    .target Smith Argus
+step << Warrior
+    .goto 1429/0,94.01,-9464.8900
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corina Steele|r
+    .vendor 54 >>|cRXP_BUY_Buy a|r |T135321:0|t[Gladius] |cRXP_BUY_from her if you can afford it|r
+    .collect 2488,1 --Collect Gladius (1)
+    .disablecheckbox
+    .target Corina Steele
+    .money <0.0536
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
+step << Warrior
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135321:0|t[Gladius]
+    .use 2488
+    .itemcount 2488,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
+step << Rogue
+    .goto 1429/0,94.01,-9464.8900
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corina Steele|r
+    .vendor 54 >>|cRXP_BUY_Buy a|r |T135421:0|t[Tomahawk] |cRXP_BUY_or|r |T135641:0|t[Stiletto] |cRXP_BUY_from her if you can afford it|r
+    .target Corina Steele
+--  .money <0.0540
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
+step << Rogue
+    #label RogueTomahawk
+    #completewith GSHS
+    +|cRXP_WARN_Equip the|r |T135421:0|t[Tomahawk]
+    .use 2490
+    .itemcount 2490,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
+step << Rogue
+    #completewith GSHS
+    +|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
+    .use 2494
+    .itemcount 2494,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
+step << Paladin
+    .goto 1429/0,94.01,-9464.8900
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corina Steele|r
+    .vendor 54 >>|cRXP_WARN_Buy a|r |T133053:0|t[Wooden Mallet] |cRXP_BUY_from her if you can afford it|r
+    .collect 2493,1 --Collect Wooden Mallet (1)
+    .disablecheckbox
+    .target Corina Steele
+--  .money <0.0631
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.0
+step << Paladin
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T133053:0|t[Wooden Mallet]
+    .use 2493
+    .itemcount 2493,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.0
+step << Mage/Priest/Warlock
+    #optional
+    #completewith next
+    .goto 1429/0,87.87,-9462.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andrew Krighton|r
+    .vendor >> Vendor Trash
+    .target Andrew Krighton
+--  .money >1.0
+step
+    .isOnQuest 91772
+    .goto 1429/0,74.02,-9465.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
+    .turnin 54 >> Turn in Report to Goldshire
+    .turnin 91772 >>Turn in Shhh! We're Hunting Kobolds
+    .accept 62 >> Accept The Fargodeep Mine
+    .target Marshal Dughan
+step
+    #label Goldshire
+    .goto 1429/0,74.02,-9465.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
+    .turnin 54 >> Turn in Report to Goldshire
+    .accept 62 >> Accept The Fargodeep Mine
+    .target Marshal Dughan
+step
+    .goto 1429/0,31.92,-9460.38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r
+    .accept 60 >> Accept Kobold Candles
+    .target William Pestle
+step
+    #label GSHS
+    .goto 1429/0,16.20,-9462.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Farley|r
+    .turnin 2158,1 >> Turn in Rest and Relaxation << Rogue/Warrior
+    .turnin 2158,2 >> Turn in Rest and Relaxation << !Rogue !Warrior
+    .target Innkeeper Farley
+step
+    .goto 1453,53.02,74.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Betty Quin|r and |cRXP_FRIENDLY_Jessara Cordell|r
+    .target +Tilli Thistlefuzz
+    .vendor
+    .collect 6217,1 -- copper rod
+    .collect 4470,1 -- simple wood
+    .collect 247786,9 -- mote of magic
+    .target +Thonys Pillarstone
+    .train 7411 >> Train |T136244:0|t[Enchanting]
+step
+    .goto 1453,60.972,11.690,30,0
+    .goto 1453,65.933,5.771
+    .subzone 2257 >>Enter the Deeprun Tram
+step
+    .collect 6218,1 -- runed copper rod
+    .zone Ironforge >> Take the Deeprun Tram to Ironforge
+step
+    .goto Ironforge,55.50,47.74
+    >>Talk to |cRXP_FRIENDLY_Gryth|r
+    .fp Ironforge >> Get the Ironforge flight path
+    .target Gryth Thurden
+step << Warlock
+    .goto 1455,60.340,45.188
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thonys Pillarstone|r
+    .vendor
+    .target +Thonys Pillarstone
+    .train 14293
+step << Warlock
+    .goto 1455,43.826,27.962
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uthrar Threx|r
+    .target +Uthrar Threx
+    .train 3908 >> Train |T136249:0|t[Tailoring]
+]])
+
+
+RXPGuides.RegisterGuide([[
+#forever
+#version 1
+<< Alliance
+#group MalzXP Forever Duo Guide
+#subgroup Duo 1-20
+--#groupid RXP-SRGCE-A1
 #name 1-5 Coldridge Valley
 #next 5-11 Dun Morogh
 #defaultfor Dwarf/Gnome
@@ -21,7 +936,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sten Stoutarm|r
     .accept 179 >> Accept Dwarven Outfitters
     .target Sten Stoutarm
-step
+step << Warlock
     #completewith coldridgeEnd
     #optional
     +|cRXP_WARN_Equip |r |T132609:0|t[Frayed Bracers] if found
@@ -405,11 +1320,11 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 5-11 Dun Morogh
 #next 11-12 Elwynn
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 
 
-step
+step << !Human
     #optional
     #label BoarMeatQuest
     #completewith SenirEnd
@@ -419,7 +1334,7 @@ step
     .collect 2886,6,384,1 --Collect Crag Boar Rib (x6)
     .mob Crag Boar
     .subzoneskip 131 --Kharanos
-step
+step << !Human
     #optional
     .goto 1426,43.316,56.283,60,0
     .goto 1426,43.949,52.524,60,0
@@ -430,12 +1345,12 @@ step
 --XX 270 from priest quest
 --XX 340 from quest, 45 from explore
 --xx 410 the adventurer
-step
+step << !Human
     #completewith next
     .goto 1426/0,-499.17,-5644.37
     .subzone 131 >> Travel to Kharanos
     .mob Crag Boar
-step
+step << !Human
     #label SenirEnd
     .goto 1426/0,-499.17,-5644.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senir Whitebeard|r
@@ -444,42 +1359,42 @@ step
     .turnin 96628 >> The Adventurer
     .accept 96608 >> The Great Outdoors
     .target Senir Whitebeard
-step
+step << !Human
     .goto 1426/0,-504.05,-5596.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ragnar Thunderbrew|r
     .accept 384 >> Accept Beer Basted Boar Ribs
     .target Ragnar Thunderbrew
-step
+step << !Human
     #optional
     #completewith next
     .goto 1426,46.952,52.050,8,0
     .goto 1426,47.153,51.939,8 >> Enter the Thunderbrew Distillery
-step
+step << !Human
     .goto 1426/0,-523.35,-5590.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tannok Frosthammer|r
     .turnin 2160,2 >> Turn in Supplies to Tannok
     .target Tannok Frosthammer
-step
+step << !Human
     .goto 1426/0,-531.23,-5601.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r inside
     .home >> Set your Hearthstone to Kharanos
     .target Innkeeper Belm
-step << Rogue/Warlock
+step << Rogue/Warlock !Human
     .goto 1426,47.2,52.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thamner Pol|r inside
     .train 3273 >> Train |T135966:0|t[First Aid]
     .target Thamner Pol
-step
+step << !Human
     .goto 1426/0,-464.45,-5573.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharek Blackstone|r
     .accept 400 >> Accept Tools for Steelgrill
     .target Tharek Blackstone
-step
+step << !Human
     .goto 1426,45.339,51.992
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tognus Flintfire|r
     .accept 98321 >> Accept Flintfire's Shipment
     .target Tognus Flintfire
-step
+step << !Human
     #optional
     #completewith next
     >>Kill |cRXP_ENEMY_Crag Boars|r. Loot them for |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r and |cRXP_LOOT_Crag Boar Ribs|r
@@ -487,10 +1402,10 @@ step
     .collect 2886,6,384,1 --Collect Crag Boar Rib (x6)
     .mob Crag Boar
     .subzoneskip 131 --Kharanos
-step
+step << !Human
     #completewith next
     >> Check for |cRXP_ENEMY_Young Black Bears|r nearby, good for Jetsteam progress
-step
+step << !Human
     #label StartStocking
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Bellowfiz|r and |cRXP_FRIENDLY_Pilot Stonegear|r
     >>|cRXP_WARN_Try to leave |cRXP_ENEMY_Young Black Bears|r alive until after quest pickup|r
@@ -500,7 +1415,7 @@ step
     .accept 313 >> Accept The Grizzled Den
     .goto 1426/0,-641.80,-5473.18
     .target +Pilot Stonegear
-step
+step << !Human
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beldin Steelgrill|r and |cRXP_FRIENDLY_Loslor Rudge|r
     .turnin 400 >> Turn in Tools for Steelgrill
     .goto 1426/0,-682.23,-5488.94
@@ -508,7 +1423,7 @@ step
     .accept 5541 >> Accept Ammo for Rumbleshot
     .goto 1426/0,-664.55,-5499.710
     .target +Loslor Rudge
-step
+step << !Human
     #completewith jetsteamEnd
     >>Kill |cRXP_ENEMY_Young Black Bears|r. Loot them for their |cRXP_LOOT_Thick Bear Fur|r
     >>Kill |cRXP_ENEMY_Large Crag Boars|r and |cRXP_ENEMY_Crag Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r and |cRXP_LOOT_Crag Boar Ribs|r
@@ -519,19 +1434,19 @@ step
     .disablecheckbox
     .mob Large Crag Boar
     .mob Crag Boar
-step
+step << !Human
     >> Go left around the mountain not through Kharanos
     .goto 1426,44.084,57.031
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Gretchen|r
     .turnin 98322 >> Turn in Secure the Mountain
     .accept 98319 >> Accept Secure the Mountain
     .complete 5541,1
-step
+step << !Human
     #optional
     #completewith next
     .goto 1426,40.632,62.794,40,0
     .goto 1426/0,-201.51,-6015.520,15 >>Travel toward |cRXP_FRIENDLY_Hegnar Rumbleshot|r
-step
+step << !Human
     #label BearFur
     .goto 1426/0,-201.51,-6015.520
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hegnar Rumbleshot|r
@@ -596,12 +1511,85 @@ step
     .target +Foreman Stonebrow
     .turnin 432 >> Turn in Those Blasted Troggs!
 step
-    #completewith next
-    >> Make sure to trade money around, ~12 silver cost for shaman and ~4 silver cost for wand users
-    >> Loan Coldridge Hammers to the vendor if necessary to get the training
-step
+    .goto 1426,70.27,56.95
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .target Spirit Healer
+step
+    #completewith next
+    #sticky
+    >> Make sure to trade money around, ~12 silver cost for shaman and ~4 silver cost for wand users
+    >> Loan Coldridge Hammers to the vendor if necessary to get the training
+step << Human
+    #label SenirEnd
+    .goto 1426/0,-499.17,-5644.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senir Whitebeard|r
+    .accept 98322 >> Accept Secure the Mountain
+    .accept 96608 >> The Great Outdoors
+    .target Senir Whitebeard
+step << Human
+    .goto 1426/0,-504.05,-5596.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ragnar Thunderbrew|r
+    .accept 384 >> Accept Beer Basted Boar Ribs
+    .target Ragnar Thunderbrew
+step << Human
+    #optional
+    #completewith next
+    .goto 1426,46.952,52.050,8,0
+    .goto 1426,47.153,51.939,8 >> Enter the Thunderbrew Distillery
+step << Human
+    .goto 1426/0,-523.35,-5590.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tannok Frosthammer|r
+    .turnin 2160,2 >> Turn in Supplies to Tannok
+    .target Tannok Frosthammer
+step << Human
+    .goto 1426/0,-531.23,-5601.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r inside
+    .home >> Set your Hearthstone to Kharanos
+    .target Innkeeper Belm
+step << Rogue/Warlock Human
+    .goto 1426,47.2,52.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thamner Pol|r inside
+    .train 3273 >> Train |T135966:0|t[First Aid]
+    .target Thamner Pol
+step << Human
+    .goto 1426/0,-464.45,-5573.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharek Blackstone|r
+    .accept 400 >> Accept Tools for Steelgrill
+    .target Tharek Blackstone
+step << Human
+    .goto 1426,45.339,51.992
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tognus Flintfire|r
+    .accept 98321 >> Accept Flintfire's Shipment
+    .target Tognus Flintfire
+step << Human
+    #optional
+    #completewith next
+    >>Kill |cRXP_ENEMY_Crag Boars|r. Loot them for |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r and |cRXP_LOOT_Crag Boar Ribs|r
+    .collect 769,4,317,1 --Collect Chunk of Boar Meat (x4)
+    .collect 2886,6,384,1 --Collect Crag Boar Rib (x6)
+    .mob Crag Boar
+    .subzoneskip 131 --Kharanos
+step << Human
+    #completewith next
+    >> Check for |cRXP_ENEMY_Young Black Bears|r nearby, good for Jetsteam progress
+step << Human
+    #label StartStocking
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Bellowfiz|r and |cRXP_FRIENDLY_Pilot Stonegear|r
+    >>|cRXP_WARN_Try to leave |cRXP_ENEMY_Young Black Bears|r alive until after quest pickup|r
+    .accept 317 >> Accept Stocking Jetsteam
+    .goto 1426/0,-632.15,-5466.540
+    .target +Pilot Bellowfiz
+    .accept 313 >> Accept The Grizzled Den
+    .goto 1426/0,-641.80,-5473.18
+    .target +Pilot Stonegear
+step << Human
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beldin Steelgrill|r and |cRXP_FRIENDLY_Loslor Rudge|r
+    .turnin 400 >> Turn in Tools for Steelgrill
+    .goto 1426/0,-682.23,-5488.94
+    .target +Beldin Steelgrill
+    .accept 5541 >> Accept Ammo for Rumbleshot
+    .goto 1426/0,-664.55,-5499.710
+    .target +Loslor Rudge
 step
     #label jetsteamEnd
     .goto 1426/0,-632.15,-5466.540
@@ -609,7 +1597,7 @@ step
     .turnin 317 >> Turn in Stocking Jetsteam
     .accept 318 >> Accept Evershine
     .target Pilot Bellowfiz
-step << !Rogue !Paladin
+step << !Rogue !Paladin !Human
     #label IFentry
     .goto 1426,47.412,41.658,50,0
     .goto 1426,51.529,39.888,50,0
@@ -631,7 +1619,7 @@ step << Shaman
     .collect 2320,1
     .collect 5957,1
     >> Now crafting just to wear
-step << Warlock
+step << Warlock !Human
     .goto 1455,60.340,45.188
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thonys Pillarstone|r and |cRXP_FRIENDLY_Tilli Thistlefuzz|r
     .target +Tilli Thistlefuzz
@@ -644,12 +1632,12 @@ step << Warlock
     .target +Thonys Pillarstone
     .train 7411 >> Train |T136244:0|t[Enchanting]
     .train 14293,1
-step << Warlock
+step << Warlock !Human
     .goto 1455,43.826,27.962
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uthrar Threx|r
     .target +Uthrar Threx
     .train 3908 >> Train |T136249:0|t[Tailoring]
-step << !Rogue !Paladin
+step << !Rogue !Paladin !Human
 	.hs >> Hearth to Kharanos
 step << Rogue
     #label Blacksmithing1
@@ -676,14 +1664,14 @@ step
     .accept 96031 >> Accept Camping 101: Leatherworking << Shaman
     .accept 96056 >> Accept Camping 101: Skinning << Shaman/Paladin/Rogue
     .accept 96057 >> Accept Camping 101: Tailoring << Warlock
-    .accept 96059 >> Accept Camping 101: Enchanting << Warlock/Paladin
+    -- .accept 96059 >> Accept Camping 101: Enchanting << Warlock/Paladin
     .accept 96629 >> Accept Camping 101: Cooking
     .collect 2320,3 << Warlock
-    .collect 3371,2 << Warlock
+    -- .collect 3371,2 << Warlock -- Empty Vial
     .complete 96608,1
     .complete 96608,2
     .collect 4238,1 << Warlock
-    .collect 20744,2 << Warlock
+    -- .collect 20744,2 << Warlock -- Minor Wizard Oil
 step
     #optional
     #completewith EvershineEnd
@@ -692,12 +1680,8 @@ step
     .mob Large Crag Boar
     .mob Crag Boar
 step
-    >> Skip Bitter Rivals, Evershine, and Favor for Evershine if only one of you ran here
-    .goto 1426,31.547,44.694,20,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gretta Ganter|r, |cRXP_FRIENDLY_Rejold Barleybrew|r, and |cRXP_FRIENDLY_Marleth Barleybrew|r
-    .target +Gretta Ganter
-    .accept 98326 >> Accept Frosthowl
-    .accept 315 >> Accept The Perfect Stout
+    #completewith next
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rejold Barleybrew|r and |cRXP_FRIENDLY_Marleth Barleybrew|r
     .turnin 318 >> Turn in Evershine
     .accept 319 >> Accept A Favor for Evershine
     .goto Dun Morogh,30.190,45.726
@@ -705,6 +1689,32 @@ step
     .accept 310 >> Accept Bitter Rivals
     .goto 1426/0,315.42,-5372.02
     .target +Marleth Barleybrew
+step
+    .goto 1426,31.547,44.694,20,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gretta Ganter|r, |cRXP_FRIENDLY_Rejold Barleybrew|r
+    .target +Gretta Ganter
+    .accept 98326 >> Accept Frosthowl
+    .accept 315 >> Accept The Perfect Stout
+    .goto Dun Morogh,30.190,45.726
+    .target +Rejold Barleybrew
+step << Human
+    >> Go left around the mountain not through Kharanos
+    .goto 1426,44.084,57.031
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Gretchen|r
+    .turnin 98322 >> Turn in Secure the Mountain
+    .accept 98319 >> Accept Secure the Mountain
+    .complete 5541,1
+step << Human
+    #optional
+    #completewith next
+    .goto 1426,40.632,62.794,40,0
+    .goto 1426/0,-201.51,-6015.520,15 >>Travel toward |cRXP_FRIENDLY_Hegnar Rumbleshot|r
+step << Human
+    #label BearFur
+    .goto 1426/0,-201.51,-6015.520
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hegnar Rumbleshot|r
+    .turnin 5541 >> Turn in Ammo for Rumbleshot
+    .target Hegnar Rumbleshot
 step
     #optional
     #completewith next
@@ -754,6 +1764,7 @@ step
     >>|cRXP_BUY_Buy a|r |T132800:0|t[Thunder Ale] |cRXP_BUY_from him|r
     .collect 2686,1,311 --Collect Thunder Ale (x1)
     .target Innkeeper Belm
+    .isOnQuest 310
 step
     #completewith next
     .goto 1426/0,-551.03,-5598.40,6,0
@@ -793,6 +1804,7 @@ step << Warlock
 step << Shaman
     .goto 1426,47.556,51.973,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ingrid Dunwald|r
+    >>Skip |T136048:0|t[Lightning Bolt] unless rich
     .trainer >> Train your class spells
     .target Ingrid Dunwald
 step << Paladin
@@ -805,12 +1817,6 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hogral Bakkan|r inside
     .trainer >> Train your class spells
     .target Hogral Bakkan
-step
-    .goto 1426,47.6,52.4
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gremlock Pilsnor|r
-    .train 2550 >> Train |T133971:0|t[Cooking]
-    .turnin 96629 >> Turn in Camping 101: Cooking
-    .target Gremlock Pilsnor
 step
     .goto 1426/0,-632.15,-5466.540
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Stonegear|r
@@ -1020,6 +2026,12 @@ step
     .vendor >> Sell junk
     .target Innkeeper Belm
     .isQuestAvailable 384
+step
+    .goto 1426,47.6,52.4
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gremlock Pilsnor|r
+    .train 2550 >> Train |T133971:0|t[Cooking]
+    .turnin 96629 >> Turn in Camping 101: Cooking
+    .target Gremlock Pilsnor
 step
     #completewith next
     .goto 1426/0,-551.03,-5598.40,6,0
@@ -1388,7 +2400,7 @@ step
 step << Shaman
     .goto 1455,47.334,13.566
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eldun Stormbreaker|r
-    .accept 971 >> Accept Knowledge in the Deeps (warlock should share but otherwise it's you)
+    -- .accept 971 >> Accept Knowledge in the Deeps (warlock should share but otherwise it's you)
     .accept 94449 >> Accept Call of Fire
     .trainer >> Train your class spells
     .target Eldun Stormbreaker
@@ -1400,17 +2412,18 @@ step << Warlock
     .target Lago Blackwrench
 step << Warlock
     .goto 1455,50.565,6.084
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gerrig Bonegrip|r and |cRXP_FRIENDLY_Briarthorn|r
-    .accept 971 >> Accept Knowledge in the Deeps
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Briarthorn|r
+    -- >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gerrig Bonegrip|r and |cRXP_FRIENDLY_Briarthorn|r
+    -- .accept 971 >> Accept Knowledge in the Deeps -- moved to way later?
     .trainer >> Train your class spells
     .target +Gerrig Bonegrip
     .target +Briarthorn
-step << Rogue 
-    >>|cRXP_WARN_Get any linen available traded to you on the way|r
-    .goto 1455,50.565,6.084
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gerrig Bonegrip|r
-    .accept 971 >> Accept Knowledge in the Deeps
-    .target +Gerrig Bonegrip
+-- step << Rogue 
+--     >>|cRXP_WARN_Get any linen available traded to you on the way|r
+--     .goto 1455,50.565,6.084
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gerrig Bonegrip|r
+--     .accept 971 >> Accept Knowledge in the Deeps
+--     .target +Gerrig Bonegrip
 step << Rogue
     .goto 1455,51.6,14.8
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hulfdan Blackbeard|r
@@ -1421,7 +2434,7 @@ step << Dwarf/Gnome
     #completewith next
     .goto 1455,49.645,28.195,12,0
     .goto 1455/0,-1120.93,-4708.06,10 >>Travel toward |cRXP_FRIENDLY_Golnir Bouldertoe|r inside the building
-step
+step << Dwarf/Gnome
     #label Ride
     .goto 1455/0,-1120.93,-4708.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Golnir Bouldertoe|r inside
@@ -1465,7 +2478,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Barin Redstone|r
     .turnin 291 >> Turn in The Reports
     .target Senator Barin Redstone
-step
+step << Dwarf/Gnome
     .goto 1455/0,-1152.40,-4821.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r
     >>|cRXP_WARN_Do NOT fly anywhere|r
@@ -1586,7 +2599,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 11-12 Elwynn
 #next 12-14 Loch Modan
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 
 step
@@ -2000,6 +3013,11 @@ step
     .goto 1436/0,1045.12,-10508.80
     .turnin 109 >> Turn in Report to Gryan Stoutmantle
     .accept 12 >> Accept The People's Militia
+step << Human
+    .goto Westfall,57.002,47.169
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quartermaster Lewis|r
+    .accept 6181 >> Accept A Swift Message
+    .target Quartermaster Lewis
 step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scout Galiaan|r
@@ -2010,6 +3028,8 @@ step
     .goto 1436/0,1037.42,-10628.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
     .fp Sentinel Hill >> Get the Sentinel Hill flight path
+    .turnin 6181 >> Turn in A Swift Message << Human
+    .accept 6281 >> Accept Continue To Stormwind << Human
     .fly Stormwind >> Fly to Stormwind << Rogue
     .target Thor
 step << Rogue
@@ -2040,7 +3060,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 12-14 Loch Modan
 #next 14-15 Westfall
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 
 step << Dwarf Paladin
@@ -2713,6 +3733,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r
     .accept 399 >> Accept Humble Beginnings
     .target Baros Alexston
+step << Human
+    .goto 1453,77.0,61.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osric Strang|r
+    .turnin 6281 >> Turn in Continue to Stormwind
+    .accept 6261 >> Accept Dungar Longdrink
+    .target Osric Strang
 step
     .goto 1453/0,625.48,-8857.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morgan Pestle|r

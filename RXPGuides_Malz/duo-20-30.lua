@@ -14,7 +14,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 20-21 Redridge/Duskwood
 #next 21-22 Deadmines
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 step << Shaman
     .goto Ironforge,55.50,47.74
@@ -400,7 +400,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 21-22 Deadmines
 #next 22-23 Ruins of Lordaeron
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 
 step
@@ -661,7 +661,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 22-23 Ruins of Lordaeron
 #next 23-25 Ashenvale
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 step 
     #optional
@@ -838,7 +838,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 23-25 Ashenvale
 #next 25-26 Wetlands
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 
 step << Shaman
@@ -1369,7 +1369,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 25-26 Wetlands
 #next 26-27 Duskwood
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 step
     .goto 1437,8.406,58.560
@@ -1403,6 +1403,14 @@ step
     .target Archaeologist Flagongut
     .turnin 942 >> Turn in The Absent Minded Prospector
     .accept 943 >> Accept The Absent Minded Prospector
+step
+    >>Go into the Barracks. Talk to Stoutfist
+    .goto Wetlands,9.86,57.49
+    .target Captain Stoutfist
+    >>Talk to |cRXP_FRIENDLY_Captain Stoutfist|r
+    .accept 464 >> Accept War Banners
+    .accept 98221 >> Accept From the Ashes
+    >> Wowhead thinks both should be there at the same time, hopefully the case
 step 
     .goto 1437,9.451,59.642
     .fp Menethil >> Get the Menethil Harbor Flight Path
@@ -1507,6 +1515,15 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einar Stonegrip|r
     .accept 469 >> Accept Daily Delivery
 step
+	.goto Wetlands,34.3,41.2,60,0
+    .goto Wetlands,44.8,43.9
+	>>Kill Dragonmaw Orcs
+    .complete 464,1 --Collect Dragonmaw War Banner (x8)
+    .complete 98221,1 -- Destroy attack plans 1-4
+    .complete 98221,2
+    .complete 98221,3
+    .complete 98221,4
+step
     .goto Wetlands,44.2,33.9
 	>>Kill gnolls
     .complete 277,1 --Collect Crude Flint (x9)
@@ -1517,6 +1534,7 @@ step
     .target Rethiel the Greenwarden
     .accept 275 >> Accept Blisters on The Land
 step
+    #completewith next
     .goto Wetlands,17.75,27.70,35,0
     .goto Wetlands,19.18,27.77,35,0
     .goto Wetlands,20.92,28.82,35,0
@@ -1531,13 +1549,6 @@ step
     >>|cRXP_WARN_Be careful as they are|r |T132320:0|t[Stealthed] |cRXP_WARN_and patrol around in the shallow water slightly|r
     .complete 275,1  --Kill Fen Creeper (x8)
     .mob Fen Creeper
-step
-    .goto Wetlands,56.4,40.5
-    .target Rethiel the Greenwarden
-    >>Talk to |cRXP_FRIENDLY_Rethiel the Greenwarden|r
-    .turnin 275 >> Turn in Blisters on The Land
-    .accept 95646 >> Accept Horrors in the Highland
-    .accept 98283 >> Accept Carnage
 step
     .goto Wetlands,44.2,25.8
     >>Kill slimes around the crypt
@@ -1602,29 +1613,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarrel Rockweaver|r
     .turnin 306 >> Turn in In Search of The Excavation Team
     .target Tarrel Rockweaver
-step
-    .goto Wetlands,8.6,55.8
-    .target James Halloran
-    >>Talk to |cRXP_FRIENDLY_James Halloran|r
-    .turnin 469 >> Turn in Daily Delivery
-    .isOnQuest 469
-step
-    .zoneskip Wetlands,1
-    .goto Wetlands,8.4,58.5
-    >>Talk to |cRXP_FRIENDLY_Karl Boran|r
-    .turnin 279 >> Turn in Claws from the Deep
-    .target Karl Boran
-    .accept 281 >> Accept Reclaiming Goods
-step
-    .goto Wetlands,11.7,58.1
-    .target Sida
-    >>Talk to |cRXP_FRIENDLY_Sida|r
-    .turnin 470 >> Turn in Digging Through the Ooze
-step
-    .goto 1437,10.815,60.406
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tGo upstairs and talk to |cRXP_FRIENDLY_Archaeologist Flagongut|r
-    .turnin 943 >> Turn in The Absent Minded Prospector
-    .target Archaeologist Flagongut
 step 
     .goto 1437,9.451,59.642
     >> You can also take the boat if it's here
@@ -1651,6 +1639,35 @@ step
     +Campfire and sleeping bag here if off cd
 step
     .hs >> Hearth to Menethil Harbor
+step
+    .goto 1437,10.815,60.406
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tGo upstairs and talk to |cRXP_FRIENDLY_Archaeologist Flagongut|r
+    .turnin 943 >> Turn in The Absent Minded Prospector
+    .target Archaeologist Flagongut
+step
+    .goto Wetlands,8.4,58.5
+    >>Talk to |cRXP_FRIENDLY_Karl Boran|r
+    .turnin 279 >> Turn in Claws from the Deep
+    .target Karl Boran
+    .accept 281 >> Accept Reclaiming Goods
+step
+    .goto Wetlands,8.6,55.8
+    .target James Halloran
+    >>Talk to |cRXP_FRIENDLY_James Halloran|r
+    .turnin 469 >> Turn in Daily Delivery
+    .isOnQuest 469
+step
+    .goto Wetlands,9.9,57.4
+    >>Talk to |cRXP_FRIENDLY_Captain Stoutfist|r
+    .turnin 464 >> Turn in War Banners
+    .turnin 98221 >> Accept From the Ashes
+    .target Captain Stoutfist
+    .accept 465 >> Accept Nek'rosh's Gambit
+step
+    .goto Wetlands,11.7,58.1
+    .target Sida
+    >>Talk to |cRXP_FRIENDLY_Sida|r
+    .turnin 470 >> Turn in Digging Through the Ooze
 step 
     .goto 1437,9.451,59.642
     .fly Thelsamar >> Fly to Thelsamar
@@ -1691,10 +1708,15 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gerrig Bonegrip|r
     .turnin -968 >> Turn in The Powers Below
     .target Gerrig Bonegrip
+step << !Warlock
+    #completewith next
+    .accept 971 >> Accept Knowledge in the Deeps
+    >> should be shared to you
 step << Warlock
     .goto 1455/0,-1117.60,-4615.14,15,0
     .goto 1455/0,-1111.62,-4599.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Briarthorn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gerrig Bonegrip|r and |cRXP_FRIENDLY_Briarthorn|r
+    .accept 971 >> Accept Knowledge in the Deeps
     .trainer >> Train your class spells
     .target Briarthorn
 step << Rogue
@@ -1735,7 +1757,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 26-27 Duskwood
 #next 27-28 Ashenvale
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 
 step
@@ -2340,7 +2362,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 27-28 Ashenvale
 #next 28-29 Blackfathom Deeps
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 
 step
@@ -2726,7 +2748,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 28-29 Blackfathom Deeps
 #next 29-30 Wetlands
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 
 step
@@ -2896,7 +2918,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 29-31 Wetlands
 #next 31-32 Stockades
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 
 step
@@ -2999,14 +3021,6 @@ step
     >>Talk to |cRXP_FRIENDLY_Harlo Barnaby|r
     .accept 472 >> Accept Fall of Dun Modr
 step
-    >>Go into the Barracks. Talk to Stoutfist
-    .goto Wetlands,9.86,57.49
-    .target Captain Stoutfist
-    >>Talk to |cRXP_FRIENDLY_Captain Stoutfist|r
-    .accept 464 >> Accept War Banners
-    .accept 98221 >> Accept From the Ashes
-    >> Wowhead thinks both should be there at the same time, hopefully the case
-step
 	#label relics
 	#sticky
 	.goto Wetlands,34.3,49.5,0
@@ -3053,23 +3067,7 @@ step
     .target Prospector Whelgar
     >>Talk to |cRXP_FRIENDLY_Prospector Whelgar|r
     .turnin 98216 >> Turn in Understanding our Present
-step
-	.goto Wetlands,34.3,41.2,60,0
-    .goto Wetlands,44.8,43.9
-	>>Kill Dragonmaw Orcs
-    .complete 464,1 --Collect Dragonmaw War Banner (x8)
-    .complete 98221,1 -- Destroy attack plans 1-4
-    .complete 98221,2
-    .complete 98221,3
-    .complete 98221,4
-step
-    .goto Wetlands,9.9,57.4
-    >>Talk to |cRXP_FRIENDLY_Captain Stoutfist|r
-    .turnin 464 >> Turn in War Banners
-    .turnin 98221 >> Accept From the Ashes
-    .target Captain Stoutfist
-    .accept 465 >> Accept Nek'rosh's Gambit
-    .accept 98230 >> Accept This Land Was Their Land
+    .accept 98310 >> Accept Gleaning Our Future
 step
     #requires Mead
     .goto Wetlands,10.89,59.66
@@ -3116,12 +3114,42 @@ step
     .turnin 286 >> Turn in Return the Statuette
     .target Karl Boran
 step
+    #label Gambit
+    .goto Wetlands,47.45,47.01
+    >>Click the |cRXP_PICK_Dragonmaw Catapult|r
+    .turnin 465 >>Turn in Nek'rosh's Gambit
+    .accept 474 >>Accept Defeat Nek'rosh
+step
+    #sticky
+    #label nekroshBook
+    .goto Wetlands,53.2,56.0,40,0
+    .goto Wetlands,53.5,54.5
+    >>Interact with the book on the ground
+    .accept 98223 >> Accept Old Habits
+step
+    .goto Wetlands,53.2,56.0,40,0
+    .goto Wetlands,53.2,56.0,0
+    >>Kill |cRXP_ENEMY_Chieftain Nek'rosh|r. Loot him for his |cRXP_LOOT_Head|r
+    >>|cRXP_WARN_You can split pull Nek'Rosh from the mobs around him by using|r |T136186:0|t[Rain of Fire] << Warlock
+    >>|cRXP_ENEMY_Chieftain Nek'rosh|r |cRXP_WARN_is snareable|r
+    >>|cRXP_ENEMY_Chieftain Nek'rosh|r |cRXP_WARN_can be|r |T136183:0|t[Feared] << Warlock
+    >>|cRXP_ENEMY_Chieftain Nek'rosh|r |cRXP_WARN_is immune to Fire damage|r << Mage/Warlock/Shaman
+    .complete 474,1 
+    .mob Chieftain Nek'rosh
+step
+    #requires nekroshBook
     .goto Wetlands,49.6,42.0
     .target Howin Kindfeather
     >>Talk to |cRXP_FRIENDLY_Howin Kindfeather|r
-    .turnin 98230 >> Turn in This Land Was Their Land
     .accept 98245 >> Accept Razormaw Needling
     .accept 98246 >> Accept Trying Times
+step
+    .goto Wetlands,56.4,40.5
+    .target Rethiel the Greenwarden
+    >>Talk to |cRXP_FRIENDLY_Rethiel the Greenwarden|r
+    .turnin 275 >> Turn in Blisters on The Land
+    .accept 95646 >> Accept Horrors in the Highland
+    .accept 98283 >> Accept Carnage
 step
     #completewith next
     >> Start looking for a group for the elite dwarves, the more the merrier, can add the other elite quests if 5
@@ -3148,14 +3176,14 @@ step
     >>Talk to |cRXP_FRIENDLY_Howin Kindfeather|r
     .turnin 98245 >> Turn in Razormaw Needling
     .turnin 98246 >> Turn in Trying Times
-    .accept 98291 >> Accept Death to the Dragonmaw
 step
-    >> now is group elite time for real, only the necessary quests are routed here but all of them are good to do, save turnins for after excavation site
+    >> now doing the elite quests, only priority is Dark Iron War, rest can be completed later
     #completewith next
     .goto Wetlands,49.9,18.3
     .target Longbraid the Grim
     >>Talk to |cRXP_FRIENDLY_Longbraid the Grim|r
     .turnin 472 >> Turn in Fall of Dun Modr
+    .accept 304 >> Accept A Grim Task
 step
     .goto Wetlands,49.9,18.3
     .target Rhag Garmason
@@ -3164,10 +3192,19 @@ step
     .target Motley Garmason
     >>Talk to |cRXP_FRIENDLY_Motley Garmason|r
     .accept 303 >> Accept The Dark Iron War
+    .target Ashlan Stonesmirk
+    >>Talk to |cRXP_FRIENDLY_Ashlan Stonesmirk|r
+    .accept 88756 >> Accept Bring Back a Bang
 step
     #sticky
     #completewith endWetlands
     +Find a group to The Stockades
+step
+    #completewith next
+    .goto Wetlands,45.7,16.6
+    >>Talk to the |cRXP_FRIENDLY_Captive Fire Elemental|r inside
+    .accept 87491 >> Accept Spark of Freedom
+    .complete 87491,1
 step
     .goto Wetlands,47.3,16.6
 	>> Kill Dark Iron dwarves in the area
@@ -3176,6 +3213,7 @@ step
     .complete 303,3 --Kill Dark Iron Saboteur (x5)
     .complete 303,4 --Kill Dark Iron Demolitionist (x5)
 step
+    >>|cRXP_WARN_Do not turn in other quests, we will be back and the XP is tight here
     .goto Wetlands,49.7,18.3
     .target Motley Garmason
     >>Talk to |cRXP_FRIENDLY_Motley Garmason|r

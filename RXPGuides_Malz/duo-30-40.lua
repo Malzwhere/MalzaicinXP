@@ -11,7 +11,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 31-32 Stockades
 #next 32-33 Gnomer
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 
 step
@@ -439,7 +439,6 @@ step
     .zone Ironforge >> Take the Deeprun Tram to Ironforge
 step
     #sticky
-    #completewith endWetlands
     +Find a group to The Stockades
 step
     .goto Ironforge,72.74,94.03
@@ -479,7 +478,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 32-33 Gnomeregan
 #next 33-34 Excavation Site
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 
 step
@@ -751,7 +750,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 33-34 Excavation Site
 #next 34-35 Duskwood
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 
 step
@@ -760,6 +759,13 @@ step
     .turnin 289 >> Turn in The Cursed Crew
     .accept 290 >> Accept Lifting the Curse
     .target First Mate Fitzsimmons
+step
+    .goto Wetlands,9.9,57.4
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Stoutfist|r
+    .turnin 474 >> Turn in Defeat Nek'rosh
+    .turnin 98223 >> Turn in Old Habits
+    .accept 98230 >> Accept This Land Was Their Land
+    .target Captain Stoutfist
 step
     #label Halyndor
     .goto Wetlands,15.984,23.111,25,0
@@ -776,29 +782,6 @@ step
     .turnin 290 >>Turn in Lifting the Curse
     .accept 292 >>Accept The Eye of Paleth
 step
-    #label Gambit
-    .goto Wetlands,47.45,47.01
-    >>Click the |cRXP_PICK_Dragonmaw Catapult|r
-    .turnin 465 >>Turn in Nek'rosh's Gambit
-    .accept 474 >>Accept Defeat Nek'rosh
-step
-    .goto Wetlands,53.2,56.0,40,0
-    .goto Wetlands,53.2,56.0,0
-    >>Kill |cRXP_ENEMY_Chieftain Nek'rosh|r. Loot him for his |cRXP_LOOT_Head|r
-    >>|cRXP_WARN_You can split pull Nek'Rosh from the mobs around him by using|r |T136186:0|t[Rain of Fire] << Warlock
-    >>|cRXP_ENEMY_Chieftain Nek'rosh|r |cRXP_WARN_is snareable|r
-    >>|cRXP_ENEMY_Chieftain Nek'rosh|r |cRXP_WARN_can be|r |T136183:0|t[Feared] << Warlock
-    >>|cRXP_ENEMY_Chieftain Nek'rosh|r |cRXP_WARN_is immune to Fire damage|r << Mage/Warlock/Shaman
-    .complete 474,1 
-    .mob Chieftain Nek'rosh
-    >> Loot the book nearby
-step
-    .goto Wetlands,10.6,60.5
-    >>Talk to |cRXP_FRIENDLY_Glorin Steelbrow|r
-    .turnin 292 >> Turn in The Eye of Paleth
-    .target Glorin Steelbrow
-    .accept 293 >> Accept Cleansing the Eye
-step
     .goto Wetlands,54.25,47.99,50,0
     .goto Wetlands,52.82,66.10,25,0
     .goto Wetlands,48.02,56.52,10
@@ -812,16 +795,72 @@ step
     .accept 95810 >> Accept Lost Relic Carry
     .use 270865
 step
-	.goto Wetlands,38.81,52.39
-    .target Prospector Whelgar
-    >>Talk to |cRXP_FRIENDLY_Prospector Whelgar|r
-	.turnin 95810 >> Turn in Lost Relic Carry
-    .accept 98824 >> Accept Prehistoric Prism
+    >> Ideally you keep the dungeon group for these quests, but may be conflicted by chains
+    .goto Wetlands,49.6,42.0
+    .target Howin Kindfeather
+    >>Talk to |cRXP_FRIENDLY_Howin Kindfeather|r
+    .turnin 98230 >> Turn in This Land Was Their Land
+    .accept 98291 >> Accept Death to the Dragonmaw
 step
     .goto Wetlands,56.4,40.5
     .target Rethiel the Greenwarden
     >>Talk to |cRXP_FRIENDLY_Rethiel the Greenwarden|r
     .turnin 95646 >> Turn in Horrors in the Highland
+step
+    .goto Wetlands,58.8,45.2
+    >>Interact with the Dragonmaw Armaments
+    .accept 98293 >> Accept Forced Disarmament
+step
+    >> Kill |cRXP_ENEMY_Dragonmaw|r and loot the boxes
+    .complete 98291,1
+    .complete 98291,2
+    .complete 98291,3
+    .complete 98293,1
+step
+    >> Kill |cRXP_ENEMY_Golm|r
+    .complete 98310,3
+    .goto Wetlands,67.6,71.8
+step
+    .goto Wetlands,49.6,42.0
+    .target Howin Kindfeather
+    >>Talk to |cRXP_FRIENDLY_Howin Kindfeather|r
+    .turnin 98291 >> Turn in Death to the Dragonmaw
+    .accept 98297 >> Accept Stopping the Cycle
+step
+    >> Kill the |cRXP_ENEMY_Subdued Dragonspawn|r and |cRXP_ENEMY_Ados|r
+    .complete 98297,1
+    .goto Wetlands,77.2,46.6
+    .complete 98310,1
+    .goto Wetlands,77.2,47.4
+step
+    .goto Wetlands,49.6,42.0
+    .target Howin Kindfeather
+    >>Talk to |cRXP_FRIENDLY_Howin Kindfeather|r
+    .turnin 98297 >> Turn in Stopping the Cycle
+    .accept 98300 >> Accept Word to Ironforge
+step
+    >> Kill |cRXP_ENEMY_Neru|r
+    .complete 98310,4
+    .goto Wetlands,60.2,22.1
+step
+    >> Complete the remaining elite dwarf quests if necessary
+    .complete 304,1
+    .complete 88756,1
+step
+    >> Kill |cRXP_ENEMY_Modr|r
+    .complete 98310,2
+    .goto Wetlands,51.2,17.3
+step
+    .target Longbraid the Grim
+    >>Talk to |cRXP_FRIENDLY_Longbraid the Grim|r
+    .turnin 304 >> Turn in A Grim Task
+    .goto Wetlands,49.9,18.3
+    .target Roggo Harlbarrow
+    >>Talk to |cRXP_FRIENDLY_Roggo Harlbarrow|r
+    .turnin 87491 >> Turn in Spark of Freedom
+    .target Ashlan Stonesmirk
+    >>Talk to |cRXP_FRIENDLY_Ashlan Stonesmirk|r
+    .turnin 88756 >> Turn in Bring Back a Bang
 step
     .goto Wetlands,49.7,18.3
     .target Motley Garmason
@@ -889,7 +928,16 @@ step
     >>Talk to |cRXP_FRIENDLY_Brewmeister Bilger|r
     .turnin 647 >> Turn in MacKreel's Moonshine
 step
-    .hs >> Hearth to Ironforge
+    .goto 1424/0,-512.15,-715.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darla Harris|r
+    .fly Menethil >> Fly to Menethil Harbor
+    .target Darla Harris
+step
+    .goto Wetlands,10.6,60.5
+    >>Talk to |cRXP_FRIENDLY_Glorin Steelbrow|r
+    .turnin 292 >> Turn in The Eye of Paleth
+    .target Glorin Steelbrow
+    .accept 293 >> Accept Cleansing the Eye
 step
     >>Click the |cRXP_PICK_Waterlogged Chest|r
     .goto Wetlands,12.10,64.19
@@ -920,15 +968,25 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sylessa Duskwhisper|r
     .turnin 98208 >> Turn in Bloom of the Heavens
 step
-    .goto Wetlands,9.9,57.4
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Stoutfist|r
-    .turnin 474 >> Turn in Defeat Nek'rosh
-    .target Captain Stoutfist
-step
     .goto Wetlands,11.8,58.6
     .target Caitlin Grassman
     >>Talk to |cRXP_FRIENDLY_Caitlin Grassman|r
     .turnin 95809 >> Turn in Heartwoven
+step
+    .goto Wetlands,9.9,57.4
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Stoutfist|r
+    .turnin 98293 >> Turn in Forced Disarmament
+    .target Captain Stoutfist
+step
+	.goto Wetlands,38.81,52.39
+    .target Prospector Whelgar
+    >>Talk to |cRXP_FRIENDLY_Prospector Whelgar|r
+	.turnin 95810 >> Turn in Lost Relic Carry
+    .accept 98824 >> Accept Prehistoric Prism
+    .turnin 98310 >> Turn in Gleaning Our Future
+    .accept 98313 >> Accept For Further Study
+step
+    .hs >> Hearth to Ironforge
 step
     .goto Ironforge,63.50,67.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sara Balloo|r
@@ -940,6 +998,7 @@ step
     .goto Ironforge,39.09,56.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Magni Bronzebeard|r
     .turnin 683 >> Turn in Sara Balloo's Plea
+    .turnin 98300 >> Turn in Word to Ironforge
     .accept 686 >> Accept A King's Tribute
     .target King Magni Bronzebeard
 step
@@ -955,6 +1014,11 @@ step
     .turnin 98824 >> Turn in Prehistoric Prism
     .target High Explorer Magellas
 step
+    .goto Ironforge,77.539,11.834
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Historian Karnik|r
+    .turnin 98313 >> Turn in For Further Study
+    .target Historian Karnik
+step
     .goto 1455/0,-1330.28,-4840.430
     .zone Stormwind City >> Enter the Deeprun Tram. Take the tram to Stormwind
 ]])
@@ -969,7 +1033,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 34-35 Duskwood
 #next 35-36 Stranglethorn Vale
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 
 step
@@ -1294,7 +1358,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 35-36 Stranglethorn Vale
 #next 36-36 Arathi Highlands
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 
 step
@@ -1683,7 +1747,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 36-36 Arathi Highlands
 #next 36-37 City of Dalaran
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 
 step
@@ -1733,34 +1797,34 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darla Harris|r
     .fly Arathi Highlands >> Fly to Arathi Highlands
     .target Darla Harris
-step
-    .goto Arathi Highlands,45.832,47.545
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Nials|r
-    .accept 681 >> Accept Northfold Manor
-    .target Captain Nials
+-- step
+--     .goto Arathi Highlands,45.832,47.545
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Nials|r
+--     .accept 681 >> Accept Northfold Manor
+--     .target Captain Nials
 step
     .goto Arathi Highlands,46.65,47.01
     .target Skuerto
     >>Talk to |cRXP_FRIENDLY_Skuerto|r
     .turnin 690 >>Turn in Malin's Request
-step
-    .goto Arathi Highlands,46.197,47.752
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Kryten|r
-    .accept 691 >> Accept Worth Its Weight in Gold
-    .target Apprentice Kryten
-step
-    #label Northfold
-    .goto Arathi Highlands,33.26,32.60,50,0
-    .goto Arathi Highlands,30.38,30.68,50,0
-    .goto Arathi Highlands,31.46,25.36,50,0
-    .goto Arathi Highlands,33.87,29.13,50,0
-    .goto Arathi Highlands,31.13,29.47
-    >>Kill |cRXP_ENEMY_Syndicate Mercenaries|r and |cRXP_ENEMY_Syndicate Highwaymen|r
-    >>|cRXP_WARN_Be aware |cRXP_ENEMY_Syndicate Highwaymen|r are in|r |T132320:0|t[Stealth] |cRXP_WARN_and can be found around the perimiter of Northfold Manor|r
-    .complete 681,1 
-    .complete 681,2 
-    .mob Syndicate Highwayman
-    .mob Syndicate Mercenary
+-- step
+--     .goto Arathi Highlands,46.197,47.752
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Kryten|r
+--     .accept 691 >> Accept Worth Its Weight in Gold
+--     .target Apprentice Kryten
+-- step
+--     #label Northfold
+--     .goto Arathi Highlands,33.26,32.60,50,0
+--     .goto Arathi Highlands,30.38,30.68,50,0
+--     .goto Arathi Highlands,31.46,25.36,50,0
+--     .goto Arathi Highlands,33.87,29.13,50,0
+--     .goto Arathi Highlands,31.13,29.47
+--     >>Kill |cRXP_ENEMY_Syndicate Mercenaries|r and |cRXP_ENEMY_Syndicate Highwaymen|r
+--     >>|cRXP_WARN_Be aware |cRXP_ENEMY_Syndicate Highwaymen|r are in|r |T132320:0|t[Stealth] |cRXP_WARN_and can be found around the perimiter of Northfold Manor|r
+--     .complete 681,1 
+--     .complete 681,2 
+--     .mob Syndicate Highwayman
+--     .mob Syndicate Mercenary
 step
     #completewith next
     .goto Arathi Highlands,43.25,55.38,60,0
@@ -1810,43 +1874,43 @@ step
     .turnin 660 >>Turn in Hints of a New Plague?
     .target Quae
     .accept 661 >>Accept Hints of a New Plague?
-step
-    >>Kill the |cRXP_ENEMY_Witherbarks|r. Loot them for their |cRXP_LOOT_Witherbark Tusks|r
-    >>Kill |cRXP_ENEMY_Witherbark Witch Doctors|r. Loot them for their |cRXP_LOOT_Medicine Pouches|r
-    >>Kill |cRXP_ENEMY_Witherbark Shadow Hunters|r. Loot them for their |cRXP_LOOT_Shadow Hunter Knife|r
-    >>|cRXP_ENEMY_Witherbark Shadow Hunters|r |cRXP_WARN_are only found inside the Cave|r
-    .complete 691,1 
-    .goto Arathi Highlands,72.51,65.67,70,0
-    .goto Arathi Highlands,70.334,69.93,70,0
-    .goto Arathi Highlands,64.06,72.51,70,0
-    .goto Arathi Highlands,61.35,71.72,70,0
-    .goto Arathi Highlands,64.23,67.72,70,0
-    .goto Arathi Highlands,66.56,63.98
-    .complete 691,2 
-    .goto Arathi Highlands,72.51,65.67,70,0
-    .goto Arathi Highlands,70.334,69.93,70,0
-    .goto Arathi Highlands,64.06,72.51,70,0
-    .goto Arathi Highlands,61.35,71.72,70,0
-    .goto Arathi Highlands,64.23,67.72,70,0
-    .goto Arathi Highlands,66.56,63.98
-    .complete 691,3 
-    .goto Arathi Highlands,68.38,75.92,30,0
-    .goto Arathi Highlands,68.20,79.47
-    .mob Witherbark Shadow Hunter
-    .mob Witherbark Witch Doctor
-    .mob Witherbark Shadowcaster
-    .mob Witherbark Troll
-    .isOnQuest 691
-step
-    .goto Arathi Highlands,46.197,47.752
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Kryten|r
-    .turnin 691 >> Turn in Worth Its Weight in Gold
-    .target Apprentice Kryten
-step
-    .goto Arathi Highlands,45.832,47.545
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Nials|r
-    .turnin 681 >> Turn in Northfold Manor
-    .target Captain Nials
+-- step
+--     >>Kill the |cRXP_ENEMY_Witherbarks|r. Loot them for their |cRXP_LOOT_Witherbark Tusks|r
+--     >>Kill |cRXP_ENEMY_Witherbark Witch Doctors|r. Loot them for their |cRXP_LOOT_Medicine Pouches|r
+--     >>Kill |cRXP_ENEMY_Witherbark Shadow Hunters|r. Loot them for their |cRXP_LOOT_Shadow Hunter Knife|r
+--     >>|cRXP_ENEMY_Witherbark Shadow Hunters|r |cRXP_WARN_are only found inside the Cave|r
+--     .complete 691,1 
+--     .goto Arathi Highlands,72.51,65.67,70,0
+--     .goto Arathi Highlands,70.334,69.93,70,0
+--     .goto Arathi Highlands,64.06,72.51,70,0
+--     .goto Arathi Highlands,61.35,71.72,70,0
+--     .goto Arathi Highlands,64.23,67.72,70,0
+--     .goto Arathi Highlands,66.56,63.98
+--     .complete 691,2 
+--     .goto Arathi Highlands,72.51,65.67,70,0
+--     .goto Arathi Highlands,70.334,69.93,70,0
+--     .goto Arathi Highlands,64.06,72.51,70,0
+--     .goto Arathi Highlands,61.35,71.72,70,0
+--     .goto Arathi Highlands,64.23,67.72,70,0
+--     .goto Arathi Highlands,66.56,63.98
+--     .complete 691,3 
+--     .goto Arathi Highlands,68.38,75.92,30,0
+--     .goto Arathi Highlands,68.20,79.47
+--     .mob Witherbark Shadow Hunter
+--     .mob Witherbark Witch Doctor
+--     .mob Witherbark Shadowcaster
+--     .mob Witherbark Troll
+--     .isOnQuest 691
+-- step
+--     .goto Arathi Highlands,46.197,47.752
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Kryten|r
+--     .turnin 691 >> Turn in Worth Its Weight in Gold
+--     .target Apprentice Kryten
+-- step
+--     .goto Arathi Highlands,45.832,47.545
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Nials|r
+--     .turnin 681 >> Turn in Northfold Manor
+--     .target Captain Nials
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cedrik Prose|r
     .goto Arathi Highlands,45.73,46.09
@@ -1928,7 +1992,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 36-37 City of Dalaran
 #next 37-38 Desolace
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 
 step
@@ -2197,7 +2261,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 37-38 Desolace
 #next 38-39 Stranglethorn Vale
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 
 step
@@ -2807,7 +2871,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 38-39 Stranglethorn Vale
 #next 39-40 Dustwallow
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 
 step
@@ -3341,7 +3405,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 39-40 Dustwallow Marsh
 #next 40-40 Razorfen Downs
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 
 step

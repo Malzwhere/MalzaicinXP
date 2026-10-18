@@ -11,7 +11,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 50-51 Searing Gorge
 #next 51-52 Maraudon
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 
 step
@@ -432,7 +432,6 @@ step
     .accept 3182 >> Accept Proof of Deed
     .target Mountaineer Pebblebitty
 step
-    .requires quest,2994
     .goto Blasted Lands,66.898,19.469
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thadius Grimshade|r atop the Tower
     .turnin 2991 >> Turn in Nekrum's Medallion
@@ -442,7 +441,6 @@ step
     .accept 2993 >> Accept Return to the Hinterlands
     .target Thadius Grimshade
 step
-    .requires quest,2994
     .isQuestTurnedIn 2991
     .goto Blasted Lands,66.898,19.469
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thadius Grimshade|r atop the Tower
@@ -457,31 +455,27 @@ step
     .fly Aerie Peak >> Fly to Aerie Peak in The Hinterlands
     .target Alexandra Constantine
 step
-    .isOnQuest 2993
     .goto The Hinterlands,9.752,44.473
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryphon Master Talonaxe|r
     .turnin 2993 >> Turn in Return to the Hinterlands
     .accept 2994 >> Accept Saving Sharpbeak
     .target Gryphon Master Talonaxe
 step
-    .isQuestTurnedIn 2993
-    .goto The Hinterlands,9.752,44.473
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryphon Master Talonaxe|r
-    .accept 2994 >> Accept Saving Sharpbeak
-    .target Gryphon Master Talonaxe
+    #label Tragan
+    .goto The Hinterlands,40.63,59.65
+    >>Loot the |cRXP_LOOT_Violet Tragan|r underwater
+    .complete 2641,1 
 step
     .goto The Hinterlands,59.6,77.4
     >>Kill the |cRXP_ENEMY_Vile Priestess Hexx|r. Loot it for its |cRXP_LOOT_Hexx's Key|r
     >>|cRXP_WARN_She can be found at the very top of Jintha'Alor|r
     .collect 9472,1,2994,1 
 step
-    .requires quest,2994
     #completewith next
     >> Head north to another cave passage
     .goto The Hinterlands,56,68,30
     .goto The Hinterlands,53.6,66.8
 step
-    .requires quest,2994
     .goto The Hinterlands,53.6,66.8
     >>Open Sharpbeak's cage and release him
     .complete 2994,1 
@@ -499,8 +493,8 @@ step
 step
     .goto Tanaris,66.989,22.354
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yeh'kinya|r
-    .accept 4787
     .turnin 4787 >> Turn in The Ancient Egg
+    .accept 3528 >> Accept The God Hakkar
     .target Yeh'kinya
 step
     .turnin 3182
@@ -517,7 +511,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 51-52 Maraudon
 #next 52-52 Alcaz Island
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 
 step
@@ -796,7 +790,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 52-52 Alcaz Island
 #next 52-53 Un'goro Crater
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 
 step
@@ -816,7 +810,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 52-53 Un'goro Crater
 #next 53-54 Sunken Temple
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 
 step
@@ -1003,7 +997,7 @@ step
 step
     .goto Un'Goro Crater,71.639,75.960
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torwa Pathfinder|r
-    .accept 4290 >> Accept The Fare of Lar'korwi
+    .accept 4290 >> Accept The Fate of Lar'korwi
     .target Torwa Pathfinder
     .isQuestAvailable 4290
 step
@@ -1014,7 +1008,7 @@ step
 step
     .goto Un'Goro Crater,71.639,75.960
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torwa Pathfinder|r
-    .turnin 4290 >> Turn in The Fare of Lar'korwi
+    .turnin 4290 >> Turn in The Fate of Lar'korwi
     .accept 4291 >> Accept The Scent of Lar'korwi
     .target Torwa Pathfinder
 step
@@ -1453,11 +1447,10 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 53-54 Sunken Temple
 #next 54-55 Felwood
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 step
     .accept 1446 >> Accept Jammalan the Prophet
-    .accept 3528 >> Accept The God Hakkar
     .accept 3446 >> Accept Into the Depths
     .accept 1475 >> Accept Into the Temple of Atal'Hakkar
     .accept 4143 >> Accept Haze of Evil
@@ -1489,7 +1482,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 54-55 Felwood
 #next 55-56 Azshara
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 
 step
@@ -2225,6 +2218,11 @@ step
     .complete 5086,1 
     .mob Toxic Horror
 step
+    .goto Moonglade,36.178,41.798
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Keeper Remulos|r
+    .turnin 7066 >> Turn in Seed of Life
+    .target Keeper Remulos
+step
     #completewith next
     #requires UnusualFlask << Mage
     .goto Felwood,65.280,7.515,20,0
@@ -2304,8 +2302,8 @@ RXPGuides.RegisterGuide([[
 #subgroup Duo 50-60
 --#groupid RXP-SRGCE-A1
 #name 55-56 Azshara
-#next 56-57 Blackrock Depths
-#defaultfor Dwarf/Gnome
+#next 56-57 Plaguelands
+#defaultfor Dwarf/Gnome/Human
 
 
 step
@@ -2717,93 +2715,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r
     .fly Tanaris>> Fly to Tanaris
     .target Bragok
-]])
-
-
-RXPGuides.RegisterGuide([[
-#forever
-#version 1
-<< Alliance
-#group MalzXP Forever Duo Guide
-#subgroup Duo 50-60
---#groupid RXP-SRGCE-A1
-#name 56-57 Blackrock Depths
-#next 57-58 LBRS
-#defaultfor Dwarf/Gnome
-
-
 step
-    .goto Burning Steppes,84.334,68.326
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Borgun Stoutarm|r
-    .fp Burning Steppes >> Get the Burning Steppes Flight Path
-    .target Borgun Stoutarm
-step
-    + Complete all the quests here, look for BRD quests, Ony attune starts here
-step
-    .accept 4126 >> Accept Hurley Blackbreath from Kharanos
-    +Do BRD quests, will likely take multiple trips but all going to be good xp
-
-step
-    .accept 4136 >> Accept Ribbly Screwspigot
-    .accept 4123 >> Accept The Heart of the Mountain
-    .accept 7848 >> Accept Attunement to the Core
-    .accept 4286 >> Accept The Good Stuff
-    .accept 4126 >> Accept Hurley Blackbreath
-    .accept 3802 >> Accept Dark Iron Legacy
-    .accept 4024 >> Accept A Taste of Flame
-    .accept 4263 >> Accept Incendius!
-    .accept 4341 >> Accept Kharan Mighthammer
-    .accept 4362 >> Accept The Fate of the Kingdom
-
-step
-    .turnin 4136 >> Turn in Ribbly Screwspigot
-    .turnin 4123 >> Turn in The Heart of the Mountain
-    .turnin 7848 >> Turn in Attunement to the Core
-    .turnin 4286 >> Turn in The Good Stuff
-    .turnin 4126 >> Turn in Hurley Blackbreath
-    .turnin 3802 >> Turn in Dark Iron Legacy
-    .turnin 4024 >> Turn in A Taste of Flame
-    .turnin 4263 >> Turn in Incendius!
-    .turnin 4341 >> Turn in Kharan Mighthammer
-    .turnin 4362 >> Turn in The Fate of the Kingdom
-]])
-
-
-RXPGuides.RegisterGuide([[
-#forever
-#version 1
-<< Alliance
-#group MalzXP Forever Duo Guide
-#subgroup Duo 50-60
---#groupid RXP-SRGCE-A1
-#name 57-58 LBRS
-#next 58-59 Plaguelands
-#defaultfor Dwarf/Gnome
-
-
-step
-    +Complete the LBRS quests, ideally hearth to turn in mother's milk and the followup to bijou's belongings
-
-step
-    .accept 4862 >> Accept En-Ay-Es-Tee-Why
-    .accept 4729 >> Accept Kibler's Exotic Pets
-    .accept 4701 >> Accept Put Her Down
+    .goto Tanaris,66.989,22.354
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yeh'kinya|r
+    .turnin 3528 >> Turn in The God Hakkar
     .accept 4788 >> Accept The Final Tablets
-    .accept 5081 >> Accept Maxwell's Mission
-    .accept 5089 >> Accept General Drakkisath's Command
-    .accept 5001 >> Accept Bijou's Belongings
-    .accept 4866 >> Accept Mother's Milk
-step
-    .turnin 4862 >> Turn in En-Ay-Es-Tee-Why
-    .turnin 4729 >> Turn in Kibler's Exotic Pets
-    .turnin 4701 >> Turn in Put Her Down
-    .turnin 4788 >> Turn in The Final Tablets
-    .turnin 5081 >> Turn in Maxwell's Mission
-    .turnin 5089 >> Turn in General Drakkisath's Command
-    .turnin 5001 >> Turn in Bijou's Belongings
-    .turnin 4866 >> Turn in Mother's Milk
+    .target Yeh'kinya
 ]])
-
 
 RXPGuides.RegisterGuide([[
 #forever
@@ -2812,9 +2730,9 @@ RXPGuides.RegisterGuide([[
 #group MalzXP Forever Duo Guide
 #subgroup Duo 50-60
 --#groupid RXP-SRGCE-A1
-#name 58-59 Plaguelands
-#next 59-60 Strat / Scholo
-#defaultfor Dwarf/Gnome
+#name 56-57 Plaguelands
+#next 57-58 Blackrock Depths
+#defaultfor Dwarf/Gnome/Human
 
 
 step
@@ -3779,8 +3697,100 @@ RXPGuides.RegisterGuide([[
 #group MalzXP Forever Duo Guide
 #subgroup Duo 50-60
 --#groupid RXP-SRGCE-A1
+#name 57-58 Blackrock Depths
+#next 58-59 LBRS
+#defaultfor Dwarf/Gnome/Human
+
+
+step
+    .goto Burning Steppes,84.334,68.326
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Borgun Stoutarm|r
+    .fp Burning Steppes >> Get the Burning Steppes Flight Path
+    .target Borgun Stoutarm
+step
+    + Complete all the quests here, look for BRD quests, Ony attune starts here
+step
+    .accept 4126 >> Accept Hurley Blackbreath from Kharanos
+    +Do BRD quests, will likely take multiple trips but all going to be good xp
+
+step
+    .accept 4136 >> Accept Ribbly Screwspigot
+    .accept 4123 >> Accept The Heart of the Mountain
+    .accept 7848 >> Accept Attunement to the Core
+    .accept 4286 >> Accept The Good Stuff
+    .accept 4126 >> Accept Hurley Blackbreath
+    .accept 3802 >> Accept Dark Iron Legacy
+    .accept 4024 >> Accept A Taste of Flame
+    .accept 4263 >> Accept Incendius!
+    .accept 4341 >> Accept Kharan Mighthammer
+    .accept 4362 >> Accept The Fate of the Kingdom
+
+step
+    .turnin 4136 >> Turn in Ribbly Screwspigot
+    .turnin 4123 >> Turn in The Heart of the Mountain
+    .turnin 7848 >> Turn in Attunement to the Core
+    .turnin 4286 >> Turn in The Good Stuff
+    .turnin 4126 >> Turn in Hurley Blackbreath
+    .turnin 3802 >> Turn in Dark Iron Legacy
+    .turnin 4024 >> Turn in A Taste of Flame
+    .turnin 4263 >> Turn in Incendius!
+    .turnin 4341 >> Turn in Kharan Mighthammer
+    .turnin 4362 >> Turn in The Fate of the Kingdom
+]])
+
+
+RXPGuides.RegisterGuide([[
+#forever
+#version 1
+<< Alliance
+#group MalzXP Forever Duo Guide
+#subgroup Duo 50-60
+--#groupid RXP-SRGCE-A1
+#name 58-59 LBRS
+#next 59-60 Strat / Scholo
+#defaultfor Dwarf/Gnome/Human
+
+
+step
+    +Complete the LBRS quests, ideally hearth to turn in mother's milk and the followup to bijou's belongings
+
+step
+    .accept 4862 >> Accept En-Ay-Es-Tee-Why
+    .accept 4729 >> Accept Kibler's Exotic Pets
+    .accept 4701 >> Accept Put Her Down
+    .accept 5081 >> Accept Maxwell's Mission
+    .accept 5089 >> Accept General Drakkisath's Command
+    .accept 5001 >> Accept Bijou's Belongings
+    .accept 4866 >> Accept Mother's Milk
+step
+    .turnin 4862 >> Turn in En-Ay-Es-Tee-Why
+    .turnin 4729 >> Turn in Kibler's Exotic Pets
+    .turnin 4701 >> Turn in Put Her Down
+    .turnin 5081 >> Turn in Maxwell's Mission
+    .turnin 5089 >> Turn in General Drakkisath's Command
+    .turnin 5001 >> Turn in Bijou's Belongings
+    .turnin 4866 >> Turn in Mother's Milk
+step
+    .goto Tanaris,66.989,22.354
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yeh'kinya|r and |cRXP_FRIENDLY_Prospector Ironboot|r
+    .turnin 4788 >> Turn in The Final Tablets
+    .accept 8181 >> Accept Confront Yeh'kinya
+    .turnin 8181 >> Turn in Confront Yeh'kinya
+    .accept 8182 >> Accept The Hand of Rastakhan
+    .target Yeh'kinya
+    .target Prospector Ironboot
+]])
+
+
+RXPGuides.RegisterGuide([[
+#forever
+#version 1
+<< Alliance
+#group MalzXP Forever Duo Guide
+#subgroup Duo 50-60
+--#groupid RXP-SRGCE-A1
 #name 59-60 Strat / Scholo
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf/Gnome/Human
 
 
 step
