@@ -64,6 +64,51 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r
     .accept 5261 >> Accept Eagan Peltskinner
     .target Deputy Willem
+step << Warlock
+    #completewith next
+    +Kill nearby mobs for 10 copper at the demon trainer
+    .money >0.001
+step << Warlock
+    .goto 1429/0,-195.59,-8926.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drusilla La Salle|r
+    .accept 1598 >> Accept The Stolen Tome
+    .train 348 >> Train |T135817:0|t[Immolate]
+    .target Drusilla La Salle
+step << Warlock
+    #hardcore
+--   .goto 1429/0,-300.65,-8964.94,60,0
+    .goto 1429/0,-432.55,-8958.00
+    >>Open the |cRXP_PICK_Stolen Books|r. Loot it for the |cRXP_LOOT_Powers of the Void|r
+    .complete 1598,1 --Collect Powers of the Void (x1)
+step << Warlock
+    #softcore
+--  .goto 1429/0,-300.65,-8964.94,60,0
+    .goto 1429/0,-432.55,-8958.00
+    >>Open the |cRXP_PICK_Stolen Books|r. Loot it for the |cRXP_LOOT_Powers of the Void|r
+    .complete 1598,1 --Collect Powers of the Void (x1)
+step << Warlock
+    #softcore
+    #completewith next
+    .goto 1429,49.527,43.491,0
+    .deathskip >> Die and respawn at the Spirit Healer
+    >>|cRXP_WARN_If there are no |cRXP_ENEMY_Defias|r nearby, run back instead|r
+    .target Spirit Healer
+step << Warlock
+    #season 0,1
+    .goto 1429/0,-195.59,-8926.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drusilla La Salle|r
+    .turnin 1598 >> Turn in The Stolen Tome
+    .target Drusilla La Salle
+step << Warlock
+    #optional
+    #completewith next
+    .cast 688 >> |cRXP_WARN_Cast|r |T136218:0|t[Summon Imp]
+    .usespell 688
+step << Warlock
+    .goto 1429/0,-136.52,-8933.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r outside
+    .accept 18 >> Accept Brotherhood of Thieves
+    .target Deputy Willem
 step
     #label EaganWolves
     .goto 1429/0,-163.24,-8869.26
@@ -229,51 +274,6 @@ step
     .accept 92479 >>Accept A Scribbled Letter << Human Hunter
     .target Marshal McBride
 
-step << Warlock
-    .goto 1429/0,-136.52,-8933.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r outside
-    .accept 18 >> Accept Brotherhood of Thieves
-    .target Deputy Willem
-step << Warlock
-    .goto 1429/0,-195.59,-8926.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drusilla La Salle|r
-    .turnin 3105 >> Turn in Tainted Letter
-    .accept 1598 >> Accept The Stolen Tome
-    .train 348 >> Train |T135817:0|t[Immolate]
-    .target Drusilla La Salle
-
-
-step << Warlock
-    #hardcore
---   .goto 1429/0,-300.65,-8964.94,60,0
-    .goto 1429/0,-432.55,-8958.00
-    >>Open the |cRXP_PICK_Stolen Books|r. Loot it for the |cRXP_LOOT_Powers of the Void|r
-    .complete 1598,1 --Collect Powers of the Void (x1)
-step << Warlock
-    #softcore
---  .goto 1429/0,-300.65,-8964.94,60,0
-    .goto 1429/0,-432.55,-8958.00
-    >>Open the |cRXP_PICK_Stolen Books|r. Loot it for the |cRXP_LOOT_Powers of the Void|r
-    .complete 1598,1 --Collect Powers of the Void (x1)
-step << Warlock
-    #softcore
-    #completewith next
-    .goto 1429,49.527,43.491,0
-    .deathskip >> Die and respawn at the Spirit Healer
-    >>|cRXP_WARN_If there are no |cRXP_ENEMY_Defias|r nearby, run back instead|r
-    .target Spirit Healer
-step << Warlock
-    #season 0,1
-    .goto 1429/0,-195.59,-8926.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drusilla La Salle|r
-    .turnin 1598 >> Turn in The Stolen Tome
-    .target Drusilla La Salle
-step << Warlock
-    #optional
-    #completewith next
-    .cast 688 >> |cRXP_WARN_Cast|r |T136218:0|t[Summon Imp]
-    .usespell 688
-
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Kobolds|r. Loot them for their |cRXP_LOOT_Stolen Books|r
@@ -432,8 +432,8 @@ step << Warlock
     .goto 1429/0,-195.59,-8926.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drusilla La Salle|r
     .train 172 >>Train |T136118:0|t[Corruption]
+    .turnin 3105 >> Turn in Tainted Letter
     .target Drusilla La Salle
-
 
 
 ----End of 1x train section----

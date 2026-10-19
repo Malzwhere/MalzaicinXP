@@ -1354,6 +1354,7 @@ step
     #sticky
     #completewith Astranaar
     +You will need 125 skinning in order to train in Ironforge, as well as for tents
+    .skill skinning,<5,1 --XX Shows if skinning skill is 5-125
     .skill skinning,125,1
 step
     .goto 1439/1,504.41,6402.39
@@ -1634,6 +1635,7 @@ step
     .goto 1439,37.439,41.839
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archaeologist Hollee|r
     .turnin 731 >> Turn in The Absent Minded Prospector
+    .accept 98461 >> Accept Unrequited Love
     .accept 741 >> Accept The Absent Minded Prospector
     .target Archaeologist Hollee
     .isQuestComplete 731
@@ -1752,6 +1754,7 @@ step
     .complete 951,1 -- Mathystra Relics (6)
 step
     #requires swellingForces
+    .goto 1439,59.13,22.88
     >>Kill |cRXP_ENEMY_Baron Marinous|r. Loot him for his Clouded Water Globe
     .use 279276
     .use 279277
@@ -1808,7 +1811,6 @@ step
     .mob Giant Foreststrider
 step
     #requires foreststriders
-    .group 2 << Warrior/Paladin/Rogue/Shaman
     .goto 1439,56.654,13.484
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gelkak Gyromast|r
     >>|cRXP_WARN_Start looking for a group for Gyromast's Revenge/|r|cRXP_ENEMY_The Threshwackonator 4100|r << Warrior/Paladin/Rogue/Shaman
@@ -1958,35 +1960,30 @@ step
     .mob Ghostpaw Runner
 step
     #label Kerlonian
-    .goto 1440/1,128.01,3305.31
+    .goto 1440,41.95,90.57
     >>|cRXP_WARN_Escort |cRXP_FRIENDLY_Kerlonian|r to Maestra's Post in Ashenvale|r
     .use 13536 >> |cRXP_WARN_Use the|r |T134229:0|t[|cRXP_LOOT_Horn of Awakening|r] |cRXP_WARN_whenever |cRXP_FRIENDLY_Kerlonian|r falls asleep next to him|r
     >>|cRXP_WARN_Avoid running on the main road as much as possible. Enemies will only spawn if you're on the road|r
     .complete 5321,2
     .isOnQuest 5321
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Liladris Moonriver|r
-	.target Liladris Moonriver
-    .goto 1440/1,128.01,3305.31
-    .turnin 5321 >> Turn in The Sleeper Has Awakened
-    .isQuestComplete 5321
-step
     #label tower
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
 	.target Delgren the Purifier
     .goto 1440/1,189.71,3185.77
     .turnin 967 >> Turn in The Tower of Althalaxx
-step
-	#xprate <1.5
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
-	.target Delgren the Purifier
-    .goto 1440/1,189.71,3185.77
     .accept 970 >> Accept The Tower of Althalaxx
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orendil Broadleaf|r
 	.target Orendil Broadleaf
     .goto 1440/1,175.87,3189.61
     .accept 1010 >> Accept Bathran's Hair
+step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Liladris Moonriver|r
+	.target Liladris Moonriver
+    .goto 1440/1,128.01,3305.31
+    .turnin 5321 >> Turn in The Sleeper Has Awakened
+    .isQuestComplete 5321
 step
     .goto 1440/1,-102.08,3492.890
     >>Kill |cRXP_ENEMY_Dark Strand Cultists|r, |cRXP_ENEMY_Dark Strand Adepts|r, |cRXP_ENEMY_Dark Strand Enforcers|r and |cRXP_ENEMY_Dark Strand Excavators|r. Loot them for the |cRXP_LOOT_Glowing Soul Gem|r
@@ -2108,6 +2105,7 @@ step
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1
 step
+    >>|cRXP_WARN_Trade linen|r
     >>|cRXP_WARN_Shaman should be soulstoned for water totem quest ahead :)|r
     #label MenethilRRBoat
     .goto 1439/1,826.67,6409.82 << Shaman

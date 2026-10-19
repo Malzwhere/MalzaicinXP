@@ -477,7 +477,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Duo 30-40
 --#groupid RXP-SRGCE-A1
 #name 32-33 Gnomeregan
-#next 33-34 Excavation Site
+#next 33-35 Excavation Site
 #defaultfor Dwarf/Gnome/Human
 
 
@@ -748,8 +748,8 @@ RXPGuides.RegisterGuide([[
 #group MalzXP Forever Duo Guide
 #subgroup Duo 30-40
 --#groupid RXP-SRGCE-A1
-#name 33-34 Excavation Site
-#next 34-35 Duskwood
+#name 33-35 Excavation Site
+#next 35-36 Duskwood
 #defaultfor Dwarf/Gnome/Human
 
 
@@ -1031,8 +1031,8 @@ RXPGuides.RegisterGuide([[
 #group MalzXP Forever Duo Guide
 #subgroup Duo 30-40
 --#groupid RXP-SRGCE-A1
-#name 34-35 Duskwood
-#next 35-36 Stranglethorn Vale
+#name 35-36 Duskwood
+#next 36-37 Stranglethorn Vale
 #defaultfor Dwarf/Gnome/Human
 
 
@@ -1356,8 +1356,8 @@ RXPGuides.RegisterGuide([[
 #group MalzXP Forever Duo Guide
 #subgroup Duo 30-40
 --#groupid RXP-SRGCE-A1
-#name 35-36 Stranglethorn Vale
-#next 36-36 Arathi Highlands
+#name 36-37 Stranglethorn Vale
+#next 37-37 Arathi Highlands
 #defaultfor Dwarf/Gnome/Human
 
 
@@ -1745,8 +1745,8 @@ RXPGuides.RegisterGuide([[
 #group MalzXP Forever Duo Guide
 #subgroup Duo 30-40
 --#groupid RXP-SRGCE-A1
-#name 36-36 Arathi Highlands
-#next 36-37 City of Dalaran
+#name 37-37 Arathi Highlands
+#next 37-38 City of Dalaran
 #defaultfor Dwarf/Gnome/Human
 
 
@@ -1990,8 +1990,8 @@ RXPGuides.RegisterGuide([[
 #group MalzXP Forever Duo Guide
 #subgroup Duo 30-40
 --#groupid RXP-SRGCE-A1
-#name 36-37 City of Dalaran
-#next 37-38 Desolace
+#name 37-38 City of Dalaran
+#next 38-39 Desolace
 #defaultfor Dwarf/Gnome/Human
 
 
@@ -2259,8 +2259,8 @@ RXPGuides.RegisterGuide([[
 #group MalzXP Forever Duo Guide
 #subgroup Duo 30-40
 --#groupid RXP-SRGCE-A1
-#name 37-38 Desolace
-#next 38-39 Stranglethorn Vale
+#name 38-39 Desolace
+#next 39-40 Stranglethorn Vale
 #defaultfor Dwarf/Gnome/Human
 
 
@@ -2869,8 +2869,8 @@ RXPGuides.RegisterGuide([[
 #group MalzXP Forever Duo Guide
 #subgroup Duo 30-40
 --#groupid RXP-SRGCE-A1
-#name 38-39 Stranglethorn Vale
-#next 39-40 Dustwallow
+#name 39-40 Stranglethorn Vale
+#next 40-40 Dustwallow
 #defaultfor Dwarf/Gnome/Human
 
 
@@ -3403,7 +3403,7 @@ RXPGuides.RegisterGuide([[
 #group MalzXP Forever Duo Guide
 #subgroup Duo 30-40
 --#groupid RXP-SRGCE-A1
-#name 39-40 Dustwallow Marsh
+#name 40-40 Dustwallow Marsh
 #next 40-40 Razorfen Downs
 #defaultfor Dwarf/Gnome/Human
 
