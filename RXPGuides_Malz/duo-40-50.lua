@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #group MalzXP Forever Duo Guide
-#subgroup Duo 40-50
+#subgroup Cap/Malz Duo 40-50
 --#groupid RXP-SRGCE-A1
 #name 40-40 Desolace
 #next 40-40 Razorfen Downs
@@ -182,7 +182,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #group MalzXP Forever Duo Guide
-#subgroup Duo 40-50
+#subgroup Cap/Malz Duo 40-50
 --#groupid RXP-SRGCE-A1
 #name 40-40 Razorfen Downs
 #next 40-41 Scarlet Monastery
@@ -256,7 +256,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #group MalzXP Forever Duo Guide
-#subgroup Duo 40-50
+#subgroup Cap/Malz Duo 40-50
 --#groupid RXP-SRGCE-A1
 #name 40-41 Scarlet Monastery
 #next 41-42 Riverglades
@@ -344,7 +344,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #group MalzXP Forever Duo Guide
-#subgroup Duo 40-50
+#subgroup Cap/Malz Duo 40-50
 --#groupid RXP-SRGCE-A1
 #name 41-42 Riverglades
 #next 42-43 Badlands
@@ -365,10 +365,10 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #group MalzXP Forever Duo Guide
-#subgroup Duo 40-50
+#subgroup Cap/Malz Duo 40-50
 --#groupid RXP-SRGCE-A1
 #name 42-43 Badlands
-#next 43-44 Riverglades
+#next 43-44 Drowned City
 #defaultfor Dwarf/Gnome/Human
 
 
@@ -1008,31 +1008,10 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #group MalzXP Forever Duo Guide
-#subgroup Duo 40-50
+#subgroup Cap/Malz Duo 40-50
 --#groupid RXP-SRGCE-A1
-#name 43-44 Riverglades
-#next 44-45 Drowned City
-#defaultfor Dwarf/Gnome/Human
-
-
-step
-    #completewith next
-    >>Travel to Redridge
-    .goto 1433,26.035,58.614
-step
-    +Riverglades quests to lvl 44
-    .xp 44
-]])
-
-RXPGuides.RegisterGuide([[
-#forever
-#version 1
-<< Alliance
-#group MalzXP Forever Duo Guide
-#subgroup Duo 40-50
---#groupid RXP-SRGCE-A1
-#name 44-45 Drowned City
-#next 45-46 Uldaman
+#name 43-44 Drowned City
+#next 44-45 Uldaman
 #defaultfor Dwarf/Gnome/Human
 
 
@@ -1418,10 +1397,10 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #group MalzXP Forever Duo Guide
-#subgroup Duo 40-50
+#subgroup Cap/Malz Duo 40-50
 --#groupid RXP-SRGCE-A1
-#name 45-46 Uldaman
-#next 46-47 Tanaris/Feralas
+#name 44-45 Uldaman
+#next 45-46 Tanaris/Feralas
 #defaultfor Dwarf/Gnome/Human
 
 
@@ -1583,10 +1562,10 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #group MalzXP Forever Duo Guide
-#subgroup Duo 40-50
+#subgroup Cap/Malz Duo 40-50
 --#groupid RXP-SRGCE-A1
-#name 46-47 Tanaris/Feralas
-#next 47-48 Hinterlands
+#name 45-46 Tanaris/Feralas
+#next 46-47 Hinterlands
 #defaultfor Dwarf/Gnome/Human
 
 
@@ -2564,10 +2543,10 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #group MalzXP Forever Duo Guide
-#subgroup Duo 40-50
+#subgroup Cap/Malz Duo 40-50
 --#groupid RXP-SRGCE-A1
-#name 47-48 Hinterlands
-#next 48-49 Krol'Dok Stronghold
+#name 46-47 Hinterlands
+#next 47-48 Krol'Dok Stronghold
 #defaultfor Dwarf/Gnome/Human
 
 
@@ -2808,9 +2787,9 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #group MalzXP Forever Duo Guide
-#subgroup Duo 40-50
+#subgroup Cap/Malz Duo 40-50
 --#groupid RXP-SRGCE-A1
-#name 48-49 Krol'dok Stronghold
+#name 47-48 Krol'dok Stronghold
 #next 49-50 STV / ZF
 #defaultfor Dwarf/Gnome/Human
 
@@ -2833,9 +2812,9 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #group MalzXP Forever Duo Guide
-#subgroup Duo 40-50
+#subgroup Cap/Malz Duo 40-50
 --#groupid RXP-SRGCE-A1
-#name 49-50 STV / ZF
+#name 48-50 STV / ZF
 #next 50-51 Searing Gorge
 #defaultfor Dwarf/Gnome/Human
 

@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #group MalzXP Forever Duo Guide
-#subgroup Duo 1-20
+#subgroup Cap/Malz Duo 1-20
 --#groupid RXP-SRGCE-A1
 #name 1-5 Northshire
 #next 5-11 Dun Morogh
@@ -922,7 +922,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #group MalzXP Forever Duo Guide
-#subgroup Duo 1-20
+#subgroup Cap/Malz Duo 1-20
 --#groupid RXP-SRGCE-A1
 #name 1-5 Coldridge Valley
 #next 5-11 Dun Morogh
@@ -1316,7 +1316,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #group MalzXP Forever Duo Guide
-#subgroup Duo 1-20
+#subgroup Cap/Malz Duo 1-20
 --#groupid RXP-SRGCE-A1
 #name 5-11 Dun Morogh
 #next 11-12 Elwynn
@@ -2595,7 +2595,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #group MalzXP Forever Duo Guide
-#subgroup Duo 1-20
+#subgroup Cap/Malz Duo 1-20
 --#groupid RXP-SRGCE-A1
 #name 11-12 Elwynn
 #next 12-14 Loch Modan
@@ -3056,7 +3056,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #group MalzXP Forever Duo Guide
-#subgroup Duo 1-20
+#subgroup Cap/Malz Duo 1-20
 --#groupid RXP-SRGCE-A1
 #name 12-14 Loch Modan
 #next 14-15 Westfall

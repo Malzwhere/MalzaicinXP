@@ -10,7 +10,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #group MalzXP Forever Duo Guide
-#subgroup Duo 20-30
+#subgroup Cap/Malz Duo 20-30
 --#groupid RXP-SRGCE-A1
 #name 20-21 Redridge/Duskwood
 #next 21-22 Deadmines
@@ -358,7 +358,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #group MalzXP Forever Duo Guide
-#subgroup Duo 20-30
+#subgroup Cap/Malz Duo 20-30
 --#groupid RXP-SRGCE-A1
 #name 21-22 Deadmines
 #next 22-23 Ruins of Lordaeron
@@ -617,7 +617,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #group MalzXP Forever Duo Guide
-#subgroup Duo 20-30
+#subgroup Cap/Malz Duo 20-30
 --#groupid RXP-SRGCE-A1
 #name 22-23 Ruins of Lordaeron
 #next 23-25 Ashenvale
@@ -789,7 +789,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #group MalzXP Forever Duo Guide
-#subgroup Duo 20-30
+#subgroup Cap/Malz Duo 20-30
 --#groupid RXP-SRGCE-A1
 #name 23-25 Ashenvale
 #next 25-26 Wetlands
@@ -1302,7 +1302,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #group MalzXP Forever Duo Guide
-#subgroup Duo 20-30
+#subgroup Cap/Malz Duo 20-30
 --#groupid RXP-SRGCE-A1
 #name 25-26 Wetlands
 #next 26-27 Duskwood
@@ -1705,7 +1705,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #group MalzXP Forever Duo Guide
-#subgroup Duo 20-30
+#subgroup Cap/Malz Duo 20-30
 --#groupid RXP-SRGCE-A1
 #name 26-27 Duskwood
 #next 27-28 Ashenvale
@@ -2310,7 +2310,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #group MalzXP Forever Duo Guide
-#subgroup Duo 20-30
+#subgroup Cap/Malz Duo 20-30
 --#groupid RXP-SRGCE-A1
 #name 27-28 Ashenvale
 #next 28-29 Blackfathom Deeps
@@ -2696,7 +2696,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #group MalzXP Forever Duo Guide
-#subgroup Duo 20-30
+#subgroup Cap/Malz Duo 20-30
 --#groupid RXP-SRGCE-A1
 #name 28-29 Blackfathom Deeps
 #next 29-30 Wetlands
@@ -2866,7 +2866,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #group MalzXP Forever Duo Guide
-#subgroup Duo 20-30
+#subgroup Cap/Malz Duo 20-30
 --#groupid RXP-SRGCE-A1
 #name 29-31 Wetlands
 #next 31-32 Stockades
