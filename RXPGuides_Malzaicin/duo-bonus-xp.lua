@@ -6,7 +6,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo Catchup XP
 --#groupid RXP-SRGCE-A1
 #name 31-32 Razorfen Kraul
@@ -335,7 +335,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo Catchup XP
 --#groupid RXP-SRGCE-A1
 #name 36-37 Stranglethorn Vale
@@ -724,7 +724,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo Catchup XP
 --#groupid RXP-SRGCE-A1
 #name 39-40 Stranglethorn Vale

@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 20-30
 --#groupid RXP-SRGCE-A1
 #name 20-21 Redridge/Duskwood
@@ -357,7 +357,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 20-30
 --#groupid RXP-SRGCE-A1
 #name 21-22 Deadmines
@@ -616,7 +616,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 20-30
 --#groupid RXP-SRGCE-A1
 #name 22-23 Ruins of Lordaeron
@@ -788,7 +788,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 20-30
 --#groupid RXP-SRGCE-A1
 #name 23-25 Ashenvale
@@ -1301,7 +1301,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 20-30
 --#groupid RXP-SRGCE-A1
 #name 25-26 Wetlands
@@ -1704,7 +1704,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 20-30
 --#groupid RXP-SRGCE-A1
 #name 26-27 Duskwood
@@ -2309,7 +2309,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 20-30
 --#groupid RXP-SRGCE-A1
 #name 27-28 Ashenvale
@@ -2695,7 +2695,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 20-30
 --#groupid RXP-SRGCE-A1
 #name 28-29 Blackfathom Deeps
@@ -2865,7 +2865,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 20-30
 --#groupid RXP-SRGCE-A1
 #name 29-31 Wetlands

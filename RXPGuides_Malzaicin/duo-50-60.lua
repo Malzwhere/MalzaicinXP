@@ -6,7 +6,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 50-60
 --#groupid RXP-SRGCE-A1
 #name 50-51 Searing Gorge
@@ -506,7 +506,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 50-60
 --#groupid RXP-SRGCE-A1
 #name 51-52 Maraudon
@@ -785,7 +785,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 50-60
 --#groupid RXP-SRGCE-A1
 #name 52-52 Alcaz Island
@@ -805,7 +805,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 50-60
 --#groupid RXP-SRGCE-A1
 #name 52-53 Un'goro Crater
@@ -1442,7 +1442,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 50-60
 --#groupid RXP-SRGCE-A1
 #name 53-54 Sunken Temple
@@ -1477,7 +1477,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 50-60
 --#groupid RXP-SRGCE-A1
 #name 54-55 Felwood
@@ -2298,7 +2298,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 50-60
 --#groupid RXP-SRGCE-A1
 #name 55-56 Azshara
@@ -2727,7 +2727,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 50-60
 --#groupid RXP-SRGCE-A1
 #name 56-57 Plaguelands
@@ -3694,7 +3694,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 50-60
 --#groupid RXP-SRGCE-A1
 #name 57-58 Blackrock Depths
@@ -3743,7 +3743,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 50-60
 --#groupid RXP-SRGCE-A1
 #name 58-59 LBRS
@@ -3786,7 +3786,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 50-60
 --#groupid RXP-SRGCE-A1
 #name 59-60 Strat / Scholo

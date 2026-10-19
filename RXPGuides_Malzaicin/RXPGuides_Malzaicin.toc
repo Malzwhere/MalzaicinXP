@@ -1,8 +1,8 @@
 ## Interface: 16001
 
-## Title: Malz RXP Route
+## Title: Malzaicin RXP Route
 ## Notes: such speed
-## Author: Malz
+## Author: Malz and Cap
 ## Version: 1.0
 
 ## Dependencies: RXPGuides

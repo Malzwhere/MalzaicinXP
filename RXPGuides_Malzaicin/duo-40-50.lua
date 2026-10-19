@@ -8,7 +8,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 40-50
 --#groupid RXP-SRGCE-A1
 #name 40-40 Desolace
@@ -181,7 +181,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 40-50
 --#groupid RXP-SRGCE-A1
 #name 40-40 Razorfen Downs
@@ -255,7 +255,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 40-50
 --#groupid RXP-SRGCE-A1
 #name 40-41 Scarlet Monastery
@@ -343,7 +343,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 40-50
 --#groupid RXP-SRGCE-A1
 #name 41-42 Riverglades
@@ -364,7 +364,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 40-50
 --#groupid RXP-SRGCE-A1
 #name 42-43 Badlands
@@ -1007,7 +1007,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 40-50
 --#groupid RXP-SRGCE-A1
 #name 43-44 Drowned City
@@ -1396,7 +1396,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 40-50
 --#groupid RXP-SRGCE-A1
 #name 44-45 Uldaman
@@ -1561,7 +1561,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 40-50
 --#groupid RXP-SRGCE-A1
 #name 45-46 Tanaris/Feralas
@@ -2542,7 +2542,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 40-50
 --#groupid RXP-SRGCE-A1
 #name 46-47 Hinterlands
@@ -2786,7 +2786,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 40-50
 --#groupid RXP-SRGCE-A1
 #name 47-48 Krol'dok Stronghold
@@ -2811,7 +2811,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 40-50
 --#groupid RXP-SRGCE-A1
 #name 48-50 STV / ZF

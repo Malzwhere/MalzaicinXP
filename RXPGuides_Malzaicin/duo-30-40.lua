@@ -6,7 +6,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 30-40
 --#groupid RXP-SRGCE-A1
 #name 31-32 Stockades
@@ -473,7 +473,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 30-40
 --#groupid RXP-SRGCE-A1
 #name 32-33 Gnomeregan
@@ -745,7 +745,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 30-40
 --#groupid RXP-SRGCE-A1
 #name 33-35 Excavation Site
@@ -1028,7 +1028,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 30-40
 --#groupid RXP-SRGCE-A1
 #name 35-36 Duskwood
@@ -1353,7 +1353,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 30-40
 --#groupid RXP-SRGCE-A1
 #name 36-36 Arathi Highlands
@@ -1598,7 +1598,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 30-40
 --#groupid RXP-SRGCE-A1
 #name 36-38 City of Dalaran
@@ -1925,7 +1925,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 30-40
 --#groupid RXP-SRGCE-A1
 #name 38-38 Desolace
@@ -2509,7 +2509,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 30-40
 --#groupid RXP-SRGCE-A1
 #name 38-39 Dustwallow Marsh
@@ -2761,7 +2761,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 30-40
 --#groupid RXP-SRGCE-A1
 #name 39-39 Swamp of Sorrows
@@ -2951,7 +2951,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 40-50
 --#groupid RXP-SRGCE-A1
 #name 39-40 Riverglades

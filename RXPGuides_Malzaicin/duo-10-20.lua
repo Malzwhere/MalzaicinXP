@@ -6,7 +6,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 1-20
 --#groupid RXP-SRGCE-A1
 #name 14-15 Westfall
@@ -218,7 +218,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 1-20
 --#groupid RXP-SRGCE-A1
 #name 15-17 Darkshore
@@ -1171,7 +1171,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 1-20
 --#groupid RXP-SRGCE-A1
 #name 17-18 Hall of Thanes
@@ -1285,7 +1285,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group MalzXP Forever Duo Guide
+#group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 1-20
 --#groupid RXP-SRGCE-A1
 #name 18-20 Darkshore
