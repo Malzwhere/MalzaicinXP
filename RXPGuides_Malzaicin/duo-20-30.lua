@@ -817,12 +817,26 @@ step << Shaman
 step << Shaman
     #sticky
     #completewith shamanDarkshore
-    >> You can also get summoned to Darkshore at this point if available
+    +You can also get summoned to Darkshore at this point if available
+step << Shaman
+    .goto Wetlands,49.91,39.36
+    .target Einar Stonegrip
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einar Stonegrip|r
+    .accept 469 >> Accept Daily Delivery
 step << Shaman
     #completewith next
     >> Travel to Menethil Harbor
     .goto 1437,10.958,54.514,30
     .zoneskip Darkshore
+step << Shaman
+    .goto 1437/0,-819.67,-3691.42,25,0
+    .goto 1437/0,-807.26,-3716.22,25,0
+    .goto 1437/0,-827.94,-3724.49,25,0
+    .goto 1437,10.760,56.721
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neal Allen|r
+    .vendor >> |cRXP_WARN_Buy a|r |T133024:0|t[Bronze Tube] if one is there
+    >>|cRXP_WARN_This is a limited supply item.
+	.target Neal Allen
 step << Shaman
     .goto 1437,11.769,57.942
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sida|r
@@ -836,20 +850,18 @@ step << Shaman
     .accept 463 >> Accept The Greenwarden
     .zoneskip Darkshore
 step << Shaman
+    .goto Wetlands,8.6,55.8
+    .target James Halloran
+    >>Talk to |cRXP_FRIENDLY_James Halloran|r
+    .turnin 469 >> Turn in Daily Delivery
+    .accept 484 >> Accept Young Crocolisk Skins
+    .isOnQuest 469
+step << Shaman
     .goto 1437,8.406,58.560
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karl Boran|r
     .target Karl Boran
     .accept 279 >> Accept Claws from the Deep
     .zoneskip Darkshore
-step << Shaman
-    .goto 1437/0,-819.67,-3691.42,25,0
-    .goto 1437/0,-807.26,-3716.22,25,0
-    .goto 1437/0,-827.94,-3724.49,25,0
-    .goto 1437,10.760,56.721
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neal Allen|r
-    .vendor >> |cRXP_WARN_Buy a|r |T133024:0|t[Bronze Tube] if one is there
-    >>|cRXP_WARN_This is a limited supply item.
-	.target Neal Allen
 step << Shaman
     #label shamanDarkshore
     >>|cRXP_WARN_This is a 3 stop boat, stay on through the Southshore stop|r
@@ -890,6 +902,7 @@ step
 	.target Raene Wolfrunner
     .goto 1440/1,-411.18,2767.19
     .accept 991 >> Accept Raene's Cleansing
+    .accept 1054 >> Accept Culling the Threat
 step
     .goto 1440/1,-433.09,2781.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Kimlya|r
@@ -970,148 +983,6 @@ step
     .turnin 1033 >> Turn in Elune's Tear
     .timer 17,Elune's Tear RP
     .accept 1034 >> Accept The Ruins of Stardust
-step
-    #sticky
-    #completewith StatuetteStart
-    >>Save up to 6 |cRXP_LOOT_Gooey Spider Legs|r looted from the |cRXP_ENEMY_Spiders|r in the zone. You will need them for a quest later
-    .collect 2251,6,93,1 -- Gooey Spider Legs
-    .mob Wildthorn Stalker
-step
-    #sticky
-    #completewith StatuetteStart
-    >>Kill and loot |cRXP_WARN_Ghostpaw Runners|r you encounter while questing. Keep any |T133970:0|t[|cRXP_LOOT_Lean Wolf Flanks|r] you get. You will need 10 for a cooking quest later
-    .collect 1015,10
-    .mob Ghostpaw Runner
-step
-    #label StatuetteStart
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talen|r
-	.target Talen
-    .goto 1440/1,847.11,3470.21
-    .accept 1007 >> Accept The Ancient Statuette
-step
-    #completewith nagas
-    >>Kill |cRXP_ENEMY_Wrathtail Nagas|r. Loot them for their |cRXP_LOOT_Heads|r
-    >>|cRXP_WARN_Don't go out of your way to complete this yet|r
-	.mob Wrathtail Wave Rider
-	.mob Wrathtail Sorceress
-    .complete 1008,1
-step
-    .goto 1440/1,881.13,3879.57
-    >>Loot the |cRXP_LOOT_Ancient Statuette|r on the ground
-    .complete 1007,1
-step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talen|r
-	.target Talen
-    .goto 1440/1,847.11,3470.21
-    .turnin 1007 >> Turn in The Ancient Statuette
-    .timer 22,The Ancient Statuette RP
-    .accept 1009 >> Accept Ruuzel
-step
-    #label nagas
-    .goto 1440/1,1323.55,4159.35
-    >>Kill |cRXP_ENEMY_Ruuzel|r. Loot her for the |cRXP_LOOT_Ring of Zoram|r
-    >>|cRXP_ENEMY_Ruuzel|r |cRXP_WARN_patrols the island with a |cRXP_ENEMY_Wrathtail Myrmidon|r and |cRXP_ENEMY_Wrathtail Sea Witch|r. Kill one of them and then reset them if needed|r
-    >>|cRXP_ENEMY_Lady Vespia|r |cRXP_WARN_is a rarespawn that can also drop the |cRXP_LOOT_Ring of Zoram|r if you see her|r
-	.unitscan Lady Vespia
-	.mob Ruuzel
-    .complete 1009,1
-step
-    .goto 1440/1,1296.33,4088.67,0
-    .goto 1440/1,866.14,4013.71,0
-    .goto 1440/1,843.07,3863.42,0
-    .goto 1440/1,942.84,3710.83,0
-    .goto 1440/1,1072.01,3518.64,0
-    .goto 1440/1,1296.33,4088.67,70,0
-    .goto 1440/1,866.14,4013.71,70,0
-    .goto 1440/1,843.07,3863.42,70,0
-    .goto 1440/1,942.84,3710.83,70,0
-    .goto 1440/1,1072.01,3518.64,70,0
-    .goto 1440/1,942.84,3710.83,70,0
-    .goto 1440/1,843.07,3863.42,70,0
-    .goto 1440/1,866.14,4013.71,70,0
-    >>Kill |cRXP_ENEMY_Wrathtail Nagas|r. Loot them for their |cRXP_LOOT_Heads|r
-	.mob Wrathtail Wave Rider
-	.mob Wrathtail Sorceress
-    .mob Wrathtail Myrmidon
-    .mob Wrathtail Priestess
-    .mob Wrathtail Razortail
-    .mob Wrathtail Sea Witch
-    .complete 1008,1
-step
-    >> Malz needs 1 campfire for warlock quest here
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talen|r
-	.target Talen
-    .goto 1440/1,847.11,3470.21
-    .turnin 1009 >> Turn in Ruuzel
-step << Warlock
-    .goto Ashenvale,26.78,22.42
-    >>Loot the |cRXP_LOOT_Unlit Torch|r on the table
-    .collect 190307,1,65602,1 
-step << Warlock
-    .goto Ashenvale,26.78,22.42
-    >>|cRXP_WARN_Create a campfire, then use the Unlit Torch on top of it|r
-    .collect 190308,1,65602,1 
-    .use 190307
-    .usespell 818
-step << Warlock
-    .goto Ashenvale,26.61,22.01
-    >>Use the Burning Torch on the cart outside next to where you looted the torch, then go upstairs and loot the statue
-    .complete 65602,1 
-step << Warlock
-    #completewith next
-    .goto Ashenvale,31.50,31.50,40 >> Travel to The Ruins of Ordil'Aran
-step << Warlock
-    .goto Ashenvale,31.50,31.50
-    >>Loot the |cRXP_LOOT_Heartswood|r giant tree
-    .complete 1738,1
-step
-    #sticky
-    #completewith SoulGemStart
-    >>Save up to 6 |cRXP_LOOT_Gooey Spider Legs|r looted from the |cRXP_ENEMY_Spiders|r in the zone. You will need them for a quest later
-    .collect 2251,6,93,1 -- Gooey Spider Legs
-    .mob Wildthorn Stalker
-step
-    #sticky
-    #completewith SoulGemStart
-    >>Kill and loot |cRXP_WARN_Ghostpaw Runners|r you encounter while questing. Keep any |T133970:0|t[|cRXP_LOOT_Lean Wolf Flanks|r] you get. You will need 10 for a cooking quest later
-    .collect 1015,10
-    .mob Ghostpaw Runner
-step
-    #label SoulGemStart
-    #xprate <1.59
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Teronis' Corpse|r
-	.target Teronis' Corpse
-    .goto 1440/1,528.79,3045.86
-    .turnin 991 >> Turn in Raene's Cleansing
-    .accept 1023 >> Accept Raene's Cleansing
-step
-    #sticky
-    #completewith GlowingGem
-    >>Keep any |T134304:0|t[Murloc Fins] you might loot. You will need 8 for a quest later
-    .collect 1468,8 --Murloc Fin(8)
-step
-    #label GlowingGem
-    .goto 1440/1,523.02,2988.59,50,0
-    .goto 1440/1,579.54,3055.08,50,0
-    .goto 1440/1,488.42,3073.53,50,0
-    .goto 1440/1,528.79,3045.86
-    >>Kill |cRXP_ENEMY_Saltspittle Murlocs|r. Loot them for the |cRXP_LOOT_Glowing Gem|r
-    >>|cRXP_WARN_Be careful as the |cRXP_ENEMY_Oracles|r can heal, and have a 90 damage instant-cast shock spell every few seconds|r
-	.mob Saltspittle Warrior
-	.mob Saltspittle Muckdweller
-	.mob Saltspittle Oracle
-	.mob Saltspittle Puddlejumper
-    .complete 1023,1
-step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shindrell Swiftfire|r
-	.target Shindrell Swiftfire
-    .goto 1440/1,-299.30,2796.01
-    .turnin 1008 >> Turn in The Zoram Strand
-step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raene Wolfrunner|r
-	.target Raene Wolfrunner
-    .goto 1440/1,-411.18,2767.19
-    .turnin 1023 >> Turn in Raene's Cleansing
 step
     .goto 1440/1,-220.3,2067.24
     >>Loot the |cRXP_PICK_Stardust Covered Bushes|r for the |cRXP_LOOT_Handful of Stardust|r
@@ -1239,22 +1110,227 @@ step
 	.target Pelturas Whitemoon
     .turnin 1034 >> Turn in The Ruins of Stardust
 step
+    #sticky
+    #completewith StatuetteStart
+    >>Save up to 6 |cRXP_LOOT_Gooey Spider Legs|r looted from the |cRXP_ENEMY_Spiders|r in the zone. You will need them for a quest later
+    .collect 2251,6,93,1 -- Gooey Spider Legs
+    .mob Wildthorn Stalker
+step
+    #completewith next
+    .goto Ashenvale,34.69,44.30,30,0
+    .goto Ashenvale,35.43,41.46,30,0
+    .goto Ashenvale,36.28,38.48,30,0
+    .goto Ashenvale,36.83,37.56,30 >> Travel to Thistlefur Village. Follow the Arrow for a shortcut
+step
+    .goto Ashenvale,36.06,36.59,0
+    .goto Ashenvale,37.00,33.77,0
+    .goto Ashenvale,35.88,31.90,0
+    .goto Ashenvale,38.73,36.32,0
+    .goto Ashenvale,36.06,36.59,60,0
+    .goto Ashenvale,37.00,33.77,60,0
+    .goto Ashenvale,35.88,31.90,60,0
+    .goto Ashenvale,38.73,36.32,60,0
+    .goto Ashenvale,39.595,36.309
+    >>Kill |cRXP_ENEMY_Dal Bloodclaw|r. Loot him for his |cRXP_LOOT_Skull|r
+    >>|cRXP_ENEMY_Dal Bloodclaw|r |cRXP_WARN_patrols Thistlefur Village|r
+    .complete 1054,1
+    .unitscan Dal Bloodclaw
+step
+    .goto Ashenvale,25.27,60.68
+    >>Kill |cRXP_ENEMY_Ilkrud Magthrull|r. Loot him for his |cRXP_LOOT_Tome|r
+    >>|cRXP_ENEMY_Ilkrud Magthrull|r |cRXP_WARN_will cast|r |T136221:0|t[Ilkrud's Guardians] |cRXP_WARN_which is a 5 second long cast and will summon 2 Voidwalkers. Stop this cast if you're able to|r
+    >>|cRXP_WARN_Clear an exit path if needed so you can reset them along with the |cRXP_ENEMY_Succubus|r if needed|r
+    .complete 973,1
+    .mob Ilkrud Magthrull
+    .isOnQuest 973
+step
+    .goto Ashenvale,22.23,52.98
+    .target Sentinel Melyria Frostshadow
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Melyria Frostshadow|r
+    .accept 1022 >> Accept The Howling Vale
+    .xp <25,1
+-- step << skip
+--     .goto Ashenvale,21.73,53.34
+--     .target Illiyana
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illiyana|r
+--     .accept 1021 >> Accept Vile Satyr! Dryads in Danger!
+-- step << skip
+--     .goto Ashenvale,26.19,38.69
+--     .target Delgren the Purifier
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
+--     .turnin 973 >> Turn in The Tower of Althalaxx
+--     .accept 1140 >> Accept The Tower of Althalaxx
+step
+    .goto Ashenvale,26.19,38.69
+    .target Delgren the Purifier
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
+    .turnin 973 >> Turn in The Tower of Althalaxx
+    .isOnQuest 973
+step
+    .goto 1440/1,189.71,3185.77
+    .target Feero Ironhand
+    >>|cRXP_WARN_This quest includes multiple waves of lvl 24 enemies|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Feero Ironhand|r
+    .accept 976 >> Accept Supplies to Auberdine
+step
+    >> Malz needs 1 campfire for warlock quest after this
+    .goto Darkshore,43.6,94.4,0
+    .complete 976,1
+step << Warlock
+    .goto Ashenvale,26.78,22.42
+    >>Loot the |cRXP_LOOT_Unlit Torch|r on the table
+    .collect 190307,1,65602,1 
+step << Warlock
+    .goto Ashenvale,26.78,22.42
+    >>|cRXP_WARN_Create a campfire, then use the Unlit Torch on top of it|r
+    .collect 190308,1,65602,1 
+    .use 190307
+    .usespell 818
+step << Warlock
+    .goto Ashenvale,26.61,22.01
+    >>Use the Burning Torch on the cart outside next to where you looted the torch, then go upstairs and loot the statue
+    .complete 65602,1 
+step << Warlock
+    #completewith next
+    .goto Ashenvale,31.50,31.50,40 >> Travel to The Ruins of Ordil'Aran
+step << Warlock
+    .goto Ashenvale,31.50,31.50
+    >>Loot the |cRXP_LOOT_Heartswood|r giant tree
+    .complete 1738,1
+step
+    #sticky
+    #completewith StatuetteStart
+    >>Kill and loot |cRXP_WARN_Ghostpaw Runners|r you encounter while questing. Keep any |T133970:0|t[|cRXP_LOOT_Lean Wolf Flanks|r] you get. You will need 10 for a cooking quest later
+    .collect 1015,10
+    .mob Ghostpaw Runner
+step
+    #label StatuetteStart
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talen|r
+	.target Talen
+    .goto 1440/1,847.11,3470.21
+    .accept 1007 >> Accept The Ancient Statuette
+step
+    #completewith nagas
+    >>Kill |cRXP_ENEMY_Wrathtail Nagas|r. Loot them for their |cRXP_LOOT_Heads|r
+    >>|cRXP_WARN_Don't go out of your way to complete this yet|r
+	.mob Wrathtail Wave Rider
+	.mob Wrathtail Sorceress
+    .complete 1008,1
+step
+    .goto 1440/1,881.13,3879.57
+    >>Loot the |cRXP_LOOT_Ancient Statuette|r on the ground
+    .complete 1007,1
+step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talen|r
+	.target Talen
+    .goto 1440/1,847.11,3470.21
+    .turnin 1007 >> Turn in The Ancient Statuette
+    .timer 22,The Ancient Statuette RP
+    .accept 1009 >> Accept Ruuzel
+step
+    #label nagas
+    .goto 1440/1,1323.55,4159.35
+    >>Kill |cRXP_ENEMY_Ruuzel|r. Loot her for the |cRXP_LOOT_Ring of Zoram|r
+    >>|cRXP_ENEMY_Ruuzel|r |cRXP_WARN_patrols the island with a |cRXP_ENEMY_Wrathtail Myrmidon|r and |cRXP_ENEMY_Wrathtail Sea Witch|r. Kill one of them and then reset them if needed|r
+    >>|cRXP_ENEMY_Lady Vespia|r |cRXP_WARN_is a rarespawn that can also drop the |cRXP_LOOT_Ring of Zoram|r if you see her|r
+	.unitscan Lady Vespia
+	.mob Ruuzel
+    .complete 1009,1
+step
+    .goto 1440/1,1296.33,4088.67,0
+    .goto 1440/1,866.14,4013.71,0
+    .goto 1440/1,843.07,3863.42,0
+    .goto 1440/1,942.84,3710.83,0
+    .goto 1440/1,1072.01,3518.64,0
+    .goto 1440/1,1296.33,4088.67,70,0
+    .goto 1440/1,866.14,4013.71,70,0
+    .goto 1440/1,843.07,3863.42,70,0
+    .goto 1440/1,942.84,3710.83,70,0
+    .goto 1440/1,1072.01,3518.64,70,0
+    .goto 1440/1,942.84,3710.83,70,0
+    .goto 1440/1,843.07,3863.42,70,0
+    .goto 1440/1,866.14,4013.71,70,0
+    >>Kill |cRXP_ENEMY_Wrathtail Nagas|r. Loot them for their |cRXP_LOOT_Heads|r
+	.mob Wrathtail Wave Rider
+	.mob Wrathtail Sorceress
+    .mob Wrathtail Myrmidon
+    .mob Wrathtail Priestess
+    .mob Wrathtail Razortail
+    .mob Wrathtail Sea Witch
+    .complete 1008,1
+step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talen|r
+	.target Talen
+    .goto 1440/1,847.11,3470.21
+    .turnin 1009 >> Turn in Ruuzel
+step
+    #sticky
+    #completewith SoulGemStart
+    >>Save up to 6 |cRXP_LOOT_Gooey Spider Legs|r looted from the |cRXP_ENEMY_Spiders|r in the zone. You will need them for a quest later
+    .collect 2251,6,93,1 -- Gooey Spider Legs
+    .mob Wildthorn Stalker
+step
+    #sticky
+    #completewith SoulGemStart
+    >>Kill and loot |cRXP_WARN_Ghostpaw Runners|r you encounter while questing. Keep any |T133970:0|t[|cRXP_LOOT_Lean Wolf Flanks|r] you get. You will need 10 for a cooking quest later
+    .collect 1015,10
+    .mob Ghostpaw Runner
+step
+    #label SoulGemStart
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Teronis' Corpse|r
+	.target Teronis' Corpse
+    .goto 1440/1,528.79,3045.86
+    .turnin 991 >> Turn in Raene's Cleansing
+    .accept 1023 >> Accept Raene's Cleansing
+step
+    #sticky
+    #completewith GlowingGem
+    >>Keep any |T134304:0|t[Murloc Fins] you might loot. You will need 8 for a quest later
+    .collect 1468,8 --Murloc Fin(8)
+step
+    #label GlowingGem
+    .goto 1440/1,523.02,2988.59,50,0
+    .goto 1440/1,579.54,3055.08,50,0
+    .goto 1440/1,488.42,3073.53,50,0
+    .goto 1440/1,528.79,3045.86
+    >>Kill |cRXP_ENEMY_Saltspittle Murlocs|r. Loot them for the |cRXP_LOOT_Glowing Gem|r
+    >>|cRXP_WARN_Be careful as the |cRXP_ENEMY_Oracles|r can heal, and have a 90 damage instant-cast shock spell every few seconds|r
+	.mob Saltspittle Warrior
+	.mob Saltspittle Muckdweller
+	.mob Saltspittle Oracle
+	.mob Saltspittle Puddlejumper
+    .complete 1023,1
+step
+    .goto 1440/1,189.71,3185.77
+    .target Delgren the Purifier
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
+    .turnin 976 >> Turn in Supplies to Auberdine
+step
+    .goto Ashenvale,22.23,52.98
+    .target Sentinel Melyria Frostshadow
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Melyria Frostshadow|r
+    .accept 1022 >> Accept The Howling Vale
+    .xp <25,1
+step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shindrell Swiftfire|r
+	.target Shindrell Swiftfire
+    .goto 1440/1,-299.30,2796.01
+    .turnin 1008 >> Turn in The Zoram Strand
+step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raene Wolfrunner|r
+	.target Raene Wolfrunner
+    .goto 1440/1,-411.18,2767.19
+    .turnin 1023 >> Turn in Raene's Cleansing
+    .turnin 1054 >> Turn in Culling the Threat
+    .accept 1024 >> Accept Raene's Cleansing
+    .accept 1025 >> Accept An Aggressive Defense
+step
+    .destroy 5505 >> Delete |T133741:0|t[Teronis' Journal]
+step
     .goto 1440/1,-284.31,2828.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daelyshia|r
     .fly Darkshore >> Fly to Darkshore
     .target Daelyshia
-step
-    .goto 1439,37.703,43.393
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
-    .turnin 4740 >> Turn in WANTED: Murkdeep!
-    .target Sentinel Glynda Nal'Shea
-step
-    .goto 1439/1,489.35,6506.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archaeologist Hollee|r
-    .turnin 731 >> Turn in The Absent Minded Prospector
-    .accept 98461 >> Accept Unrequited Love
-    .accept 741 >> Accept The Absent Minded Prospector
-    .target Archaeologist Hollee
 step
     #completewith next
     .vendor >> Restock/Resupply
@@ -1467,14 +1543,17 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einar Stonegrip|r
     .accept 469 >> Accept Daily Delivery
 step
-	.goto Wetlands,34.3,41.2,60,0
     .goto Wetlands,44.8,43.9
 	>>Kill Dragonmaw Orcs
     .complete 464,1 --Collect Dragonmaw War Banner (x8)
-    .complete 98221,1 -- Destroy attack plans 1-4
-    .complete 98221,2
+    .complete 98221,4 -- Destroy attack plans 1-4
+    .goto Wetlands,38.47,46.03
     .complete 98221,3
-    .complete 98221,4
+    .goto Wetlands,45.32,45.68
+    .complete 98221,1
+    .goto Wetlands,45.71,42.67
+    .complete 98221,2
+    .goto Wetlands,48.4,46.82
 step
     .goto Wetlands,44.2,33.9
 	>>Kill gnolls
@@ -1486,38 +1565,30 @@ step
     .target Rethiel the Greenwarden
     .accept 275 >> Accept Blisters on The Land
 step
-    #completewith next
-    .goto Wetlands,17.75,27.70,35,0
-    .goto Wetlands,19.18,27.77,35,0
-    .goto Wetlands,20.92,28.82,35,0
-    .goto Wetlands,19.45,24.30,35,0
-    .goto Wetlands,20.58,24.25,35,0
-    .goto Wetlands,23.24,25.27,35,0
-    .goto Wetlands,22.42,22.37,35,0
-    .goto Wetlands,25.96,21.38,35,0
-    .goto Wetlands,27.54,20.60,35,0
-    .goto Wetlands,28.52,20.98,35,0
+    #completewith endCreepers
     >>Kill |cRXP_ENEMY_Fen Creepers|r
     >>|cRXP_WARN_Be careful as they are|r |T132320:0|t[Stealthed] |cRXP_WARN_and patrol around in the shallow water slightly|r
-    .complete 275,1  --Kill Fen Creeper (x8)
+    .complete 275,1  --Kill Fen Creeper (x12)
     .mob Fen Creeper
 step
     .goto Wetlands,44.2,25.8
     >>Kill slimes around the crypt
     .complete 470,1 --Collect Sida's Bag (x1)
+    .mob Black Ooze
 step
     #sticky
     #completewith next
     .vendor 2682>>Buy a Bronze Tube from Fradd Swiftgear (limited supply), skip this step if he doesn't have it or if you already have one
     .goto Wetlands,26.4,25.8
     .collect 4371,1,175,1,1
-step
+step << Shaman
+    >> This is sharable
 	.goto Wetlands,34.3,41.2,60,0
     .goto Wetlands,38.179,50.889
     .target Ormer Ironbraid
     >>Talk to |cRXP_FRIENDLY_Ormer Ironbraid|r
     .accept 294 >> Accept Ormer's Revenge
-step
+step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Merrin Rockweaver|r and |cRXP_FRIENDLY_Prospector Whelgar|r
     .turnin 305 >> Turn in In Search of The Excavation Team
     .accept 306 >> Accept In Search of The Excavation Team
@@ -1525,11 +1596,15 @@ step
     .goto Wetlands,38.909,52.340
     .target Merrin Rockweaver
     .target Prospector Whelgar
-step
+step << Shaman
     .isQuestTurnedIn 942
     .goto Wetlands,38.858,52.208
     >>Loot |cRXP_LOOT_Flagongut's Fossil|r on the ground
     .complete 943,2 
+step << !Shaman
+    >> Should be shared to you
+    .accept 294 >> Accept Ormer's Revenge
+    .accept 299 >> Accept Uncovering the Past
 step
 	#label fossil
 	#sticky
@@ -1550,6 +1625,18 @@ step
     .turnin 294 >> Turn in Ormer's Revenge
     .target Ormer Ironbraid
     .accept 295 >> Accept Ormer's Revenge
+step << !Shaman
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Merrin Rockweaver|r and |cRXP_FRIENDLY_Prospector Whelgar|r
+    .turnin 305 >> Turn in In Search of The Excavation Team
+    .accept 306 >> Accept In Search of The Excavation Team
+    .goto Wetlands,38.909,52.340
+    .target Merrin Rockweaver
+    .target Prospector Whelgar
+step << !Shaman
+    .isQuestTurnedIn 942
+    .goto Wetlands,38.858,52.208
+    >>Loot |cRXP_LOOT_Flagongut's Fossil|r on the ground
+    .complete 943,2 
 step
     #requires fossil
     .goto Wetlands,14.1,41.5,70,0
@@ -1561,10 +1648,20 @@ step
 	.mob Gobbler
     .mob Bluegill Murloc
 step
+    #label endCreepers
     .goto Wetlands,11.458,52.163
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarrel Rockweaver|r
     .turnin 306 >> Turn in In Search of The Excavation Team
     .target Tarrel Rockweaver
+step
+    .goto 1437/0,-819.67,-3691.42,25,0
+    .goto 1437/0,-807.26,-3716.22,25,0
+    .goto 1437/0,-827.94,-3724.49,25,0
+    .goto 1437,10.760,56.721
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neal Allen|r
+    .vendor >> |cRXP_WARN_Buy a|r |T133024:0|t[Bronze Tube] if one is there
+    >>|cRXP_WARN_This is a limited supply item.
+	.target Neal Allen
 step 
     .goto 1437,9.451,59.642
     >> You can also take the boat if it's here
@@ -1607,7 +1704,24 @@ step
     .target James Halloran
     >>Talk to |cRXP_FRIENDLY_James Halloran|r
     .turnin 469 >> Turn in Daily Delivery
+    .accept 484 >> Accept Young Crocolisk Skins
     .isOnQuest 469
+step << Shaman
+    .goto Wetlands,8.6,55.8
+    .target James Halloran
+    >>Talk to |cRXP_FRIENDLY_James Halloran|r
+    .turnin 484 >> Turn in Young Crocolisk Skins
+    .accept 98815 >> Accept Highland Hides
+    .isQuestComplete 484
+step
+    .goto 1437/0,-819.67,-3691.42,25,0
+    .goto 1437/0,-807.26,-3716.22,25,0
+    .goto 1437/0,-827.94,-3724.49,25,0
+    .goto 1437,10.760,56.721
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neal Allen|r
+    .vendor >> |cRXP_WARN_Buy a|r |T133024:0|t[Bronze Tube] if one is there
+    >>|cRXP_WARN_This is a limited supply item.
+	.target Neal Allen
 step
     .goto Wetlands,9.9,57.4
     >>Talk to |cRXP_FRIENDLY_Captain Stoutfist|r
@@ -1660,17 +1774,16 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gerrig Bonegrip|r
     .turnin -968 >> Turn in The Powers Below
     .target Gerrig Bonegrip
-step << !Warlock
+step << !Shaman
     #completewith next
     .accept 971 >> Accept Knowledge in the Deeps
     >> should be shared to you
-step << Warlock
+step << Shaman
+    >> Malz using trainer in SW instead
     .goto 1455/0,-1117.60,-4615.14,15,0
     .goto 1455/0,-1111.62,-4599.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gerrig Bonegrip|r and |cRXP_FRIENDLY_Briarthorn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gerrig Bonegrip|r
     .accept 971 >> Accept Knowledge in the Deeps
-    .trainer >> Train your class spells
-    .target Briarthorn
 step << Rogue
     .goto 1455,51.6,14.8
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hulfdan Blackbeard|r
@@ -1803,7 +1916,7 @@ step
     #label RedridgeEnd
     #completewith MadEva
     .zone Duskwood >> Head to Duskwood
-    .goto Duskwood,73.48,24.84
+    .goto Redridge Mountains,3,93
 step
     #completewith MadEva
     .subzone 42 >> Head to Darkshire
@@ -1881,6 +1994,10 @@ step
     .target Blind Mary
     .isQuestTurnedIn 174
 step
+    #completewith spiderLegs
+    >>Save up to 6 |cRXP_LOOT_Gooey Spider Legs|r looted from the |cRXP_ENEMY_Spiders|r in the zone. You will need them for a quest later
+    .collect 2251,6,93,1 -- Gooey Spider Legs
+step
     #sticky
     #completewith endDuskwood
     >> If you see any Lost ghosts kill them and complete their quests, not on route but good turnins. If you find bow, save it for later
@@ -1928,6 +2045,12 @@ step
     .mob Skeletal Warrior
     .mob Skeletal Mage
 step
+    #completewith next
+    +|cRXP_WARN_Be careful not to run into |cRXP_ENEMY_Stitches|r the Abomination who may be patrolling the road between Raven Hill and Darkshire|r
+    >>He spawns after a player completes the Hermit questline and is |cRXP_WARN_extremely lethal if pulled|r
+    .unitscan Stitches
+    .line Duskwood,34.2,60.4,40.6,63.2,44.6,65.7,50.9,66.7,52.8,68.6,54.7,68.7,58.1,65.9,61.7,61.6,65.8,60.0,71.1,59.3,74.2,56.1,75.2,52.2,74.5,46.9
+step
     .goto Duskwood,18.203,56.215
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jitters|r
     .turnin 163 >> Turn in Raven Hill
@@ -1960,8 +2083,24 @@ step
     .target Sven Yorgen
     .accept 95 >> Accept Sven's Revenge
 step
-    .goto Westfall,56.55,52.64
+    .goto Westfall,41.51,66.72
     .zone Westfall >> Travel to Westfall
+step
+    #label MoonbrookSt
+    .goto Westfall,41.51,66.72
+    >>Click the |cRXP_PICK_Old Footlocker|r on the ground
+    .turnin 67 >> Turn in The Legend of Stalvan
+    .accept 68 >> Accept The Legend of Stalvan
+step << Shaman
+    .goto Westfall,46.20,58.86
+    >>Click the stone (arrow maybe a bit off)
+    .turnin 94502 >> Turn in Call of Water
+    .accept 94503 >> Accept Call of Water
+step << Shaman
+    .goto Westfall,46.20,58.86
+    >>Talk to the |cRXP_FRIENDLY_Minor Manifestation of Water|r
+    .turnin 94503 >> Turn in Call of Water
+    .accept 94505 >> Accept Call of Water
 step
     #completewith next
     .goto Westfall,56.55,52.64
@@ -1994,7 +2133,6 @@ step
     .turnin 96139 >> Turn in The Valor Family
     .target Sirra Von'Indi
 step
-    #completewith next
     .destroy 281149 >> Delete the |T133743:0|t[Memories of Valor]
 step
     .goto Duskwood,71.938,47.778
@@ -2046,22 +2184,6 @@ step
 step
     #completewith MoonbrookSt
     .zone Westfall >> Travel to Westfall
-step
-    #label MoonbrookSt
-    .goto Westfall,41.51,66.72
-    >>Click the |cRXP_PICK_Old Footlocker|r on the ground
-    .turnin 67 >> Turn in The Legend of Stalvan
-    .accept 68 >> Accept The Legend of Stalvan
-step << Shaman
-    .goto Westfall,46.20,58.86
-    >>Click the stone (arrow maybe a bit off)
-    .turnin 94502 >> Turn in Call of Water
-    .accept 94503 >> Accept Call of Water
-step << Shaman
-    .goto Westfall,46.20,58.86
-    >>Talk to the |cRXP_FRIENDLY_Minor Manifestation of Water|r
-    .turnin 94503 >> Turn in Call of Water
-    .accept 94505 >> Accept Call of Water
 step
     .goto Westfall,56.55,52.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
@@ -2142,6 +2264,7 @@ step
     .turnin 266 >> Turn in Inquire at the Inn
     .accept 453 >> Accept Finding the Shadowy Figure
 step
+    #label spiderLegs
     .goto Duskwood,73.88,43.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chef Grual|r
     .target Chef Grual
@@ -2332,80 +2455,15 @@ step
     .fly Astranaar >> Fly to Astranaar
     .target Caylais Moonfeather
 step
-    .goto Ashenvale,36.61,49.58
-    .target Raene Wolfrunner
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raene Wolfrunner|r
-    .accept 1054 >> Accept Culling the Threat
-step
-    #completewith next
-    .goto Ashenvale,34.69,44.30,30,0
-    .goto Ashenvale,35.43,41.46,30,0
-    .goto Ashenvale,36.28,38.48,30,0
-    .goto Ashenvale,36.83,37.56,30 >> Travel to Thistlefur Village. Follow the Arrow for a shortcut
-step
-    .goto Ashenvale,36.06,36.59,0
-    .goto Ashenvale,37.00,33.77,0
-    .goto Ashenvale,35.88,31.90,0
-    .goto Ashenvale,38.73,36.32,0
-    .goto Ashenvale,36.06,36.59,60,0
-    .goto Ashenvale,37.00,33.77,60,0
-    .goto Ashenvale,35.88,31.90,60,0
-    .goto Ashenvale,38.73,36.32,60,0
-    .goto Ashenvale,39.595,36.309
-    >>Kill |cRXP_ENEMY_Dal Bloodclaw|r. Loot him for his |cRXP_LOOT_Skull|r
-    >>|cRXP_ENEMY_Dal Bloodclaw|r |cRXP_WARN_patrols Thistlefur Village|r
-    .complete 1054,1
-    .unitscan Dal Bloodclaw
-step
-    .goto Ashenvale,25.27,60.68
-    >>Kill |cRXP_ENEMY_Ilkrud Magthrull|r. Loot him for his |cRXP_LOOT_Tome|r
-    >>|cRXP_ENEMY_Ilkrud Magthrull|r |cRXP_WARN_will cast|r |T136221:0|t[Ilkrud's Guardians] |cRXP_WARN_which is a 5 second long cast and will summon 2 Voidwalkers. Stop this cast if you're able to|r
-    >>|cRXP_WARN_Clear an exit path if needed so you can reset them along with the |cRXP_ENEMY_Succubus|r if needed|r
-    .complete 973,1
-    .mob Ilkrud Magthrull
-    .isOnQuest 973
+    .goto 1440/1,-433.09,2781.02
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Kimlya|r
+    .home >> Set your Hearthstone to Astranaar
+    .target Innkeeper Kimlya
 step
     .goto Ashenvale,22.23,52.98
     .target Sentinel Melyria Frostshadow
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Melyria Frostshadow|r
     .accept 1022 >> Accept The Howling Vale
--- step << skip
---     .goto Ashenvale,21.73,53.34
---     .target Illiyana
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illiyana|r
---     .accept 1021 >> Accept Vile Satyr! Dryads in Danger!
--- step << skip
---     .goto Ashenvale,26.19,38.69
---     .target Delgren the Purifier
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
---     .turnin 973 >> Turn in The Tower of Althalaxx
---     .accept 1140 >> Accept The Tower of Althalaxx
-step
-    .goto Ashenvale,26.19,38.69
-    .target Delgren the Purifier
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
-    .turnin 973 >> Turn in The Tower of Althalaxx
-    .isOnQuest 973
-step
-    .goto 1440/1,189.71,3185.77
-    .target Feero Ironhand
-    >>|cRXP_WARN_This quest includes multiple waves of lvl 24 enemies|r
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Feero Ironhand|r
-    .accept 976 >> Accept Supplies to Auberdine
-step
-    .complete 976,1
-step
-    .goto 1440/1,189.71,3185.77
-    .target Delgren the Purifier
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
-    .turnin 976 >> Turn in Supplies to Auberdine
-step
-    .goto Ashenvale,36.61,49.58
-    .target Raene Wolfrunner
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raene Wolfrunner|r
-    .turnin 1054 >> Turn in Culling the Threat
-    .accept 1024 >> Accept Raene's Cleansing
-    .accept 1025 >> Accept An Aggressive Defense
 step
     .goto Ashenvale,37.36,51.79
     .target Pelturas Whitemoon
@@ -2467,12 +2525,6 @@ step
 --     .fp Azshara>> Get the Azshara flight path
 --     .fly Ashenvale>> Fly to Ashenvale
 --     .target Jarrodenus
-step 
-    .goto Ashenvale,22.23,52.98
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Melyria Frostshadow|r
-    .turnin 1022 >> Turn in The Howling Vale
-    .target Sentinel Melyria Frostshadow
-    .accept 1037 >> Accept Velinde Starsong
 -- step
 --     .goto Ashenvale,21.73,53.34
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illiyana|r
@@ -2501,6 +2553,10 @@ step
     .mob Foulweald Ursa
     .mob Foulweald Totemic
     .mob Foulweald Warrior
+step
+    .goto Ashenvale,63,71.6
+    >>Interact with the necklace in the river
+    .accept 98027 >> Accept Gleaming Crescent Necklace
 step
     .goto Ashenvale,66.649,82.189
     >>Kill the |cRXP_ENEMY_Shadethicket Oracle|r. Loot it for the |cRXP_LOOT_Fallen Moonstone|r
@@ -2584,6 +2640,7 @@ step
 --     .mob Felmusk Satyr
 --     .mob Felmusk Shadowstalker
 step
+    >>Long RP
     .goto Ashenvale,53.53,46.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shael'dryn|r
     .turnin 1027 >> Turn in Raene's Cleansing
@@ -2672,10 +2729,16 @@ step
     .isOnQuest 1046
 step
     #label BFDgroup
-    .goto 1440/1,-433.09,2781.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Kimlya|r
-    .home >> Set your Hearthstone to Astranaar
-    .target Innkeeper Kimlya
+    .goto Ashenvale,36.6,49.8
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maliynn|r
+    .turnin 98027 >> Turn in Gleaming Crescent Necklace
+    .target Maliynn
+step 
+    .goto Ashenvale,22.23,52.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Melyria Frostshadow|r
+    .turnin 1022 >> Turn in The Howling Vale
+    .target Sentinel Melyria Frostshadow
+    .accept 1037 >> Accept Velinde Starsong
 -- step << skip
 --     .goto Ashenvale,21.73,53.34
 --     .target Illiyana
@@ -3218,4 +3281,17 @@ step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beldruk Doombrow|r
     .trainer >> Train your class spells
     .target Beldruk Doombrow
+step
+    #label DRT
+    #completewith TramEnd
+    .goto 1455/0,-1330.28,-4840.430
+    .subzone 2257 >>Enter the Deeprun Tram
+step
+    #label endWetlands
+    #completewith TramEnd
+    >> |cRXP_WARN_CRAFT ON TRAM
+step
+    #label TramEnd
+    #optional
+    .zone Stormwind City >> Enter Stormwind
 ]])

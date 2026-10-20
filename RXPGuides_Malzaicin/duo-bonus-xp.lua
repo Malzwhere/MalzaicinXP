@@ -11,7 +11,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 31-32 Razorfen Kraul
 #next 32-33 Excavation Site
-#defaultfor Dwarf/Gnome/Human
+-- #defaultfor Dwarf/Gnome/Human
 
 
 step

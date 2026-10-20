@@ -15,18 +15,6 @@ RXPGuides.RegisterGuide([[
 
 
 step
-    #label DRT
-    #completewith TramEnd
-    .goto 1455/0,-1330.28,-4840.430
-    .subzone 2257 >>Enter the Deeprun Tram
-step
-    #completewith TramEnd
-    >> |cRXP_WARN_CRAFT ON TRAM
-step
-    #label TramEnd
-    #optional
-    .zone Stormwind City >> Enter Stormwind
-step
     #completewith next
     .goto 1453,53,51,20 >> Travel to the Stormwind Cathedral
 step
@@ -1110,16 +1098,6 @@ step
     .turnin 2904 >> Turn in A Fine Mess
     .target Scooty
 step
-    .goto Stranglethorn Vale,27.120,77.208
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crank Fizzlebub|r
-    .accept 605 >>Accept Singing Blue Shards
-    .target Crank Fizzlebub
-step
-    .goto Stranglethorn Vale,27.04,77.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Skindle|r
-    .home >> Set your Hearthstone to Booty Bay
-    .target Innkeeper Skindle
-step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kebok|r and |cRXP_FRIENDLY_Krazek|r up stairs on the top floor
     .accept 213 >> Accept Hostile Takeover
     .goto Stranglethorn Vale,27.000,77.124
@@ -1135,11 +1113,6 @@ step
     .turnin 616 >> Turn in The Haunted Isle
     .accept 578 >> Accept The Stone of the Tides
     .target Baron Revilgaz
-step
-    .goto Stranglethorn Vale,28.294,77.592
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drizzlik|r
-    .accept 575 >> Accept Supply and Demand
-    .target Drizzlik
 step
     #completewith next
     .destroy 3898 >>Throw away the |T134939:0|t[Library Scrip]
