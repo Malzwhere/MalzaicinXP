@@ -1309,6 +1309,7 @@ step
 step
     .hs >> Hearthstone to Booty Bay
 step
+    .goto 1434,21.49,27.83
     +Do the Drowned City
 step
     #completewith BBTurnin

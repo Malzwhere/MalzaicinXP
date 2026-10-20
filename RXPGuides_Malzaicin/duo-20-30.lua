@@ -3031,10 +3031,55 @@ step
     .target Glorin Steelbrow
     .accept 321 >> Accept Lightforge Iron
 step
+    #requires Mead
+    .goto Wetlands,10.89,59.66
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_First Mate Fitzsimmons|r
+    .accept 288 >> Accept The Third Fleet
+    .turnin 288 >> Turn in The Third Fleet
+    .accept 289 >> Accept The Cursed Crew
+    .target First Mate Fitzsimmons
+step
     .goto Wetlands,10.9,55.9
     .target Harlo Barnaby
     >>Talk to |cRXP_FRIENDLY_Harlo Barnaby|r
     .accept 472 >> Accept Fall of Dun Modr
+step
+    .isQuestTurnedIn 279
+    .goto Wetlands,13.513,41.384
+    >>Click the |cRXP_PICK_Damaged Crate|r on the ground
+    .turnin 281 >> Turn in Reclaiming Goods
+    .accept 284 >> Accept The Search Continues
+step
+    .isQuestTurnedIn 281
+    .goto Wetlands,13.608,38.214
+    >>Click the |cRXP_PICK_Sealed Barrel|r on the ground
+    .turnin 284 >> Turn in The Search Continues
+    .accept 285 >> Accept Search More Hovels
+step
+    .isQuestTurnedIn 284
+    .goto Wetlands,13.945,34.809
+    >>Click the |cRXP_PICK_Half-buried Barrel|r on the ground
+    .turnin 285 >> Turn in Search More Hovels
+    .accept 286 >> Accept Return the Statuette
+step
+    #loop
+    .goto Wetlands,14.00,29.80,0
+    .goto Wetlands,15.03,24.05,0
+    .goto Wetlands,14.00,29.80,70,0
+    .goto Wetlands,15.03,24.05,70,0
+    >>Kill |cRXP_ENEMY_Cursed Sailors|r, |cRXP_ENEMY_Cursed Marines|r and |cRXP_ENEMY_First Mate Snellig|r. Loot him for his |cRXP_LOOT_Snuffbox|r
+    .complete 289,1 
+    .complete 289,2 
+    .complete 289,3 
+    .mob Cursed Sailor
+    .mob Cursed Marine
+    .mob First Mate Snellig
+step
+    .isOnQuest 286
+    .goto Wetlands,8.359,58.526
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karl Boran|r
+    .turnin 286 >> Turn in Return the Statuette
+    .target Karl Boran
 step
 	#label relics
 	#sticky
@@ -3083,51 +3128,6 @@ step
     >>Talk to |cRXP_FRIENDLY_Prospector Whelgar|r
     .turnin 98216 >> Turn in Understanding our Present
     .accept 98310 >> Accept Gleaning Our Future
-step
-    #requires Mead
-    .goto Wetlands,10.89,59.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_First Mate Fitzsimmons|r
-    .accept 288 >> Accept The Third Fleet
-    .turnin 288 >> Turn in The Third Fleet
-    .accept 289 >> Accept The Cursed Crew
-    .target First Mate Fitzsimmons
-step
-    .isQuestTurnedIn 279
-    .goto Wetlands,13.513,41.384
-    >>Click the |cRXP_PICK_Damaged Crate|r on the ground
-    .turnin 281 >> Turn in Reclaiming Goods
-    .accept 284 >> Accept The Search Continues
-step
-    .isQuestTurnedIn 281
-    .goto Wetlands,13.608,38.214
-    >>Click the |cRXP_PICK_Sealed Barrel|r on the ground
-    .turnin 284 >> Turn in The Search Continues
-    .accept 285 >> Accept Search More Hovels
-step
-    .isQuestTurnedIn 284
-    .goto Wetlands,13.945,34.809
-    >>Click the |cRXP_PICK_Half-buried Barrel|r on the ground
-    .turnin 285 >> Turn in Search More Hovels
-    .accept 286 >> Accept Return the Statuette
-step
-    #loop
-    .goto Wetlands,14.00,29.80,0
-    .goto Wetlands,15.03,24.05,0
-    .goto Wetlands,14.00,29.80,70,0
-    .goto Wetlands,15.03,24.05,70,0
-    >>Kill |cRXP_ENEMY_Cursed Sailors|r, |cRXP_ENEMY_Cursed Marines|r and |cRXP_ENEMY_First Mate Snellig|r. Loot him for his |cRXP_LOOT_Snuffbox|r
-    .complete 289,1 
-    .complete 289,2 
-    .complete 289,3 
-    .mob Cursed Sailor
-    .mob Cursed Marine
-    .mob First Mate Snellig
-step
-    .isOnQuest 286
-    .goto Wetlands,8.359,58.526
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karl Boran|r
-    .turnin 286 >> Turn in Return the Statuette
-    .target Karl Boran
 step
     #label Gambit
     .goto Wetlands,47.45,47.01
@@ -3267,7 +3267,7 @@ step << Shaman
     .goto Arathi Highlands,59.8,27.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
     .turnin 94789 >> Turn in Call of Air
-    .accept 96264 >> Accept Elemental Aid
+    -- .accept 96264 >> Accept Elemental Aid
     .target Veyric Thunderhame
 step << Shaman
     .hs >> Astral Recall back to Ironforge
