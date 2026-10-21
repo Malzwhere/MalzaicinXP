@@ -2723,7 +2723,12 @@ step
 --     .turnin 1287 >> Turn in The Deserters
 --     .target Captain Garran Vimes
 step
-    +Fly to ratchet and take the boat to booty bay
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baldruc|r
+    .goto Dustwallow Marsh,67.476,51.300
+    .fly Ratchet >> Fly to Ratchet
+    .target Baldruc
+step
+    .zone Stranglethorn Vale >> Take the boat to Booty Bay
 step
     .goto Stranglethorn Vale,27.000,77.124
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kebok|r
@@ -2778,11 +2783,6 @@ step
     .goto Stormwind City,66.277,62.137
     .fly Duskwood >>Fly to Duskwood
     .target Dungar Longdrink
-step
-    .goto Duskwood,73.872,44.406
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Trelayne|r
-    .home >> Set your Hearthstone to Duskwood
-    .target Innkeeper Trelayne
 step
     #completewith next
     >> Loot |cRXP_ENEMY_Skullsplitter Mystics|r for their |cRXP_LOOT_Partial Mystical Notes|r
@@ -2981,6 +2981,8 @@ step
     >>Swim to the middle of the Pool of Tears
     >>Be careful not to run too close to Stonard on your way there. Avoid fighting any of the higher level dragonkin on the way as well
     .complete 1448,1
+step
+    .hs >> Hearth to Ironforge
 ]])
 
 
@@ -2998,7 +3000,7 @@ RXPGuides.RegisterGuide([[
 
 step
     >>Travel to Redridge
-    .goto 1433,26.035,58.614
+    .goto 1433,26.035,58.614,50
 step
     +Riverglades quests to lvl 40
     .xp 40
@@ -3021,13 +3023,15 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hulfdan Blackbeard|r
     .trainer >> Train your class spells
     .target Hulfdan Blackbeard
-step << Dwarf/Gnome !Paladin !Rogue
+step << Dwarf/Gnome !Paladin !Warlock
     >> Trade gold if necessary
     .goto Dun Morogh,63.4,50.6
     +Head to the Amberstill Ranch in Dun Morogh and buy a mount
 step
-    .goto Stranglethorn Vale,26.4,73.6
-    +Travel to booty bay, take the boat to ratchet
+    .goto Ironforge,55.50,47.74
+    >>Talk to |cRXP_FRIENDLY_Gryth|r
+    .fly Booty Bay >> Fly to Booty Bay
+    .target Gryth Thurden
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dudd Fizzlescroll|r
     .turnin -95384 >> Turn in Partial Mystical Notes
@@ -3045,4 +3049,6 @@ step
     .turnin 601 >> Turn in Water Elementals
     .accept 602 >> Accept Magical Analysis
     .target Baron Revilgaz
+step
+    .zone The Barrens >> Take the boat to Ratchet
 ]])

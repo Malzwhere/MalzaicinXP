@@ -2036,6 +2036,14 @@ step
 --Hunter stays Darkshore/Ashenvale
 --Shaman to IF for training then SW > Redridge
 --!Hunter !Shaman straight to SW > Redridge
+step
+    .goto 1439,37.439,41.839
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archaeologist Hollee|r
+    .turnin 731 >> Turn in The Absent Minded Prospector
+    .accept 98461 >> Accept Unrequited Love
+    .accept 741 >> Accept The Absent Minded Prospector
+    .target Archaeologist Hollee
+    .isQuestComplete 731
 
 step
     .goto 1439/1,488.69,6564.830

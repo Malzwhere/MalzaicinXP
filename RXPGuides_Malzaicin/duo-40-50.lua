@@ -219,14 +219,12 @@ step
 step
     .zone Stranglethorn Vale >> Take the boat to Booty Bay
 step
-    +Check for good, doable quests to do while here in STV, maybe pirates + riddle?
-step
-    .goto StormwindClassic,39.592,27.199
+    .goto 1453,50.36,45.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archbishop Benedictus|r
     .turnin 3636 >> Turn in Bring the Light
     .target Archbishop Benedictus
 step
-    .goto StormwindClassic,64.328,20.627
+    .goto 1453,69.43,40.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brohann Caskbelly|r
     .turnin 1448 >>Turn in In Search of The Temple
     .accept 1449 >>Accept To The Hinterlands
@@ -336,6 +334,9 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guthrum Thunderfist|r
     .fp Hinterlands >> Get The Hinterlands Flight Path
     .target Guthrum Thunderfist
+step
+    .goto Western Plaguelands,42.9,85.0
+    .fp Chillwind >> Get the Chillwind Camp flight path
 step
     --TURNIN BLOCK
     +Complete Scarlet Monastery

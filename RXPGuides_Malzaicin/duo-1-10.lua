@@ -881,6 +881,38 @@ step
     .turnin 2158,2 >> Turn in Rest and Relaxation << !Rogue !Warrior
     .target Innkeeper Farley
 step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remy "Two Times"|r
+    .target Remy "Two Times"
+    .goto Elwynn Forest,42.140,67.254
+    .accept 47 >> Accept Gold Dust Exchange
+step
+    #completewith next
+    >>|cRXP_WARN_Likely won't both complete, don't focus on this|r
+    >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for their |cRXP_LOOT_Candles|r and |cRXP_LOOT_Dust|r
+    .complete 60,1 --Kobold Candle (8)
+    .complete 47,1 --Gold Dust (10)
+    .mob Kobold Tunneler
+    .mob Kobold Miner
+step
+    .goto 1429/0,193.00,-9832.40,50,0
+    .goto 1429/0,129.73,-9844.49
+    >>|cRXP_WARN_Enter and explore Fargodeep Mine|r
+    .complete 62,1 --Scout Through the Fargodeep Mine
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ma Stonefield|r
+    .accept 88 >> Accept Princess Must Die!
+    .target +Ma Stonefield
+    .goto Elwynn Forest,34.660,84.483
+step
+    #completewith next
+    .subzone 87 >> Travel to Goldshire
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
+    .target Marshal Dughan
+    .goto 1429/0,73.92,-9465.54
+    .turnin 62 >> Turn in The Fargodeep Mine
+    .accept 76 >> Accept The Jasperlode Mine
+step
     .goto 1453,53.02,74.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Betty Quin|r and |cRXP_FRIENDLY_Jessara Cordell|r
     .target +Tilli Thistlefuzz
@@ -2636,7 +2668,7 @@ step << Rogue/Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Michelle Belle|r
     .turnin 97919 >> Turn in Camping 101: First Aid
     .target Michelle Belle
-step << Shaman
+step << !Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r
     .target William Pestle
     .goto 1429/0,31.92,-9460.38
@@ -2646,14 +2678,14 @@ step
     .target Remy "Two Times"
     .goto Elwynn Forest,42.140,67.254
     .accept 40 >> Accept A Fishy Peril
-    .accept 47 >> Accept Gold Dust Exchange << Shaman
+    .accept 47 >> Accept Gold Dust Exchange << !Shaman
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ma Stonefield|r
     .accept 88 >> Accept Princess Must Die!
     .target +Ma Stonefield
     .goto Elwynn Forest,34.660,84.483
-    .abandon 47 << !Shaman
-    .abandon 60 << !Shaman
+    .abandon 47 << Shaman
+    .abandon 60 << Shaman
 step
     #completewith next
     >>|cRXP_WARN_Likely won't both complete, don't focus on this|r
@@ -2862,6 +2894,12 @@ step
     .abandon 83 >> Abandon Red Linen Goods
     .isOnQuest 83
 step
+    #completewith enterRR
+    >>Kill |cRXP_ENEMY_Elmpaw|r if it's easily findable. Loot it for its |cRXP_LOOT_head|r
+    .mob Elmpaw
+    .use 247862
+    .accept 91746 >> Accept Elmpaw's Head
+step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Merell Ross|r
     .target Merell Ross
     .goto 1429,84.669,79.320,5,0
@@ -2871,6 +2909,7 @@ step
     .goto 1433/0,-1948.56,-9582.75
     .zone Redridge Mountains >> Travel to Redridge Mountains
 step
+    #label enterRR
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Parker|r
     .target Guard Parker
     .goto 1433,10.318,71.298
@@ -2943,6 +2982,11 @@ step << Warlock
 step
     .goto 1429/0,74.02,-9465.52
     .zone Elwynn Forest >> Exit Stormwind. Travel to Goldshire
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helene Peltskinner|r
+    .target Helene Peltskinner
+    .goto 1429,46.2,62.2
+    .turnin -91746 >> Turn in Elmpaw's Head
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r
     .target William Pestle
