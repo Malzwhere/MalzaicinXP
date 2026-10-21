@@ -1820,8 +1820,8 @@ RXPGuides.RegisterGuide([[
 #group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 20-30
 --#groupid RXP-SRGCE-A1
-#name 26-27 Duskwood
-#next 27-28 Ashenvale
+#name 26-28 Duskwood
+#next 28-29 Ashenvale
 #defaultfor Dwarf/Gnome/Human
 
 
@@ -2235,11 +2235,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Viktori Prism'Antras|r
     .turnin 177 >> Turn in Look To The Stars
     .target Viktori Prism'Antras
-step
-    .goto Duskwood,75.302,48.046
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calor|r
-    .accept 173 >> Accept Worgen in the Woods
-    .target Calor
+-- step
+--     .goto Duskwood,75.302,48.046
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calor|r
+--     .accept 173 >> Accept Worgen in the Woods
+--     .target Calor
 step
     .goto Duskwood,75.81,45.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Madame Eva|r
@@ -2426,6 +2426,19 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hulfdan Blackbeard|r
     .trainer >> Train your class spells
     .target Hulfdan Blackbeard
+step
+    .goto 1455/0,-1330.28,-4840.430
+    .zone Stormwind City >> Enter the Deeprun Tram. Take the tram to Stormwind
+step
+    #completewith next
+    .goto 1453,53,51,20 >> Travel to the Stormwind Cathedral
+step
+    .isQuestTurnedIn 323
+    .goto 1453,49.976,46.022
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bishop Farthing|r
+    .turnin 269 >> Turn in Seeking Wisdom
+    .accept 270 >> Accept The Doomed Fleet
+    .target Bishop Farthing
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -2435,30 +2448,26 @@ RXPGuides.RegisterGuide([[
 #group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 20-30
 --#groupid RXP-SRGCE-A1
-#name 27-28 Ashenvale
-#next 28-29 Blackfathom Deeps
+#name 28-29 Ashenvale
+#next 29-29 Blackfathom Deeps
 #defaultfor Dwarf/Gnome/Human
 
 
 step
-    .goto Ironforge,55.50,47.74
-    >>Talk to |cRXP_FRIENDLY_Gryth|r
-    .fly Wetlands >> Fly to Menethil Harbor
-    .target Gryth Thurden
+    #optional
+    #completewith next
+    .goto 1453,41.882,49.433,20 >> Go to Stormwind Harbor
 step
-    >>|cRXP_WARN_This is a 3 stop boat, stay on through the Southshore stop|r
-    .goto 1437,4.640,57.122
+    .goto 1453,22.559,56.108
     .zone 1439 >> Take the boat to Darkshore
+step
+	.goto Darkshore,37.0,44.1
+    .home >> Set your Hearthstone to Auberdine
 step
     .goto 1439/1,561.66,6343.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caylais Moonfeather|r
     .fly Astranaar >> Fly to Astranaar
     .target Caylais Moonfeather
-step
-    .goto 1440/1,-433.09,2781.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Kimlya|r
-    .home >> Set your Hearthstone to Astranaar
-    .target Innkeeper Kimlya
 step
     .goto Ashenvale,22.23,52.98
     .target Sentinel Melyria Frostshadow
@@ -2761,7 +2770,7 @@ RXPGuides.RegisterGuide([[
 #group MalzaicinXP Forever Duo Guide
 #subgroup Cap/Malz Duo 20-30
 --#groupid RXP-SRGCE-A1
-#name 28-29 Blackfathom Deeps
+#name 29-29 Blackfathom Deeps
 #next 29-30 Wetlands
 #defaultfor Dwarf/Gnome/Human
 
@@ -2826,16 +2835,11 @@ step
     >>If you haven't completed this quest yet, click on the altar at the end of the dungeon to teleport you to the entrance. The mobs outside of the instance can also drop it.
     .complete 1275,1 
 step
-    .hs >> Hearth to Astranaar
+    .hs >> Hearth to Auberdine
     >>|cRXP_BUY_Buy food/water if needed|r
     .cooldown item,6948,>2,1
 step
-    .subzone 415 >> Travel to Astranaar
-step
-    .goto 1440/1,-284.31,2828.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daelyshia|r
-    .fly Darkshore >> Fly to Darkshore
-    .target Daelyshia
+    .subzone 415 >> Travel to Auberdine
 step
     .goto 1439,38.325,43.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gershala Nightwhisper|r
@@ -2889,39 +2893,14 @@ step
     .goto Darnassus,29.466,41.405
     .zone Teldrassil >> Travel through the purple portal to Rut'theran Village
     .zoneskip Darkshore
--- step
---     .goto Teldrassil,58.39,94.01
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vesprystus|r
---     .fly Darkshore >> Fly to Auberdine
---     .target Vesprystus
--- step
---     .goto 1439/1,929.100,6543.600
---     .zone Stormwind City >> Take the boat to Stormwind City
 step
     .goto Teldrassil,58.39,94.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vesprystus|r
-    .fly Ratchet >> Fly to Ratchet
+    .fly Darkshore >> Fly to Auberdine
     .target Vesprystus
-step
-    .goto The Barrens,63.2,38.4
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wharfmaster Dizzywig|r
-    .turnin 1039 >> Turn in The Barrens Port
-    .accept 1040 >> Accept Passage to Booty Bay
-    .target Wharfmaster Dizzywig
-step
-    .zone Stranglethorn Vale >> Take the boat to Booty Bay
-step
-    .goto Stranglethorn Vale,27.2,74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caravaneer Ruzzgot|r
-    .turnin 1040 >> Turn in Passage to Booty Bay
-    .accept 1041 >> Accept The Caravan Road
-    .target Caravaneer Ruzzgot
-step
-    +Pick up some other quests while here for early STV
-step
-    .goto Stranglethorn Vale,27.4,77.8
-    .fp Booty Bay >> Get the Booty Bay Flight Path
-    .fly Stormwind >> Fly to Stormwind City
+step 
+    .goto 1439,32.405,43.800
+    .zone 1437 >> Take the boat to Menethil Harbor
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -2936,60 +2915,19 @@ RXPGuides.RegisterGuide([[
 #defaultfor Dwarf/Gnome/Human
 
 
-step
-    .goto 1453,51.6,69.4
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warden Thelwater|r
-    .accept 387 >> Accept Quell The Uprising
-    .turnin 389 >> Turn in Bazil Thredd
-    .accept 391 >> Accept The Stockade Riots
-    .target Warden Thelwater
-step
-    #completewith next
-    .goto 1453,53,51,20 >> Travel to the Stormwind Cathedral
-step
-    .isQuestTurnedIn 323
-    .goto 1453,49.976,46.022
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bishop Farthing|r
-    .turnin 269 >> Turn in Seeking Wisdom
-    .accept 270 >> Accept The Doomed Fleet
-    .target Bishop Farthing
-step
-    .goto 1453,60.972,11.690,30,0
-    .goto 1453,65.933,5.771
-    .subzone 2257 >>Enter the Deeprun Tram
-step
-    >> |cRXP_WARN_CRAFT ON TRAM
-    .zone Ironforge >> Take the Deeprun Tram to Ironforge
+step 
+    .goto 1437,9.451,59.642
+    .fly Ironforge >> Fly to Ironforge
 step
     .goto Ironforge,50.826,5.613
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gerrig Bonegrip|r
     .turnin 971 >> Turn in Knowledge in the Deeps
     .target Gerrig Bonegrip
-step << Warlock
-    .goto 1455/0,-1117.60,-4615.14,15,0
-    .goto 1455/0,-1111.62,-4599.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Briarthorn|r
-    .trainer >> Train your class spells
-    .target Briarthorn
-step << Shaman
-    .goto 1455,47.334,13.566
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eldun Stormbreaker|r
-    .trainer >> Train your class spells
-    .target Eldun Stormbreaker
-step << Rogue
-    .goto 1455,51.6,14.8
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hulfdan Blackbeard|r
-    .trainer >> Train your class spells
-    .target Hulfdan Blackbeard
-step << Paladin
-    .goto 1455/0,-907.69,-4592.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beldruk Doombrow|r
-    .trainer >> Train your class spells
-    .target Beldruk Doombrow
 step
     .goto 1455,18.564,51.558
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Firebrew|r
     .home >> Set your Hearthstone to Ironforge
+    .vendor >> Make sure to buy water/food
     .target Innkeeper Firebrew
 step
     .goto Ironforge,55.50,47.74
@@ -3015,16 +2953,6 @@ step
     >>|cRXP_BUY_Buy a|r |T132792:0|t[Flagon of Dwarven Honeymead] |cRXP_BUY_from him|r
     .collect 2594,1,288,1
 step
-    .goto Wetlands,8,55.8
-    .target Sylessa Duskwhisper
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sylessa Duskwhisper|r
-    .accept 98208 >> Accept Bloom of the Heavens
-step
-    .goto Wetlands,11.8,58.6
-    .target Caitlin Grassman
-    >>Talk to |cRXP_FRIENDLY_Caitlin Grassman|r
-    .accept 95647 >> Accept Lost in the Thicket Things
-step
     .goto Wetlands,10.6,60.5
     >>Talk to |cRXP_FRIENDLY_Glorin Steelbrow|r
     .turnin 270 >> Turn in The Doomed Fleet
@@ -3036,8 +2964,18 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_First Mate Fitzsimmons|r
     .accept 288 >> Accept The Third Fleet
     .turnin 288 >> Turn in The Third Fleet
-    .accept 289 >> Accept The Cursed Crew
+    -- .accept 289 >> Accept The Cursed Crew
     .target First Mate Fitzsimmons
+step
+    .goto Wetlands,11.8,58.6
+    .target Caitlin Grassman
+    >>Talk to |cRXP_FRIENDLY_Caitlin Grassman|r
+    .accept 95647 >> Accept Lost in the Thicket Things
+step
+    .goto Wetlands,8,55.8
+    .target Sylessa Duskwhisper
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sylessa Duskwhisper|r
+    .accept 98208 >> Accept Bloom of the Heavens
 step
     .goto Wetlands,10.9,55.9
     .target Harlo Barnaby
@@ -3061,20 +2999,21 @@ step
     >>Click the |cRXP_PICK_Half-buried Barrel|r on the ground
     .turnin 285 >> Turn in Search More Hovels
     .accept 286 >> Accept Return the Statuette
-step
-    #loop
-    .goto Wetlands,14.00,29.80,0
-    .goto Wetlands,15.03,24.05,0
-    .goto Wetlands,14.00,29.80,70,0
-    .goto Wetlands,15.03,24.05,70,0
-    >>Kill |cRXP_ENEMY_Cursed Sailors|r, |cRXP_ENEMY_Cursed Marines|r and |cRXP_ENEMY_First Mate Snellig|r. Loot him for his |cRXP_LOOT_Snuffbox|r
-    .complete 289,1 
-    .complete 289,2 
-    .complete 289,3 
-    .mob Cursed Sailor
-    .mob Cursed Marine
-    .mob First Mate Snellig
-step
+-- step
+--     #loop
+--     .goto Wetlands,14.00,29.80,0
+--     .goto Wetlands,15.03,24.05,0
+--     .goto Wetlands,14.00,29.80,70,0
+--     .goto Wetlands,15.03,24.05,70,0
+--     >>Kill |cRXP_ENEMY_Cursed Sailors|r, |cRXP_ENEMY_Cursed Marines|r and |cRXP_ENEMY_First Mate Snellig|r. Loot him for his |cRXP_LOOT_Snuffbox|r
+--     .complete 289,1 
+--     .complete 289,2 
+--     .complete 289,3 
+--     .mob Cursed Sailor
+--     .mob Cursed Marine
+--     .mob First Mate Snellig
+step << Shaman
+    >> Cap turning in because speed buff op
     .isOnQuest 286
     .goto Wetlands,8.359,58.526
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karl Boran|r
@@ -3258,19 +3197,6 @@ step << Shaman
     .trainer >> Train your class spells
     .accept 94789 >> Accept Call of Air
     .target Eldun Stormbreaker
-step << Shaman
-    .goto 1455/0,-1152.40,-4821.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r
-    .fly Refuge Pointe >> Fly to Arathi Highlands
-    .target Gryth Thurden
-step << Shaman
-    .goto Arathi Highlands,59.8,27.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
-    .turnin 94789 >> Turn in Call of Air
-    -- .accept 96264 >> Accept Elemental Aid
-    .target Veyric Thunderhame
-step << Shaman
-    .hs >> Astral Recall back to Ironforge
 step << Rogue
     .goto 1455,51.6,14.8
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hulfdan Blackbeard|r

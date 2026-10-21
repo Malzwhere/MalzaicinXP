@@ -607,7 +607,6 @@ step
     .complete 6,1 --Collect Garrick's Head (x1)
     .mob Garrick Padfoot
 step
-    #requires CuttyNote << Rogue --Season 2
     #optional
     #loop
     .goto 1429/0,-288.51,-9068.87,0

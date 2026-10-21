@@ -1252,3 +1252,587 @@ step
     .fly Wetlands >> Fly to Menethil Harbor
     .target Gryth Thurden
 ]])
+
+
+RXPGuides.RegisterGuide([[
+#forever
+#version 1
+<< Alliance
+#group MalzaicinXP Forever Duo Guide
+#subgroup Cap/Malz Duo Catchup XP
+--#groupid RXP-SRGCE-A1
+#name 38-38 Desolace
+#next 38-39 Dustwallow Marsh
+-- #defaultfor Dwarf/Gnome/Human
+
+
+step
+    #optional
+    #completewith next
+    .goto 1453,41.882,49.433,20 >> Go to Stormwind Harbor
+step
+    .goto 1453,22.559,56.108
+    .zone 1439 >> Take the boat to Darkshore
+step
+    .goto 1439/1,561.66,6343.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caylais Moonfeather|r
+    .fly Stonetalon >> Fly to Stonetalon Mountains
+    .target Caylais Moonfeather
+step
+    #map Stonetalon Mountains
+    #completewith next
+    .goto Desolace,53.958,3.436
+    .zone Desolace >> Travel to Desolace
+step
+    .goto Desolace,67.28,15.00,40 >> Travel to the path leading to Nijel's Point in Desolace
+step
+    .goto Desolace,66.44,11.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vahlarriel Demonslayer|r
+    .accept 1437 >> Accept Vahlarriel's Search
+    .target Vahlarriel Demonslayer
+step
+    .goto Desolace,64.66,10.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baritanas Skyriver|r
+    .fp Desolace >> Get the Desolace Flight Path
+    .target Baritanas Skyriver
+step
+    #label DesolaceArrive
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Lyshaerya|r
+    .goto Desolace,66.275,6.554
+    .home >> Set your Hearthstone to Nijel's Point
+    .target Innkeeper Lyshaerya
+step
+    .goto Desolace,66.519,7.907
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Anton|r
+    .accept 261 >> Accept Down the Scarlet Path
+    .target Brother Anton
+-- step
+--     .goto Desolace,66.201,9.626
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kreldig Ungor|r
+--     .turnin 1453 >> Turn in Reclaimers' Business in Desolace
+--     .accept 1458 >> Accept Reagents for Reclaimers Inc.
+--     .accept 1454 >> Accept The Karnitol Shipwreck
+--     .target Kreldig Ungor
+step
+    .goto Desolace,66.74,10.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corporal Melkins|r and |cRXP_FRIENDLY_Captain Pentigast|r
+    .accept 1387 >> Accept Centaur Bounty
+    .goto Desolace,66.743,10.872
+    .accept 1382 >> Accept Strange Alliance
+    .goto Desolace,66.665,10.933
+    .target Corporal Melkins
+    .target Captain Pentigast
+-- step
+--     .goto Desolace,72.96,18.47,70,0
+--     .goto Desolace,79.45,17.65,70,0
+--     .goto Desolace,78.09,22.50,70,0
+--     .goto Desolace,76.32,25.08,70,0
+--     .goto Desolace,73.96,22.05,70,0
+--     .goto Desolace,72.51,17.93
+--     >>Kill |cRXP_ENEMY_Hatefury Satyrs|r. Loot them for their |cRXP_LOOT_Claws|r and |cRXP_LOOT_Horns|r
+--     .complete 1458,1 
+--     .complete 1458,2 
+--     .mob Hatefury Trickster
+--     .mob Hatefury Shadowstalker
+--     .mob Hatefury Hellcaller
+--     .mob Hatefury Betrayer
+-- step
+--     .isQuestComplete 1458
+--     .goto Desolace,66.201,9.626
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kreldig Ungor|r
+--     .turnin 1458 >> Turn in Reagents for Reclaimers Inc.
+--     .accept 1459 >> Accept Reagents for Reclaimers Inc.
+--     .target Kreldig Ungor
+-- step
+--     #completewith ReagentsOne
+--     >>Kill |cRXP_ENEMY_Scorpashi Snappers|r and |cRXP_ENEMY_Scorpashi Lashers|r. Loot them for their |cRXP_LOOT_Venom|r
+--     >>Kill |cRXP_ENEMY_Aged Kodos|r. Loot them for their |cRXP_LOOT_Hides|r
+--     >>|cRXP_WARN_You may need to kill |cRXP_ENEMY_Gritjaw Basilisks|r to force |cRXP_ENEMY_Scorpashi Snappers|r and |cRXP_ENEMY_Scorpashi Lashers|r to spawn|r
+--     .complete 1459,1 
+--     .complete 1459,2 
+--     .mob Scorpashi Snapper
+--     .mob Scorpashi Lasher
+--     .mob Aged Kodo
+step
+    .goto Desolace,56.522,17.844
+    >>Click the |cRXP_PICK_Malem Chest|r on the ground
+    .turnin 1437 >> Turn in Vahlarriel's Search
+    .accept 1465 >> Accept Vahlarriel's Search
+step
+    .goto Desolace,66.44,11.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vahlarriel Demonslayer|r
+    .turnin 1465 >> Turn in Vahlarriel's Search
+    .accept 1438 >> Accept Vahlarriel's Search
+    .target Vahlarriel Demonslayer
+step
+    #completewith next
+    >> This is sharable
+    .goto Desolace,39.295,28.839,50,0
+    .goto Desolace,38.884,27.162
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Azore Aldamort|r
+    .accept 5741 >> Accept Sceptre of Light
+    .target Azore Aldamort
+-- step
+--     .goto Desolace,36.111,30.451
+--     >>Click |cRXP_PICK_Karnitol's Chest|r on the ground
+--     .turnin 1454 >> Turn in The Karnitol Shipwreck
+--     .accept 1455 >> Accept The Karnitol Shipwreck
+-- step
+--     .goto Desolace,36.111,30.451
+--     >>Click |cRXP_PICK_Karnitol's Chest|r on the ground
+--     .turnin 1454 >> Turn in The Karnitol Shipwreck
+--     .accept 1455 >> Accept The Karnitol Shipwreck
+-- step
+--     #label ReagentsOne
+--     .goto Desolace,36.069,30.407
+--     >>Click |cRXP_PICK_Rackmore's Log|r on the small barrel
+--     .accept 6161 >> Accept Claim Rackmore's Treasure!
+-- step
+--     .goto Desolace,31.4,28.2,70,0
+--     .goto Desolace,34.2,32.6,70,0
+--     .goto Desolace,30.6,34.6,70,0
+--     .goto Desolace,33.2,31.6
+--     >>Kill |cRXP_ENEMY_Drysnap Pincers|r and |cRXP_ENEMY_Drysnap Crawlers|r. Loot them for |cRXP_LOOT_Rackmore's Silver Key|r
+--     >>|cRXP_WARN_Buff yourself with|r |T136148:0|t[Underwater Breathing] << Warlock
+--     >>Use an |T134797:0|t[Elixir of Water Breathing] if you have one << !Warlock
+--     .use 5996 
+--     .complete 6161,1 
+--     .mob Drysnap Pincer
+--     .mob Drysnap Crawler
+-- step
+--     .goto Desolace,31.4,28.2,70,0
+--     .goto Desolace,34.2,32.6,70,0
+--     .goto Desolace,30.6,34.6,70,0
+--     .goto Desolace,33.2,31.6
+--     >>Kill |cRXP_ENEMY_Drysnap Pincers|r and |cRXP_ENEMY_Drysnap Crawlers|r. Loot them for |cRXP_LOOT_Rackmore's Silver Key|r
+--     >>|cRXP_WARN_Buff yourself with|r |T136148:0|t[Underwater Breathing] << Warlock
+--     >>Use an |T134797:0|t[Elixir of Water Breathing] if you have one << !Warlock
+--     .use 5996 
+--     .complete 6161,1 
+--     .mob Drysnap Pincer
+--     .mob Drysnap Crawler
+-- step
+--     #completewith next
+--     .hs >> Hearth to Nijel's Point
+--     >>|cRXP_BUY_Buy food/water if needed|r
+--     .cooldown item,6948,>0,1
+-- step
+--     #completewith next
+--     .subzone 608 >> Travel to Nijel's Point
+-- step
+--     .goto Desolace,66.201,9.626
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kreldig Ungor|r
+--     .turnin 1455 >> Turn in The Karnitol Shipwreck
+--     .accept 1456 >> Accept The Karnitol Shipwreck
+--     .target Kreldig Ungor
+-- step
+--     .goto Desolace,66.201,9.626
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kreldig Ungor|r
+--     .turnin 1455 >> Turn in The Karnitol Shipwreck
+--     .accept 1456 >> Accept The Karnitol Shipwreck
+--     .target Kreldig Ungor
+-- step
+--     #completewith ReagentsTwo
+--     >>Kill |cRXP_ENEMY_Scorpashi Snappers|r and |cRXP_ENEMY_Scorpashi Lashers|r. Loot them for their |cRXP_LOOT_Venom|r
+--     >>Kill |cRXP_ENEMY_Aged Kodos|r. Loot them for their |cRXP_LOOT_Hides|r
+--     >>|cRXP_WARN_You may need to kill |cRXP_ENEMY_Gritjaw Basilisks|r to force |cRXP_ENEMY_Scorpashi Snappers|r and |cRXP_ENEMY_Scorpashi Lashers|r to spawn|r
+--     .complete 1459,1 
+--     .complete 1459,2 
+--     .mob Scorpashi Snapper
+--     .mob Scorpashi Lasher
+--     .mob Aged Kodo
+step
+    #completewith next
+    .goto Desolace,55.75,28.88,110 >> Travel to Thunder Axe Fortress
+step
+    .isOnQuest 5741
+    .goto Desolace,55.170,30.149
+    >>Ascend the Watchtower
+    >>Kill the |cRXP_ENEMY_Burning Blade Seer|r atop the Tower. Loot it for the |cRXP_LOOT_Sceptre|r
+    >>|cRXP_WARN_There may only ever be 1 |cRXP_ENEMY_Burning Blade Seer|r. You may need to wait for a respawn|r
+    .complete 5741,1 
+    .mob Burning Blade Seer
+step
+    #completewith next
+    #label ReagentsTwo
+    .goto Desolace,55.31,27.45,25 >> Enter the main Fortress
+step
+    .goto Desolace,54.859,26.125
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalinda Malem|r
+    .turnin 1438 >> Turn in Vahlarriel's Search
+    .accept 1439 >> Accept Search for Tyranis
+    .target Dalinda Malem
+step
+    #completewith next
+    .goto Desolace,53.32,29.18,25 >> Enter the secondary Fortress
+step
+    >>Kill |cRXP_ENEMY_Tyranis Malem|r. Loot him for his |cRXP_LOOT_Pendant|r
+    .goto Desolace,53.008,29.078
+    .complete 1439,1 
+    .mob Tyranis Malem
+step
+    #completewith next
+    .goto Desolace,55.31,27.45,25 >> Travel back towards |cRXP_FRIENDLY_Dalinda Malem|r
+step
+    #completewith next
+    .goto Desolace,54.859,26.125
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalinda Malem|r
+    .turnin 1439 >> Turn in Search for Tyranis
+    .target Dalinda Malem
+step
+    .goto Desolace,54.859,26.125
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalinda Malem|r
+    >>|cRXP_WARN_This will start an escort quest|r
+    .accept 1440,1 >> Accept Return to Vahlarriel
+    .target Dalinda Malem
+step
+    .goto Desolace,58.26,30.94
+    >>Safely exit Thunder Axe Fortress with |cRXP_FRIENDLY_Dalinda Malem|r
+    .complete 1440,1 
+    .target Dalinda Malem
+-- step
+--     #completewith ReagentsThree
+--     >>Kill |cRXP_ENEMY_Scorpashi Snappers|r and |cRXP_ENEMY_Scorpashi Lashers|r. Loot them for their |cRXP_LOOT_Venom|r
+--     >>Kill |cRXP_ENEMY_Aged Kodos|r. Loot them for their |cRXP_LOOT_Hides|r
+--     >>|cRXP_WARN_You may need to kill |cRXP_ENEMY_Gritjaw Basilisks|r to force |cRXP_ENEMY_Scorpashi Snappers|r and |cRXP_ENEMY_Scorpashi Lashers|r to spawn|r
+--     .complete 1459,1 
+--     .complete 1459,2 
+--     .mob Scorpashi Snapper
+--     .mob Scorpashi Lasher
+--     .mob Aged Kodo
+step
+    .goto Desolace,62.314,38.965
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bibbly F'utzbuckle|r
+    .accept 5501 >> Accept Bone Collector
+    .target Bibbly F'utzbuckle
+-- step
+--     #optional
+--     .goto Desolace,60.863,61.859
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smeed Scrabblescrew|r
+--     .accept 5561 >> Accept Kodo Roundup
+--     .target Smeed Scrabblescrew
+--     .xp 36,1
+step
+    .goto Desolace,68.8,71.2,75,0
+    .goto Desolace,65.2,75.6,75,0
+    .goto Desolace,70.0,81.0,75,0
+    .goto Desolace,70.0,74.6,75,0
+    .goto Desolace,73.8,65.8,75,0
+    .goto Desolace,69.4,73.4
+    >>Kill |cRXP_ENEMY_Magram Centaurs|r. Loot them for their |cRXP_LOOT_Ears|r
+    >>|cRXP_WARN_Continue killing |cRXP_ENEMY_Magram Centaurs|r until you've reached |cRXP_FRIENDLY_Friendly|r reputation standing with Gelkis Clan Centaur|r
+    >>Ears have no followup, if drops are bad leave after friendly
+    .complete 1387,1 
+    .complete 1382,1 
+    .mob Magram Marauder
+    .mob Magram Mauler
+    .mob Magram Outrunner
+    .mob Magram Pack Runner
+    .mob Magram Scout
+    .mob Magram Stormer
+    .mob Magram Windchaser
+    .mob Magram Wrangler
+-- step
+--     #sticky
+--     #completewith KodoBones
+--     #label KodoTaming
+--     .isOnQuest 5561
+--     .goto Desolace,51.668,58.244
+--     .goto Desolace,60.863,61.859,0
+--     .use 13892 >>|cRXP_WARN_Use the|r |T132488:0|t[Kodo Kombobulator] |cRXP_WARN_on |cRXP_ENEMY_Ancient Kodos|r and |cRXP_ENEMY_Dying Kodos|r. Take them back to|r |cRXP_FRIENDLY_Smeed|r
+--     >>|cRXP_WARN_You may only take 1 |cRXP_FRIENDLY_Tamed Kodo|r back at a time|r
+--     >>While you can't have more than one tamed kodo following you at the time it's possible to use the item in combat as long as you dont take damage. |cRXP_WARN_You can try kiting multiple at a time and have your pet hold aggro while you tame them next to the quest giver|r << Warlock/Hunter
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_WARN_Talk to the |cRXP_FRIENDLY_Tamed Kodo|r once you've taken it back to|r |cRXP_FRIENDLY_Smeed|r
+--     .skipgossip
+--     .complete 5561,1 
+--     .target Tamed Kodo
+--     .mob Ancient Kodo
+--     .mob Dying Kodo
+--     .xp 36,1
+-- step
+--     #sticky
+--     #requires KodoTaming
+--     #completewith KodoBones
+--     .isQuestComplete 5561
+--     .goto Desolace,60.863,61.859
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smeed Scrabblescrew|r
+--     .turnin 5561 >> Turn in Kodo Roundup
+--     .target Smeed Scrabblescrew
+step
+    #label KodoBones
+    .goto Desolace,52.50,58.56
+    >>Loot |cRXP_LOOT_Kodo Bones|r around the graveyard
+    >>|cRXP_WARN_Looting them may cause |cRXP_ENEMY_Kodo Apparitions|r to spawn. |cRXP_ENEMY_Kodo Apparitions|r do not drop|r |cRXP_LOOT_Kodo Bones|r
+    .complete 5501,1 
+-- step
+--     .isOnQuest 5561
+--     .goto Desolace,51.668,58.244
+--     .goto Desolace,60.863,61.859,0
+--     .use 13892 >>|cRXP_WARN_Use the|r |T132488:0|t[Kodo Kombobulator] |cRXP_WARN_on |cRXP_ENEMY_Ancient Kodos|r and |cRXP_ENEMY_Dying Kodos|r. Take them back to|r |cRXP_FRIENDLY_Smeed|r
+--     >>|cRXP_WARN_You may only take 1 |cRXP_FRIENDLY_Tamed Kodo|r back at a time|r
+--     >>While you can't have more than one tamed kodo following you at the time it's possible to use the item in combat as long as you dont take damage. |cRXP_WARN_You can try kiting multiple at a time and have your pet hold aggro while you tame them next to the quest giver|r << Warlock/Hunter
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_WARN_Talk to the |cRXP_FRIENDLY_Tamed Kodo|r once you've taken it back to|r |cRXP_FRIENDLY_Smeed|r
+--     .skipgossip
+--     .complete 5561,1 
+--     .target Tamed Kodo
+--     .mob Ancient Kodo
+--     .mob Dying Kodo
+--     .maxlevel 36
+-- step
+--     #sticky
+--     #requires KodoBones
+--     .isQuestComplete 5561
+--     .goto Desolace,60.863,61.859
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smeed Scrabblescrew|r
+--     .turnin 5561 >> Turn in Kodo Roundup
+--     .target Smeed Scrabblescrew
+step
+    >> This chain unlocks the new centaur quests around honored
+    .goto Desolace,36.234,79.245
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uthek the Wise|r
+    .turnin 1382 >> Turn in Strange Alliance
+    .accept 1384 >> Accept Raid on the Kolkar
+    .target Uthek the Wise
+step
+    .goto Desolace,70.0,41.6,70,0
+    .goto Desolace,73.6,44.6,70,0
+    .goto Desolace,70.2,47.2,70,0
+    .goto Desolace,73.4,51.5,70,0
+    .goto Desolace,71.6,45.6
+    >>Kill the |cRXP_ENEMY_Kolkar|r. Loot them for their |cRXP_LOOT_Charms|r
+    .complete 1384,1 
+    .mob Kolkar Centaur
+    .mob Kolkar Scout
+    .mob Kolkar Windchaser
+    .mob Kolkar Mauler
+    .mob Kolkar Destroyer
+    .mob Kolkar Battle Lord
+    .mob Kolkar Waylayer
+    .mob Kolkar Ambusher
+step
+    .goto Desolace,36.234,79.245
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uthek the Wise|r
+    .turnin 1384 >> Turn in Raid on the Kolkar
+    .accept 1370 >> Accept Stealing Supplies
+    .target Uthek the Wise
+step
+    .goto Desolace,66.5,80.5,50,0
+    .goto Desolace,70.9,75.5,50,0
+    .goto Desolace,72.5,78.6,50,0
+    .goto Desolace,74.1,72.7,50,0
+    .goto Desolace,66.5,80.5,50,0
+    .goto Desolace,70.9,75.5,50,0
+    .goto Desolace,72.5,78.6,50,0
+    .goto Desolace,74.1,72.7,50,0
+    .goto Desolace,70.9,75.5
+    >>Open the |cRXP_PICK_Sacks of Meat|r. Loot them for the |cRXP_LOOT_Crudely Dried Meats|r
+    .complete 1370,1 
+step
+    .goto Desolace,36.234,79.245
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uthek the Wise|r
+    .turnin 1370 >> Turn in Stealing Supplies
+    .accept 1373 >> Accept Ongeku
+    .target Uthek the Wise
+step
+    #label ReagentsThree
+    .goto Desolace,62.32,38.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bibbly F'utzbuckle|r
+    .turnin 5501 >> Turn in Bone Collector
+    .target Bibbly F'utzbuckle
+-- step
+--     .isOnQuest 1459
+--     >>Kill |cRXP_ENEMY_Scorpashi Snappers|r, |cRXP_ENEMY_Scorpashi Lashers|r and |cRXP_ENEMY_Scorpashi Venomlashs|r. Loot them for their |cRXP_LOOT_Venom|r
+--     >>Kill |cRXP_ENEMY_Aged Kodos|r. Loot them for their |cRXP_LOOT_Aged Kodo Hides|r
+--     >>|cRXP_WARN_You may need to kill |cRXP_ENEMY_Gritjaw Basilisks|r to force |cRXP_ENEMY_Scorpashi Snappers|r and |cRXP_ENEMY_Scorpashi Lashers|r to spawn|r
+--     >>|cRXP_WARN_You must complete this step now|r
+--     .complete 1459,1 
+--     .goto Desolace,70.4,63.0,80,0
+--     .goto Desolace,58.6,50.0,80,0
+--     .goto Desolace,41.4,48.2,80,0
+--     .goto Desolace,43.6,75.2
+--     .complete 1459,2 
+--     .goto Desolace,52.19,57.50,70,0
+--     .goto Desolace,62.13,60.65,70,0
+--     .goto Desolace,63.86,68.83,70,0
+--     .goto Desolace,52.19,57.50
+--     .mob Scorpashi Snapper
+--     .mob Scorpashi Lasher
+--     .mob Scorpashi Venomlash
+--     .mob Aged Kodo
+step
+    #label ReagentsFour
+    .goto Desolace,38.884,27.162
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Azore Aldamort|r
+    .turnin 5741 >> Turn in Sceptre of Light
+    .target Azore Aldamort
+-- step
+--     .goto Desolace,38.884,27.162
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Azore Aldamort|r
+--     .accept 6027 >> Accept Book of the Ancients
+--     .target Azore Aldamort
+--     .maxlevel 37
+-- step
+--     .isOnQuest 6161
+--     #completewith BookofAncients
+--     >>Kill the |cRXP_ENEMY_Slitherblades|r. Loot them for |cRXP_LOOT_Rackmore's Golden Key|r
+--     .complete 6161,2 
+--     .mob Slitherblade Sea Witch
+--     .mob Slitherblade Tidehunter
+--     .mob Slitherblade Naga
+--     .mob Slitherblade Sorceress
+--     .mob Slitherblade Myrmidon
+--     .mob Slitherblade Oracle
+--     .mob Slitherblade Razortail
+-- step
+--     .isOnQuest 1456
+--     #completewith BookofAncients
+--     >>Kill |cRXP_ENEMY_Slitherblade Tidehunters|r and |cRXP_ENEMY_Slitherblade Sea Witches|r. Loot them for |cRXP_LOOT_Karnitol's Satchel|r
+--     .complete 1456,1 
+--     .mob Slitherblade Tidehunter
+--     .mob Slitherblade Sea Witch
+-- step
+--     .isOnQuest 6027
+--     #label BookofAncients
+--     .goto Desolace,28.250,6.670
+--     >>Click the |cRXP_PICK_Serpent Statue|r to summon |cRXP_ENEMY_Lord Kragaru|r
+--     >>Kill |cRXP_ENEMY_Lord Kragaru|r. Loot him for the |cRXP_LOOT_Book of the Ancients|r
+--     .complete 6027,1 
+--     .mob Lord Kragaru
+-- step
+--     .isOnQuest 6161
+--     #completewith next
+--     >>Kill the |cRXP_ENEMY_Slitherblades|r. Loot them for |cRXP_LOOT_Rackmore's Golden Key|r
+--     .complete 6161,2 
+--     .mob Slitherblade Sea Witch
+--     .mob Slitherblade Tidehunter
+--     .mob Slitherblade Naga
+--     .mob Slitherblade Sorceress
+--     .mob Slitherblade Myrmidon
+--     .mob Slitherblade Oracle
+--     .mob Slitherblade Razortail
+-- step
+--     .isOnQuest 1456
+--     .goto Desolace,28.06,10.86,70,0
+--     .goto Desolace,30.87,8.41,70,0
+--     .goto Desolace,30.6,15.8,70,0
+--     .goto Desolace,33.2,10.6,70,0
+--     .goto Desolace,30.8,8.0
+--     >>Kill |cRXP_ENEMY_Slitherblade Tidehunters|r and |cRXP_ENEMY_Slitherblade Sea Witches|r. Loot them for |cRXP_LOOT_Karnitol's Satchel|r
+--     >>|cRXP_WARN_You may also find |cRXP_ENEMY_Slitherblade Tidehunters|r and |cRXP_ENEMY_Slitherblade Sea Witches|r in the water|r
+--     .complete 1456,1 
+--     .mob Slitherblade Tidehunter
+--     .mob Slitherblade Sea Witch
+-- step
+--     .isOnQuest 6161
+--     .goto Desolace,28.06,10.86,70,0
+--     .goto Desolace,30.87,8.41,70,0
+--     .goto Desolace,30.6,15.8,70,0
+--     .goto Desolace,33.2,10.6,70,0
+--     .goto Desolace,30.8,8.0
+--     >>Kill the |cRXP_ENEMY_Slitherblades|r. Loot them for |cRXP_LOOT_Rackmore's Golden Key|r
+--     .complete 6161,2 
+--     .mob Slitherblade Sea Witch
+--     .mob Slitherblade Tidehunter
+--     .mob Slitherblade Naga
+--     .mob Slitherblade Sorceress
+--     .mob Slitherblade Myrmidon
+--     .mob Slitherblade Oracle
+--     .mob Slitherblade Razortail
+-- step
+--     >>Click |cRXP_PICK_Rackmore's Chest|r on the ground
+--     .goto Desolace,30.005,8.706
+--     .turnin 6161 >>Turn in Claim Rackmore's Treasure!
+-- step
+--     .goto Desolace,38.884,27.162
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Azore Aldamort|r
+--     .turnin 6027 >>Turn in Book of the Ancients
+--     .target Azore Aldamort
+-- step
+--     #completewith next
+--     .hs >> Hearth to Nijel's Point
+--     >>|cRXP_BUY_Buy food/water if needed|r
+--     .cooldown item,6948,>0,1
+-- step
+--     .subzone 608 >> Travel to Nijel's Point
+-- step
+--     .isQuestTurnedIn 1455
+--     .goto Desolace,66.201,9.626
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kreldig Ungor|r
+--     .turnin 1456 >> Turn in The Karnitol Shipwreck
+--     .accept 1457 >> Accept The Karnitol Shipwreck
+--     .target Kreldig Ungor
+-- step
+--     #label ReagentsforReclaimersIncB
+--     .goto Desolace,66.201,9.626
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kreldig Ungor|r
+--     .turnin -1459 >> Turn in Reagents for Reclaimers Inc.
+--     .target Kreldig Ungor
+-- step
+--     .goto Desolace,66.201,9.626
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kreldig Ungor|r
+--     .isQuestTurnedIn 1459
+--     .accept 1466 >> Accept Reagents for Reclaimers Inc.
+--     .target Kreldig Ungor
+step
+    .goto Desolace,66.743,10.872
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corporal Melkins|r
+    .turnin 1387 >> Turn in Centaur Bounty
+    .target Corporal Melkins
+step
+    .goto Desolace,66.44,11.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vahlarriel Demonslayer|r
+    .turnin 1440 >> Turn in Return to Vahlarriel
+    .target Vahlarriel Demonslayer
+-- step
+--     .isOnQuest 1466
+--     .goto Desolace,51.72,83.92,0
+--     >>Kill |cRXP_ENEMY_Ley Hunters|r, |cRXP_ENEMY_Mana Eaters|r and |cRXP_ENEMY_Mage Hunters|r. Loot them for their |cRXP_LOOT_Brains|r
+--     >>Kill |cRXP_ENEMY_Nether Sisters|r, |cRXP_ENEMY_Nether Maidens|r and |cRXP_ENEMY_Nether Sorceresses|r. Loot them for their |cRXP_LOOT_Wings|r
+--     >>Kill |cRXP_ENEMY_Doomwarder Captains|r. Loot them for their |cRXP_LOOT_Blood|r
+--     >>|cRXP_WARN_Prioritize |cRXP_ENEMY_Doomwarder Captains|r as you may need to wait for their respawns. Regular |cRXP_ENEMY_Doomwarders|r do not drop |cRXP_LOOT_Blood|r. You could also ask someone to invite you so you change layers|r
+--     .complete 1466,1 
+--     .goto Desolace,50.6,81.6,70,0
+--     .goto Desolace,51.6,85.8,70,0
+--     .goto Desolace,53.6,84.6,70,0
+--     .goto Desolace,53.6,77.6,70,0
+--     .goto Desolace,56.6,75.6,70,0
+--     .goto Desolace,53.0,68.6,70,0
+--     .goto Desolace,53.6,77.6
+--     .complete 1466,2 
+--     .goto Desolace,54.6,78.2,70,0
+--     .goto Desolace,50.6,71.6,70,0
+--     .goto Desolace,48.8,77.6,70,0
+--     .goto Desolace,54.6,78.2,70,0
+--     .goto Desolace,50.6,71.6,70,0
+--     .goto Desolace,48.8,77.6
+--     .complete 1466,3 
+--     .goto Desolace,51.72,83.92
+--     .mob Ley Hunter
+--     .mob Mana Eater
+--     .mob Mage Hunter
+--     .mob Nether Sister
+--     .mob Nether Maiden
+--     .mob Nether Sorceress
+--     .mob Doomwarder Captain
+-- step
+--     .isQuestComplete 1466
+--     .goto Desolace,66.20,9.62
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kreldig Ungor|r
+--     .turnin 1466 >> Turn in Reagents for Reclaimers Inc.
+--     .accept 1467 >> Accept Reagents for Reclaimers Inc.
+--     .target Kreldig Ungor
+
+-- step
+--     .goto Ironforge,67.91,17.50,25,0
+--     .goto Ironforge,69.93,21.25
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Roetten Stonehammer|r
+--     .turnin 1457 >> Turn in The Karnitol Shipwreck
+--     .accept -1467 >> Turnin Reagents for Reclaimers Inc.
+--     .target Roetten Stonehammer
+--     .isOnQuest 1457
+step
+    .goto Desolace,64.66,10.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baritanas Skyriver|r
+    .fly Theramore >> Fly to Theramore
+    .target Baritanas Skyriver
+]])

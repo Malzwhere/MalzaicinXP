@@ -1788,6 +1788,7 @@ step
     .goto 1439,48.5,12.3
     >>Kill |cRXP_ENEMY_Stormscale Beastmistress|r and loot her for her |cRXP_LOOT_Rod of Deep Dominion|r
     .complete 87760,1
+    .mob Stormscale Beastmistress
 step
     .goto 1439/1,-699.48,7591.87,45,0
     .goto 1439/1,-579.61,7505.41,45,0

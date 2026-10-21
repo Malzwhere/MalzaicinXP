@@ -16,24 +16,7 @@ RXPGuides.RegisterGuide([[
 #defaultfor Dwarf/Gnome/Human
 
 
-step << !Warlock
-    #optional
-    #completewith next
-    .goto 1453,41.882,49.433,20 >> Go to Stormwind Harbor
-step << !Warlock
-    .goto 1453,22.559,56.108
-    .zone 1439 >> Take the boat to Darkshore
-step << !Warlock
-    .goto 1439/1,561.66,6343.27
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caylais Moonfeather|r
-    .fly Desolace >> Fly to Desolace
-    .target Caylais Moonfeather
-step << Warlock
-    .goto 1453/0,490.03,-8835.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
-    .fly Booty Bay >> Fly to Booty Bay
-    .target Dungar Longdrink
-step << Warlock
+step
     .zone The Barrens >> Take the boat to Ratchet
 step << Warlock
     .goto The Barrens,62.627,35.500
@@ -42,7 +25,7 @@ step << Warlock
     .accept 4490 >> Accept Summon Felsteed
     .turnin 4490 >> Turn in Summon Felsteed
     .target Strahad Farsan
-step << Warlock
+step
     .goto The Barrens,63.084,37.163
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r
     .fly Desolace >> Fly to Desolace
@@ -289,6 +272,18 @@ step
     .fly Southshore >> Fly to Southshore
     .target Gryth Thurden
 step
+    .goto Hillsbrad Foothills,50.570,57.093
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loremaster Dibbs|r
+    .turnin 95786 >> Turn in An Acquaintance in Southshore
+    .accept 95787 >> Accept Take Two With Water
+    .accept 95788 >> Accept Magics of the Drowned City
+    .target Loremaster Dibbs
+step
+    .goto Hillsbrad Foothills,48.2,59.3
+    .target Magistrate Henry Maleb
+    >>Talk to |cRXP_FRIENDLY_Magistrate Henry Maleb|r
+    .turnin 525 >> Turn in Further Mysteries
+step
     .goto Hillsbrad Foothills,51.4,58.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raleigh the Devout|r
     .target Raleigh the Devout
@@ -307,6 +302,42 @@ step
     .accept 603 >> Accept Ansirem's Key
     .target Archmage Ansirem Runeweaver
 step
+    .goto The Hinterlands,6.23,61.87
+    .zone The Hinterlands >> Travel to The Hinterlands
+step
+    .goto The Hinterlands,11.806,46.755
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falstad Wildhammer|r
+    .turnin 1449 >> Turn in To The Hinterlands
+    .accept 1450 >> Accept Gryphon Master Talonaxe
+    .target Falstad Wildhammer
+    .isOnQuest 1449
+step
+    .goto The Hinterlands,9.752,44.473
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryphon Master Talonaxe|r
+    .turnin 1450 >> Turn in Gryphon Master Talonaxe
+    .accept 1451 >> Accept Rhapsody Shindigger
+    .target Gryphon Master Talonaxe
+    .isOnQuest 1450
+step
+    #completewith next
+    .goto The Hinterlands,26.943,48.588
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rhapsody Shindigger|r
+    .turnin 1451 >> Turn in Rhapsody Shindigger
+    .target Rhapsody Shindigger
+    .isOnQuest 1451
+step
+    .goto The Hinterlands,26.943,48.588
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rhapsody Shindigger|r
+    .accept 1452 >> Accept Rhapsody's Kalimdor Kocktail
+    .target Rhapsody Shindigger
+    .isQuestTurnedIn 1451
+step
+    .goto The Hinterlands,11.071,46.153
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guthrum Thunderfist|r
+    .fp Hinterlands >> Get The Hinterlands Flight Path
+    .target Guthrum Thunderfist
+step
+    --TURNIN BLOCK
     +Complete Scarlet Monastery
     .complete 96800,1
     .complete 1050,1
@@ -1140,6 +1171,11 @@ step
     .mob Bloodsail Raider
     .mob Bloodsail Warlock
 step
+    #completewith next
+    .use 4056
+    >>Loot the riddle from the bottom of the pirate ships, it will respawn instantly on a different ship
+    .accept 624 >> Accept Cortello's Riddle
+step
     #label BloodsailOne
     .goto Stranglethorn Vale,31.76,79.45,100,0
     .goto Stranglethorn Vale,29.56,81.51,75,0
@@ -1234,21 +1270,21 @@ step
     .mob Zanzil Zombie
     .mob Zanzil Hunter
     .mob Zanzil Naga
-step
-    .goto Stranglethorn Vale,28.41,46.88,0
-    .goto Stranglethorn Vale,31.12,43.17,0
-    .goto Stranglethorn Vale,28.41,46.88,55,0
-    .goto Stranglethorn Vale,28.71,43.81,55,0
-    .goto Stranglethorn Vale,31.12,43.17,55,0
-    .goto Stranglethorn Vale,31.76,41.34,55,0
-    .goto Stranglethorn Vale,31.12,43.17,55,0
-    .goto Stranglethorn Vale,28.71,43.81,55,0
-    .goto Stranglethorn Vale,28.41,46.88,55,0
-    .goto Stranglethorn Vale,31.12,43.17
-    >>Kill |cRXP_ENEMY_Tethis|r. Loot him for his |cRXP_LOOT_Talon|r
-    >>|cRXP_ENEMY_Tethis|r |cRXP_WARN_will patrol around in this location|r
-    .complete 197,1 
-    .unitscan Tethis
+-- step
+--     .goto Stranglethorn Vale,28.41,46.88,0
+--     .goto Stranglethorn Vale,31.12,43.17,0
+--     .goto Stranglethorn Vale,28.41,46.88,55,0
+--     .goto Stranglethorn Vale,28.71,43.81,55,0
+--     .goto Stranglethorn Vale,31.12,43.17,55,0
+--     .goto Stranglethorn Vale,31.76,41.34,55,0
+--     .goto Stranglethorn Vale,31.12,43.17,55,0
+--     .goto Stranglethorn Vale,28.71,43.81,55,0
+--     .goto Stranglethorn Vale,28.41,46.88,55,0
+--     .goto Stranglethorn Vale,31.12,43.17
+--     >>Kill |cRXP_ENEMY_Tethis|r. Loot him for his |cRXP_LOOT_Talon|r
+--     >>|cRXP_ENEMY_Tethis|r |cRXP_WARN_will patrol around in this location|r
+--     .complete 197,1 
+--     .unitscan Tethis
 step
     #completewith next
     .goto Stranglethorn Vale,24.957,23.586
@@ -1260,16 +1296,16 @@ step
     >>Kill |cRXP_ENEMY_Gazban|r. Loot him for the |cRXP_LOOT_Stone of the Tides|r
     .complete 611,1 
     .mob Gazban
-step
-    #completewith PagesTurnIn
-    .goto Stranglethorn Vale,35.658,10.808,80 >> Travel to Nesingwary's Expedition
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sir S. J. Erlgadin|r and |cRXP_FRIENDLY_Hemet Nesingwary|r
-    .turnin 78823 >> Turn in Terror of the Desert Skies
-    .turnin 197 >> Turn in Raptor Mastery
-    .accept 208 >> Accept Big Game Hunter
-    .goto Stranglethorn Vale,35.658,10.808
-    .target Hemet Nesingwary
+-- step
+--     #completewith PagesTurnIn
+--     .goto Stranglethorn Vale,35.658,10.808,80 >> Travel to Nesingwary's Expedition
+-- step
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sir S. J. Erlgadin|r and |cRXP_FRIENDLY_Hemet Nesingwary|r
+--     .turnin 78823 >> Turn in Terror of the Desert Skies
+--     .turnin 197 >> Turn in Raptor Mastery
+--     .accept 208 >> Accept Big Game Hunter
+--     .goto Stranglethorn Vale,35.658,10.808
+--     .target Hemet Nesingwary
 step
     #label PagesTurnIn
     .goto Stranglethorn Vale,35.662,10.528
@@ -1287,23 +1323,23 @@ step
     .turnin 342 >> Turn in Chapter IV
     .turnin 338 >> Turn in The Green Hills of Stranglethorn
     .target Barnil Stonepot
-step
-    #optional
-    #completewith next
-    +|cRXP_WARN_Use the|r |T133581:0|t[Flash Bomb] |cRXP_WARN_on |cRXP_ENEMY_King Bangalash|r when he is at 55%|r
-    .itemcount 4852,1
-    .use 4852
-step
-    .goto Stranglethorn Vale,38.20,35.57
-    >>Kill |cRXP_ENEMY_King Bangalash|r. Loot him for the |cRXP_LOOT_Head of Bangalash|r
-    >>|cRXP_ENEMY_King Bangalash|r |cRXP_WARN_will spawn 2 |cRXP_ENEMY_Panthers|r at 50% health. Try to CC him just before 50% if possible so it prevents him from spawning any|r
-    .complete 208,1 
-    .mob King Bangalash
-step
-    .goto Stranglethorn Vale,35.658,10.808
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hemet Nesingwary|r
-    .turnin 208 >> Turn in Big Game Hunter
-    .target Hemet Nesingwary
+-- step
+--     #optional
+--     #completewith next
+--     +|cRXP_WARN_Use the|r |T133581:0|t[Flash Bomb] |cRXP_WARN_on |cRXP_ENEMY_King Bangalash|r when he is at 55%|r
+--     .itemcount 4852,1
+--     .use 4852
+-- step
+--     .goto Stranglethorn Vale,38.20,35.57
+--     >>Kill |cRXP_ENEMY_King Bangalash|r. Loot him for the |cRXP_LOOT_Head of Bangalash|r
+--     >>|cRXP_ENEMY_King Bangalash|r |cRXP_WARN_will spawn 2 |cRXP_ENEMY_Panthers|r at 50% health. Try to CC him just before 50% if possible so it prevents him from spawning any|r
+--     .complete 208,1 
+--     .mob King Bangalash
+-- step
+--     .goto Stranglethorn Vale,35.658,10.808
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hemet Nesingwary|r
+--     .turnin 208 >> Turn in Big Game Hunter
+--     .target Hemet Nesingwary
 step
     +check the north stv camp for quests
 step
@@ -1362,13 +1398,17 @@ step
     .turnin 576 >> Turn in Keep An Eye Out
     .target Dizzy One-Eye
 step
+    .goto Swamp of Sorrows,22.8,48.1
+    >>Travel to Swamp of Sorrows for the riddle step
+    .turnin 624 >> Turn in Cortello's Riddle
+    .accept 625 >> Accept Cortello's Riddle
+step
     .hs >> Hearth to Ironforge
 step << Warlock
     .goto 1455/0,-1117.60,-4615.14,15,0
     .goto 1455/0,-1111.62,-4599.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Briarthorn|r
     .trainer >> Train your class spells
-    .accept 4487 >> Accept Summon Felsteed
     .target Briarthorn
 step << Shaman
     .goto 1455,47.334,13.566
@@ -1521,6 +1561,12 @@ step
     .turnin 17 >> Turn in Uldaman Reagent Run
     .target Ghak Healtouch
 step
+    .goto Hillsbrad Foothills,50.570,57.093
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loremaster Dibbs|r
+    .turnin 95787 >> Turn in Take Two With Water
+    .turnin 95788 >> Turn in Magics of the Drowned City
+    .target Loremaster Dibbs
+step
     #label UldaLoch
     .goto Loch Modan,33.938,50.954
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r
@@ -1555,6 +1601,9 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Advisor Belgrum|r
     .turnin 1139 >> Turn in The Lost Tablets of Will
     .target Advisor Belgrum
+step 
+    .goto Wetlands,5.075,63.408
+    .zone Dustwallow Marsh >> Take the boat to Theramore
 ]])
 
 
@@ -1571,8 +1620,7 @@ RXPGuides.RegisterGuide([[
 
 
 step
-    .zone Tanaris >> Return to Tanaris
-
+    .zone Tanaris >> Return to Tanaris by riverglades boat
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Engineer Bilgewhizzle|r and |cRXP_FRIENDLY_Spigot Operator Luglunket|r
     .accept 1690 >> Accept Wastewander Justice
@@ -1674,8 +1722,22 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bera Stonehammer|r
     .goto Tanaris,51.006,29.345
-    .fly Thalanaar >> Fly to Thalanaar
+    .fly Theramore >> Fly to Theramore
     .target Bera Stonehammer
+step
+    .goto Dustwallow Marsh,31.1,66.1
+    >>Travel through Dustwallow for the riddle step
+    .turnin 625 >> Turn in Cortello's Riddle
+    .accept 626 >> Accept Cortello's Riddle
+step
+    #completewith next
+    .goto Thousand Needles,8.456,17.953,0
+    .goto Feralas,89.50,45.85,50 >> Travel to Thalanaar
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thyssiana|r
+    .goto Feralas,89.497,45.853
+    .fp Thalanaar >> Get the Thalanaar flight path
+    .target Thyssiana
 step
     #completewith next
     .goto Feralas,30.239,43.251
