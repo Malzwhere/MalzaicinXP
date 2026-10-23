@@ -886,6 +886,11 @@ step
     .goto Elwynn Forest,42.140,67.254
     .accept 47 >> Accept Gold Dust Exchange
 step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ma Stonefield|r
+    .accept 88 >> Accept Princess Must Die!
+    .target +Ma Stonefield
+    .goto Elwynn Forest,34.660,84.483
+step
     #completewith next
     >>|cRXP_WARN_Likely won't both complete, don't focus on this|r
     >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for their |cRXP_LOOT_Candles|r and |cRXP_LOOT_Dust|r
@@ -899,10 +904,9 @@ step
     >>|cRXP_WARN_Enter and explore Fargodeep Mine|r
     .complete 62,1 --Scout Through the Fargodeep Mine
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ma Stonefield|r
-    .accept 88 >> Accept Princess Must Die!
-    .target +Ma Stonefield
-    .goto Elwynn Forest,34.660,84.483
+    .goto 1429/0,129.73,-9844.49
+    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .target Spirit Healer
 step
     #completewith next
     .subzone 87 >> Travel to Goldshire
@@ -923,8 +927,8 @@ step
     .target +Thonys Pillarstone
     .train 7411 >> Train |T136244:0|t[Enchanting]
 step
-    .goto 1453,60.972,11.690,30,0
-    .goto 1453,65.933,5.771
+    .goto 1453,68.78,31.20,30,0
+    .goto 1453,68.78,31.20
     .subzone 2257 >>Enter the Deeprun Tram
 step
     .collect 6218,1 -- runed copper rod
@@ -937,9 +941,8 @@ step
 step << Warlock
     .goto 1455,60.340,45.188
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thonys Pillarstone|r
-    .vendor
     .target +Thonys Pillarstone
-    .train 14293
+    .train 14293 >> Learn Lesser Magic Wand
 step << Warlock
     .goto 1455,43.826,27.962
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uthrar Threx|r
@@ -1536,11 +1539,24 @@ step
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
     .mob Rockjaw Skullthumper
 step
+    #completewith next
+    >> Loot the skullthumpers, if the keg drops we can do this quest
+    .use 268548
+    .accept 95213 >> Accept Stolen Blasting Powder
+step
     .goto 1426,69.438,56.700,5,0
     .goto 1426,69.162,56.210,5,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Stonebrow|r
     .target +Foreman Stonebrow
     .turnin 432 >> Turn in Those Blasted Troggs!
+step
+    #optional
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quarrymaster Thesten|r
+    .turnin 95213 >> Turn in Stolen Blasting Powder
+    .accept 95214 >> Accept Stolen Blasting Powder << !Shaman
+    .goto 1426,69.128,54.850
+    .target +Quarrymaster Thesten
+    .isOnQuest 95213
 step
     .goto 1426,70.27,56.95
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
@@ -1548,7 +1564,7 @@ step
 step
     #completewith next
     #sticky
-    >> Make sure to trade money around, ~12 silver cost for shaman and ~4 silver cost for wand users
+    + Make sure to trade money around, ~12 silver cost for shaman and ~4 silver cost for wand users
     >> Loan Coldridge Hammers to the vendor if necessary to get the training
 step << Human
     #label SenirEnd
@@ -1567,11 +1583,6 @@ step << Human
     #completewith next
     .goto 1426,46.952,52.050,8,0
     .goto 1426,47.153,51.939,8 >> Enter the Thunderbrew Distillery
-step << Human
-    .goto 1426/0,-523.35,-5590.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tannok Frosthammer|r
-    .turnin 2160,2 >> Turn in Supplies to Tannok
-    .target Tannok Frosthammer
 step << Human
     .goto 1426/0,-531.23,-5601.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r inside
@@ -1621,7 +1632,7 @@ step << Human
     .accept 5541 >> Accept Ammo for Rumbleshot
     .goto 1426/0,-664.55,-5499.710
     .target +Loslor Rudge
-step
+step << !Human
     #label jetsteamEnd
     .goto 1426/0,-632.15,-5466.540
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Bellowfiz|r
@@ -1641,6 +1652,7 @@ step << Shaman
 step << Shaman
     #requires IFentry
     .goto 1455,39.778,32.911
+    >>|cRXP_WARN_No crafting here! crafting at campfire later|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balthus Stoneflayer|r, |cRXP_FRIENDLY_Bombus Finespindle|r and |cRXP_FRIENDLY_Greta Finespindle|r
     .target +Balthus Stoneflayer
     .vendor
@@ -1710,24 +1722,25 @@ step
     .collect 2886,6,384,1 --Collect Crag Boar Rib (x6)
     .mob Large Crag Boar
     .mob Crag Boar
-step
-    #completewith next
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rejold Barleybrew|r and |cRXP_FRIENDLY_Marleth Barleybrew|r
-    .turnin 318 >> Turn in Evershine
-    .accept 319 >> Accept A Favor for Evershine
-    .goto Dun Morogh,30.190,45.726
-    .target +Rejold Barleybrew
+step << !Human
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gretta Ganter|r, |cRXP_FRIENDLY_Rejold Barleybrew|r, and |cRXP_FRIENDLY_Marleth Barleybrew|r
+    .accept 98326 >> Accept Frosthowl
+    .goto 1426,31.547,44.694,20,0
+    .target +Gretta Ganter
     .accept 310 >> Accept Bitter Rivals
     .goto 1426/0,315.42,-5372.02
     .target +Marleth Barleybrew
-step
-    .goto 1426,31.547,44.694,20,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gretta Ganter|r, |cRXP_FRIENDLY_Rejold Barleybrew|r
-    .target +Gretta Ganter
-    .accept 98326 >> Accept Frosthowl
+    .turnin 318 >> Turn in Evershine
+    .accept 319 >> Accept A Favor for Evershine
     .accept 315 >> Accept The Perfect Stout
     .goto Dun Morogh,30.190,45.726
     .target +Rejold Barleybrew
+step << Human
+    #sticky
+    #completewith BearFur
+    >> These should be shared
+    .accept 98326 >> Accept Frosthowl
+    .accept 315 >> Accept The Perfect Stout
 step << Human
     >> Go left around the mountain not through Kharanos
     .goto 1426,44.084,57.031
@@ -1848,6 +1861,12 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hogral Bakkan|r inside
     .trainer >> Train your class spells
     .target Hogral Bakkan
+step << Human
+    .goto 1426/0,-632.15,-5466.540
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Bellowfiz|r
+    .turnin 317 >> Turn in Stocking Jetsteam
+    .accept 318 >> Accept Evershine
+    .target Pilot Bellowfiz
 step
     .goto 1426/0,-632.15,-5466.540
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Stonegear|r
@@ -2081,16 +2100,19 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ingrid Dunwald|r
     .trainer >> Train your class spells
     .target Ingrid Dunwald
+    .xp <10,1
 step << Paladin
     .goto 1426/0,-542.100,-5586.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Azar Stronghammer|r inside upstairs
     .trainer >> Train your class spells
     .target Azar Stronghammer
+    .xp <10,1
 step << Rogue
     .goto 1426,47.6,52.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hogral Bakkan|r inside
     .trainer >> Train your class spells
     .target Hogral Bakkan
+    .xp <10,1
 step
     .goto 1426/0,-504.05,-5596.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ragnar Thunderbrew|r outside
@@ -2101,12 +2123,14 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gimrizz Shadowcog|r
     .trainer >> Train your class spells
     .target Gimrizz Shadowcog
+    .xp <10,1
 step << Warlock
     .goto 1426/0,-526.11,-5638.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dannie Fizzwizzle|r
     .vendor 6328 >> |cRXP_BUY_Buy the|r |T133738:0|t[Grimoire of Firebolt (Rank 2)] |cRXP_BUY_if you can afford it. If not you can buy it later|r
     .target Gimrizz Shadowcog
     .money <0.100
+    .xp <10,1
 step
     .goto 1426/0,-499.17,-5644.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senir Whitebeard|r
@@ -2153,6 +2177,14 @@ step
     .target +Foreman Stonebrow
 step
     #sticky
+    >>This is a 1 person funnel quest
+    #completewith blastingPowderEnd
+    >>Kill |cRXP_ENEMY_Rockjaw Ambushers|r and loot them for their |cRXP_LOOT_Stolen Blasting Powder|r
+    .complete 95214,1 --Loot 16 stolen blasting powder
+    .mob Rockjaw Ambusher
+    .isOnQuest 95214
+step
+    #sticky
     #label Bonesnappers
     >>Kill |cRXP_ENEMY_Rockjaw Bonesnappers|r
     .complete 433,1 --Kill Rockjaw Bonesnapper (x10)
@@ -2172,17 +2204,22 @@ step
     .mob Dark Iron Spy
 step
     #requires Bonesnappers
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Mehr Stonehallow|r
-    .turnin 433 >> Turn in The Public Servant
-    .goto 1426/0,-1579.96,-5714.73
-    .target +Foreman Stonebrow
-step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quarrymaster Thesten|r
     .turnin 95214 >> Turn in Stolen Blasting Powder
     .goto 1426,69.128,54.850
     .target +Quarrymaster Thesten
-    .isOnQuest 95214
+    .isQuestComplete 95214
+step
+    #label blastingPowderEnd
+    #requires Bonesnappers
+    .abandon 95214 >> Abandon Stolen Blasting Powder
+step
+    #requires Bonesnappers
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Mehr Stonehallow|r
+    .turnin 433 >> Turn in The Public Servant
+    .goto 1426/0,-1579.96,-5714.73
+    .target +Foreman Stonebrow
 step 
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Earthseer Farsen|r
     .turnin 96390 >> Turn in Nip 'Em in the Bud
@@ -2197,6 +2234,7 @@ step
     .goto 1426,70.845,51.784,0
     .goto 1426,73.533,50.850,0
     .goto 1426,75.353,48.533,0
+    >> Reminder to skin for light leather << Shaman
     >>Kill |cRXP_ENEMY_Scarred Crag Boars|r and |cRXP_ENEMY_Elder Crag Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
     .collect 769,10,2178,1,0x20,cooking --Chunk of Boar Meat (1-10)
     .mob Scarred Crag Boar
@@ -2209,6 +2247,7 @@ step
     .goto 1426,70.845,51.784,0
     .goto 1426,73.533,50.850,0
     .goto 1426,75.353,48.533,0
+    >> Reminder to skin for light leather << Shaman
     >>Kill |cRXP_ENEMY_Scarred Crag Boars|r and |cRXP_ENEMY_Elder Crag Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
     >>|cRXP_WARN_Don't go out of your way to farm this now. Simply kill and loot all the boars you're passing by|r
     .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
@@ -2259,6 +2298,10 @@ step
     .target Captain Rugelfuss
     .xp >14,1 << !Warrior !Dwarf/!Paladin
 --XX Skip if 14+ unless warr
+step << Shaman
+    #sticky
+    #completewith flyIF
+    >> |cRXP_WARN_Reminder to skin for light leather in Loch Modan|r
 step
     #optional
     .goto 1432,23.522,70.102,40,0
@@ -2288,16 +2331,15 @@ step
     .target Vidra Hearthstove
     .xp >14,1
 --XX Skip if 14+
-step << Shaman
-    #completewith next
-    >>|cRXP_BUY_Buy a|r |T135435:0|t[Simple Wood] |cRXP_BUY_and a|r |T135237:0|t[Flint and Tinder] |cRXP_BUY_from her|r
-    .collect 4470,10 --Simple Wood (10)
-    .collect 4471,1 --Flint and Tinder (1)
-step 
+step
     .goto 1432/0,-2952.46,-5381.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yanni Stoutheart|r
     .vendor
     .target Yanni Stoutheart
+    >>|cRXP_BUY_Buy |r |T135435:0|t[Simple Wood] |cRXP_BUY_and a|r |T135237:0|t[Flint and Tinder] |cRXP_BUY_from her|r
+    .collect 4470,10 << Shaman --Simple Wood (10)
+    .collect 4470,5 << !Shaman --Simple Wood (5)
+    .collect 4471,1 --Flint and Tinder (1)
 step << !Paladin
     #label ThelsaHS
     .goto 1432/0,-2973.90,-5377.93
@@ -2429,6 +2471,7 @@ step
     .target Thorgrum Borrelson
     .zoneskip Ironforge
 step << Shaman
+    >>|cRXP_WARN_trade linen on the way|r
     .goto 1455,47.334,13.566
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eldun Stormbreaker|r
     -- .accept 971 >> Accept Knowledge in the Deeps (warlock should share but otherwise it's you)
@@ -2648,6 +2691,7 @@ step << Rogue/Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sam Sarsaparilla|r
     >> |cRXP_WARN_craft bandages here to 20 ideally
     .accept 97919 >> Accept Camping 101: First Aid
+    .accept 97917 >> Accept Camping 101: Enchanting << Warlock
     .target Sam Sarsaparilla
 step
     .goto 1429,44.8,63.2
@@ -2686,7 +2730,7 @@ step
     .goto Elwynn Forest,34.660,84.483
     .abandon 47 << Shaman
     .abandon 60 << Shaman
-step
+step << !Shaman
     #completewith next
     >>|cRXP_WARN_Likely won't both complete, don't focus on this|r
     >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for their |cRXP_LOOT_Candles|r and |cRXP_LOOT_Dust|r
@@ -3236,8 +3280,8 @@ step
 step
     #optional
     #completewith next
-    .goto 1432,35.273,47.750,10 >> Exit the Stoutlager Inn
-step << Dwarf/Gnome
+    .goto 1432,35.273,47.750,20 >> Exit the Stoutlager Inn
+step
     .goto 1432,36.506,48.329
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grenhild Darktalon|r
     .accept 86667 >> Accept Snowbound
@@ -3248,6 +3292,10 @@ step << Dwarf/Gnome
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brock Stoneseeker|r
     .turnin 6392 >> Turn in Return to Brock
     .target Brock Stoneseeker
+step << Shaman
+    #sticky
+    #completewith LochModanEnd
+    >> |cRXP_WARN_Reminder to skin for light leather in Loch Modan|r
 step << Shaman
     .goto 1432,21.382,67.957,20,0
     .goto 1426,86.183,51.217,20,0
@@ -3351,7 +3399,6 @@ step
     .mob +Stonesplinter Skullthumper
     .complete 237,2 --Kill Stonesplinter Seers (x10)
     .mob +Stonesplinter Seer
-    .isOnQuest 237
 step
     .goto 1432,29.012,84.454,20,0
     .goto 1432,31.793,86.202

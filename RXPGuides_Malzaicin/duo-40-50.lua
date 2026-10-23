@@ -19,12 +19,33 @@ RXPGuides.RegisterGuide([[
 step
     .zone The Barrens >> Take the boat to Ratchet
 step << Warlock
+    #optional
+    .isOnQuest 4965
+    .goto The Barrens,62.509,35.449
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Menara Voidrender|r
+    .turnin 4965 >> Turn in Knowledge of the Orb of Orahil
+    .target Menara Voidrender
+step << Warlock
+    #optional
+    .isQuestTurnedIn 4965
+    .goto The Barrens,62.509,35.449
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Menara Voidrender|r
+    .accept 1799 >> Accept Fragments of the Orb of Orahil
+    .target Menara Voidrender
+step << Warlock
     .goto The Barrens,62.627,35.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Strahad Farsan|r
     .turnin 4487 >> Turn in Summon Felsteed
     .accept 4490 >> Accept Summon Felsteed
     .turnin 4490 >> Turn in Summon Felsteed
     .target Strahad Farsan
+step << Warlock
+    #optional
+    .isQuestTurnedIn 4965
+    .goto The Barrens,62.641,35.304
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Acolyte Wytula|r
+    .accept 4962 >> Accept Shard of a Felhound
+    .target Acolyte Wytula
 step
     .goto The Barrens,63.084,37.163
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r
@@ -50,6 +71,23 @@ step
     .accept 93034 >> Accept Valley of Bones
     >>You will need to be honored for this step, supposedly there's a repeatable quest if necessary otherwise farm Magram Centaur
     .target Uthek the Wise
+step << Warlock
+    #completewith next
+    >>Kill |cRXP_ENEMY_Burning Blade Summoners|r. Loot them for their |cRXP_LOOT_Infernal Orb|r
+    .complete 1799,1 
+    .mob Burning Blade Summoner
+step << Warlock
+    .goto Desolace,51.72,83.92
+    .use 12647 >>|cRXP_WARN_Channel the|r |T134129:0|t[Felhas Ruby] |cRXP_WARN_on a |cRXP_ENEMY_Ley Hunter|r, |cRXP_ENEMY_Mana Eater|r or |cRXP_ENEMY_Mage Hunter|r as it is about to die|r
+    .complete 4962,1 
+    .mob Ley Hunter
+    .mob Mana Eater
+    .mob Mage Hunter
+step << Warlock
+    .goto Desolace,51.72,83.92
+    >>Kill |cRXP_ENEMY_Burning Blade Summoners|r. Loot them for their |cRXP_LOOT_Infernal Orb|r
+    .complete 1799,1 
+    .mob Burning Blade Summoner
 step
     .goto Desolace,58.4,88.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nerlokh|r
@@ -175,8 +213,35 @@ RXPGuides.RegisterGuide([[
 step
     .goto Desolace,64.66,10.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baritanas Skyriver|r
-    .fly Thalanaar >> Fly to Thousand Needles
+    .fly Theramore >> Fly to Theramore
     .target Baritanas Skyriver
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Janene|r
+    .goto Dustwallow Marsh,66.587,45.223
+    .home >> Set your Hearthstone to Theramore
+    .target Innkeeper Janene
+step << Warlock
+    #completewith next
+    +|cRXP_WARN_The follow up quest will have |cRXP_FRIENDLY_Tabetha|r summon |cRXP_ENEMY_Demon of the Orb|r which is a level 40 Elite that you need to kill. This quest is simple so long as you don't agro additional mobs|r
+    >>|cRXP_WARN_Kill any mobs around |cRXP_FRIENDLY_Tabetha's|r farm before accepting the next quest|r
+step << Warlock
+    .goto Dustwallow Marsh,46.021,57.096
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tabetha|r
+    .turnin 1799 >> Turn in Fragments of the Orb of Orahil
+    .accept 4961 >> Accept Cleansing of the Orb of Orahil
+    .target Tabetha
+step << Warlock
+    .goto Dustwallow Marsh,45.87,56.74
+    >>Kill |cRXP_ENEMY_Demon of the Orb|r
+    >>|cRXP_WARN_Cast|r |T136183:0|t[Fear] |cRXP_WARN_continously on |cRXP_ENEMY_Demon of the Orb|r until your DoTs kill it|r
+    .complete 4961,1 
+    .mob Demon of the Orb
+step << Warlock
+    .goto Dustwallow Marsh,46.021,57.096
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tabetha|r
+    .turnin 4961 >> Turn in Cleansing of the Orb of Orahil
+    .accept 4976 >> Accept Returning the Cleansed Orb
+    .target Tabetha
 step
     .goto The Barrens,49.255,93.077,0
     .goto The Barrens,49.255,93.077,30,0
@@ -203,21 +268,42 @@ step
     .complete 3636,1 
     .isOnQuest 3636
 step
-    .hs >> Hearth to Nijel's Point
-    >> If on CD can walk out
+    .hs >> Hearth to Theramore
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thyssiana|r
-    .goto Feralas,89.497,45.853
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baldruc|r
+    .goto Dustwallow Marsh,67.476,51.300
     .fly Ratchet >> Fly to Ratchet
-    .target Thyssiana
-    .zoneskip Desolace
-step
-    .goto Desolace,64.66,10.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baritanas Skyriver|r
-    .fly Ratchet >> Fly to Ratchet
-    .target Baritanas Skyriver
+    .target Baldruc
+step << Warlock
+    .goto The Barrens,62.509,35.449
+    .target Menara Voidrender
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Menara Voidrender|r
+    .turnin 4962 >> Turn in Shard of a Felhound
+    .turnin 4976 >> Turn in Returning the Cleansed Orb
+step << Warlock
+    .goto The Barrens,62.509,35.449
+    .target Menara Voidrender
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Menara Voidrender|r
+    >>|cRXP_WARN_Wait out the RP|r
+    .accept 4964 >> Accept The Completed Orb of Dar'Orahil
+    .turnin 4964 >> Turn in The Completed Orb of Dar'Orahil
+    .isQuestTurnedIn 4962
+    .isQuestTurnedIn 4976
 step
     .zone Stranglethorn Vale >> Take the boat to Booty Bay
+step
+    .goto Stranglethorn Vale,26.90,77.10
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFollow the small pathway around the balcony |cRXP_FRIENDLY_Fleet Master Seahorn|r is facing, then talk to |cRXP_FRIENDLY_Gringer|r
+    .fly Stormwind >> Fly to Stormwind
+    .target Gringer
+step
+    #completewith next
+    .goto Stormwind City,48.8,87.6,15 >> Travel towards |cRXP_FRIENDLY_High Sorcerer Andromath|r in the Mage Tower
+step
+    .goto Stormwind City,48.8,87.6
+    .target High Sorcerer Andromath
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Sorcerer Andromath|r
+    .accept 1477 >> Accept Vital Supplies
 step
     .goto 1453,50.36,45.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archbishop Benedictus|r
@@ -405,6 +491,29 @@ RXPGuides.RegisterGuide([[
 
 
 step
+    .hs >> Hearth to Ironforge
+step << Warlock
+    .goto 1455/0,-1117.60,-4615.14,15,0
+    .goto 1455/0,-1111.62,-4599.09
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Briarthorn|r
+    .trainer >> Train your class spells
+    .target Briarthorn
+step << Shaman
+    .goto 1455,47.334,13.566
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eldun Stormbreaker|r
+    .trainer >> Train your class spells
+    .target Eldun Stormbreaker
+step << Rogue
+    .goto 1455,51.6,14.8
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hulfdan Blackbeard|r
+    .trainer >> Train your class spells
+    .target Hulfdan Blackbeard
+step << Paladin
+    .goto 1455/0,-907.69,-4592.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beldruk Doombrow|r
+    .trainer >> Train your class spells
+    .target Beldruk Doombrow
+step
     .goto Ironforge,74.645,11.742
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Stormpike|r
     .accept 2398 >> Accept The Lost Dwarves
@@ -416,15 +525,13 @@ step
     .accept 1360 >> Accept Reclaimed Treasures
     .target Krom Stoutarm
 step
-    +If the dalaran port is available, take it to turn in southshore SM quest, otherwise tram -> flight
-step
+    #completewith next
     +Stop by the ironforge auction house and check for gyro, frost oil, patterned bronze bracers, invis pot + "Healing Potion"
 step
-    .zone Badlands >> Travel to the Badlands through Loch Modan
-step
-    +Complete quests in the Badlands, this is your chance to do the outer Uldaman quests and all prequests
-    >> Get as much XP here as feels good, Feralas will be a little tight
-    .xp 42
+    .goto Ironforge,55.50,47.74
+    >>Talk to |cRXP_FRIENDLY_Gryth|r
+    .fly Thelsamar >> Fly to Loch Modan
+    .target Gryth Thurden
 step
     .goto Loch Modan,36.50,48.35,15,0
     .goto Loch Modan,37.067,49.379
@@ -864,9 +971,9 @@ step
     #completewith Murdaloc
     .abandon 706 >> Abandon Fiery Blaze Enchantments
 step
-    .hs >> Hearth to Loch Modan
-    >>|cRXP_BUY_Buy food/water if needed|r << !Warrior !Rogue
-    >>|cRXP_BUY_Buy food if needed|r << Warrior/Rogue
+    #completewith next
+    .zone Loch Modan
+    >> Travel to Loch Modan for turnins
 step
     .goto Loch Modan,65.934,65.622
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Ironband|r
@@ -882,12 +989,6 @@ step
     .target Ghak Healtouch
 step
     .destroy 7846 >> Delete any extra |T134298:0|t[Crag Coyote Fangs] you still have
-step
-    #label Murdaloc
-    .goto Loch Modan,65.934,65.622
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Ironband|r
-    .turnin 739 >> Turn in Murdaloc
-    .target Prospector Ironband
 step
     #completewith HammertoeGrez
     .goto 1415,54.46,57.78
@@ -1011,28 +1112,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krom Stoutarm|r
     .turnin 1360 >> Turn in Reclaimed Treasures
     .target Krom Stoutarm
-step << Warlock
-    .goto 1455/0,-1117.60,-4615.14,15,0
-    .goto 1455/0,-1111.62,-4599.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Briarthorn|r
-    .trainer >> Train your class spells
-    .accept 4487 >> Accept Summon Felsteed
-    .target Briarthorn
-step << Shaman
-    .goto 1455,47.334,13.566
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eldun Stormbreaker|r
-    .trainer >> Train your class spells
-    .target Eldun Stormbreaker
-step << Rogue
-    .goto 1455,51.6,14.8
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hulfdan Blackbeard|r
-    .trainer >> Train your class spells
-    .target Hulfdan Blackbeard
-step << Paladin
-    .goto 1455/0,-907.69,-4592.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beldruk Doombrow|r
-    .trainer >> Train your class spells
-    .target Beldruk Doombrow
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1129,6 +1208,11 @@ step
     .turnin 610 >> Turn in "Pretty Boy" Duncan
     .accept 611 >> Accept The Curse of the Tides
     .target Catelyn the Blade
+step
+    .goto Stranglethorn Vale,27.04,77.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Skindle|r
+    .home >>Set your Hearthstone to Booty Bay
+    .target Innkeeper Skindle
 step
     .goto Stranglethorn Vale,26.920,77.347
     .target Deeg
@@ -1342,12 +1426,8 @@ step
 --     .turnin 208 >> Turn in Big Game Hunter
 --     .target Hemet Nesingwary
 step
-    +check the north stv camp for quests
-step
-    .hs >> Hearthstone to Booty Bay
-step
     .goto 1434,21.49,27.83
-    +Do the Drowned City
+    +Do the Drowned City, turn in any quests at the northern camp
 step
     #completewith BBTurnin
     .hs >> Hearth to Booty Bay
@@ -1399,37 +1479,71 @@ step
     .turnin 576 >> Turn in Keep An Eye Out
     .target Dizzy One-Eye
 step
-    .goto Swamp of Sorrows,22.8,48.1
-    >>Travel to Swamp of Sorrows for the riddle step
+    .goto Stranglethorn Vale,26.90,77.10
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFollow the small pathway around the balcony |cRXP_FRIENDLY_Fleet Master Seahorn|r is facing, then talk to |cRXP_FRIENDLY_Gringer|r
+    .fly Duskwood >> Fly to Duskwood
+    .target Gringer
+step
+    .goto Duskwood,75.779,46.159
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Watchmaster Sorigal|r
+    .turnin 1477 >> Turn in Vital Supplies
+    .accept 1395 >> Accept Supplies for Nethergarde
+    .target Watchmaster Sorigal
+step
+    .goto Duskwood,88.47,41.00,50,0
+    .goto Deadwind Pass,48.02,34.60,60,0
+    .goto Deadwind Pass,58.43,41.51,50 >> Travel to Swamp of Sorrows
+    .zoneskip Swamp of Sorrows
+step
+    .goto Swamp of Sorrows,22.87,48.18
+    >>Click |cRXP_PICK_A Soggy Scroll|r in the water under the bridge
     .turnin 624 >> Turn in Cortello's Riddle
     .accept 625 >> Accept Cortello's Riddle
 step
-    .hs >> Hearth to Ironforge
+    .goto Blasted Lands,66.521,21.386
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quartermaster Lungertz|r
+    .turnin 1395 >> Turn in Supplies for Nethergarde
+    .target Quartermaster Lungertz
+step
+    .goto Blasted Lands,65.535,24.337
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alexandra Constantine|r
+    .fp Blasted Lands >> Get the Blasted Lands Flight Path
+    .fly Ironforge >> Fly to Ironforge
+    .target Alexandra Constantine
+step
+    .goto 1455,18.564,51.558
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Firebrew|r
+    .home >> Set your Hearthstone to Ironforge
+    .target Innkeeper Firebrew
 step << Warlock
     .goto 1455/0,-1117.60,-4615.14,15,0
     .goto 1455/0,-1111.62,-4599.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Briarthorn|r
     .trainer >> Train your class spells
     .target Briarthorn
+    .xp <44,1
 step << Shaman
     .goto 1455,47.334,13.566
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eldun Stormbreaker|r
     .trainer >> Train your class spells
     .target Eldun Stormbreaker
+    .xp <44,1
 step << Rogue
     .goto 1455,51.6,14.8
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hulfdan Blackbeard|r
     .trainer >> Train your class spells
     .target Hulfdan Blackbeard
+    .xp <44,1
 step << Paladin
     .goto 1455/0,-907.69,-4592.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beldruk Doombrow|r
     .trainer >> Train your class spells
     .target Beldruk Doombrow
+    .xp <44,1
 step
     .goto Ironforge,55.50,47.74
     >>Talk to |cRXP_FRIENDLY_Gryth|r
-    .fly Wetlands >> Fly to Menethil Harbor
+    .fly Thelsamar >> Fly to Loch Modan
     .target Gryth Thurden
 ]])
 
@@ -1446,6 +1560,10 @@ RXPGuides.RegisterGuide([[
 #defaultfor Dwarf/Gnome/Human
 
 
+step
+    #sticky
+    #completewith travelUlda
+    +Time to start searching for an Uldaman group
 step
     .zone Badlands >> Travel to the Badlands
 step
@@ -1474,6 +1592,12 @@ step
     .turnin 762 >> Turn in An Ambassador of Evil
     .accept 1139 >> Accept The Lost Tablets of Will
     .target Advisor Belgrum
+step
+    #label travelUlda
+    .goto Ironforge,55.50,47.74
+    >>Talk to |cRXP_FRIENDLY_Gryth|r
+    .fly Thelsamar >> Fly to Loch Modan
+    .target Gryth Thurden
 step
     .goto 1415,53.850,57.641
     .subzone 1337,2 >> Zone into Uldaman
@@ -1547,32 +1671,7 @@ step
     .turnin 2278 >> Turn in The Platinum Discs
     .accept 2279 >> Accept The Platinum Discs
 step
-    #label uldaRun
-    +Zone out of Uldaman together as a group to turn in quests in Badlands. The closest exit is the Uldaman backdoor
-    .zoneskip Badlands
-step
-    #completewith UldaLoch
-    .goto Badlands,49.52,9.83,0
-    .goto Loch Modan,46.78,78.09
-    .zone Loch Modan >> Travel to Loch Modan
-step
-    .goto Loch Modan,36.50,48.35,15,0
-    .goto Loch Modan,37.067,49.379
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ghak Healtouch|r
-    .turnin 17 >> Turn in Uldaman Reagent Run
-    .target Ghak Healtouch
-step
-    .goto Hillsbrad Foothills,50.570,57.093
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loremaster Dibbs|r
-    .turnin 95787 >> Turn in Take Two With Water
-    .turnin 95788 >> Turn in Magics of the Drowned City
-    .target Loremaster Dibbs
-step
-    #label UldaLoch
-    .goto Loch Modan,33.938,50.954
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r
-    .fly Ironforge >> Fly to Ironforge
-    .target Thorgrum Borrelson
+    .hs >> Hearth to Ironforge
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talvash del Kissel|r
     .turnin 2204 >> Turn in Restoring the Necklace
@@ -1602,9 +1701,36 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Advisor Belgrum|r
     .turnin 1139 >> Turn in The Lost Tablets of Will
     .target Advisor Belgrum
-step 
-    .goto Wetlands,5.075,63.408
-    .zone Dustwallow Marsh >> Take the boat to Theramore
+step
+    #label travelUlda
+    .goto Ironforge,55.50,47.74
+    >>Talk to |cRXP_FRIENDLY_Gryth|r
+    .fly Thelsamar >> Fly to Loch Modan
+    .target Gryth Thurden
+step
+    .goto Loch Modan,36.50,48.35,15,0
+    .goto Loch Modan,37.067,49.379
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ghak Healtouch|r
+    .turnin 17 >> Turn in Uldaman Reagent Run
+    .target Ghak Healtouch
+step
+    .goto 1432/0,-2929.87,-5424.84
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r
+    .fly Southshore >> Fly to Southshore
+    .target Thorgrum Borrelson
+step
+    .goto Hillsbrad Foothills,50.570,57.093
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loremaster Dibbs|r
+    .turnin 95787 >> Turn in Take Two With Water
+    .turnin 95788 >> Turn in Magics of the Drowned City
+    .target Loremaster Dibbs
+step
+    .goto 1424/0,-512.15,-715.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darla Harris|r
+    .fly Riverglades >> Fly to Riverglades
+    .target Darla Harris
+step
+    .zone Tanaris >> Take the boat to Steamwheedle Port
 ]])
 
 
@@ -1621,7 +1747,25 @@ RXPGuides.RegisterGuide([[
 
 
 step
-    .zone Tanaris >> Return to Tanaris by riverglades boat
+    .goto Tanaris,66.560,22.265
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Haughty Modiste|r
+    .accept 8365 >> Accept Pirate Hats Ahoy!
+    .target Haughty Modiste
+step
+    .goto Tanaris,66.989,22.354
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yeh'kinya|r
+    .accept 3520 >> Accept Screecher Spirits
+    .target Yeh'kinya
+step
+    #label PortQ
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Security Chief Bilgewhizzle|r and |cRXP_FRIENDLY_Stoley|r
+    .accept 8366 >> Accept Southsea Shakedown
+    .goto Tanaris,67.058,23.891
+    .turnin 2872 >> Turn in Stoley's Debt
+    .accept 2873 >> Accept Stoley's Shipment
+    .goto Tanaris,67.109,23.978
+    .target Security Chief Bilgewhizzle
+    .target Stoley
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Engineer Bilgewhizzle|r and |cRXP_FRIENDLY_Spigot Operator Luglunket|r
     .accept 1690 >> Accept Wastewander Justice
@@ -1630,11 +1774,6 @@ step
     .goto Tanaris,52.486,28.445
     .target Chief Engineer Bilgewhizzle
     .target Spigot Operator Luglunket
-step
-    .goto Tanaris,52.51,27.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Fizzgrimble|r
-    .home >> Set your Hearthstone to Gadgetzan
-    .target Innkeeper Fizzgrimble
 step
     .goto Tanaris,52.358,26.904
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Curgle Cranklehop|r
@@ -1666,37 +1805,6 @@ step
 -- >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wizzle Brassbolts|r
 -- .accept 2770 >> Accept Gahz'rilla
 -- .target Wizzle Brassbolts
-step
-    #completewith PortQ
-    >>Kill |cRXP_ENEMY_Wastewander Bandits|r and |cRXP_ENEMY_Wastewander Thieves|r. Loot them for their |cRXP_LOOT_Wastewander Water Pouches|r
-    >>|cRXP_WARN_Kill them en-route to Steamwheedle Port. Don't complete this immediately|r
-    .goto Tanaris,60.4,24.6,0
-    .goto Tanaris,63.6,31.0,0
-    .complete 1690,1 
-    .complete 1690,2 
-    .complete 1707,1 
-    .mob Wastewander Bandit
-    .mob Wastewander Thief
-step
-    .goto Tanaris,66.560,22.265
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Haughty Modiste|r
-    .accept 8365 >> Accept Pirate Hats Ahoy!
-    .target Haughty Modiste
-step
-    .goto Tanaris,66.989,22.354
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yeh'kinya|r
-    .accept 3520 >> Accept Screecher Spirits
-    .target Yeh'kinya
-step
-    #label PortQ
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Security Chief Bilgewhizzle|r and |cRXP_FRIENDLY_Stoley|r
-    .accept 8366 >> Accept Southsea Shakedown
-    .goto Tanaris,67.058,23.891
-    .turnin 2872 >> Turn in Stoley's Debt
-    .accept 2873 >> Accept Stoley's Shipment
-    .goto Tanaris,67.109,23.978
-    .target Security Chief Bilgewhizzle
-    .target Stoley
 step
     #label WastewanderEnd
     .goto Tanaris,60.14,23.42,0
@@ -1763,7 +1871,7 @@ step
 step
     .goto Feralas,30.966,43.488
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Shyria|r
-    .home >> Set your Hearthstone to Feralas
+    .home >> Set your Hearthstone to Feathermoon Stronghold
     .target Innkeeper Shyria
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Latronicus Moonspear|r and |cRXP_FRIENDLY_Shandris Feathermoon|r
@@ -2249,7 +2357,7 @@ step
     .turnin 2972 >> Turn in Doling Justice
     .target Tyrande Whisperwind
 step
-    .hs >> Hearth to Feralas
+    .hs >> Hearth to Feathermoon Stronghold
 step
     .fly Gadgetzan >> Fly to Gadgetzan
 step
@@ -2295,6 +2403,11 @@ step
     .turnin 2747 >> Turn in An Extraordinary Egg
     .target Curgle Cranklehop
     .itemcount 8643,1
+step
+    .goto Tanaris,52.50,27.91
+    >>Talk to |cRXP_FRIENDLY_Fizzgrimble|r
+    .home >> Set your Hearthstone to Gadgetzan
+    .target Innkeeper Fizzgrimble
 step
     .goto Tanaris,52.462,28.514
     .target Chief Engineer Bilgewhizzle
@@ -2789,7 +2902,7 @@ step
     .cooldown item,6948,<0
 step
     #label HinterlandsEnd
-    .hs >> Hearth to Tanaris
+    .hs >> Hearth to Gadgetzan
     .cooldown item,6948,>0,1
 step
     .goto Ironforge,55.491,47.751

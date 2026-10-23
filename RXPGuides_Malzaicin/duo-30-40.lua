@@ -332,50 +332,50 @@ step
 --     .turnin 223 >>Turn in Worgen in the Woods
 --     .turnin 1043 >> Turn in The Scythe of Elune
 --     .accept 1044 >> Accept Answered Questions
--- step
---     #label Haggard
---     .goto Elwynn Forest,84.61,69.37
---     >>Talk to |cRXP_FRIENDLY_Haggard|r
---     .turnin 74 >>Turn in The Legend of Stalvan
---     .accept 75 >>Accept The Legend of Stalvan
---     .target Marshal Haggard
--- step
---     .goto Elwynn Forest,85.13,69.69,12,0
---     .goto Elwynn Forest,85.20,69.15,8,0
---     .goto Elwynn Forest,85.70,69.54
---     >>Go inside the house, then upstairs
---     >>Open |cRXP_PICK_Marshal Haggard's Chest|r. Loot it for |cRXP_LOOT_A Faded Journal Page|r
---     >>|cRXP_WARN_This has a 5 second cast time|r
---     >>|cRXP_WARN_This will spawn a |cRXP_ENEMY_Forlon Spirit|r. Get ready to run back outside|r
---     .complete 75,1 
--- step
---     .goto Elwynn Forest,84.61,69.37
---     >>Talk to |cRXP_FRIENDLY_Haggard|r
---     .turnin 75 >>Turn in The Legend of Stalvan
---     .accept 78 >>Accept The Legend of Stalvan
---     .target Marshal Haggard
--- step
---     .goto Duskwood,74.09,44.71
---     >>Talk to |cRXP_FRIENDLY_Smitts|r inside
---     .turnin 78 >>Turn in The Legend of Stalvan
---     .accept 79 >>Accept The Legend of Stalvan
---     .target Tavernkeep Smitts
--- step
---     >>Talk to |cRXP_FRIENDLY_Althea|r and |cRXP_FRIENDLY_Daltry|r
---     .turnin 79 >>Turn in The Legend of Stalvan
---     .accept 80 >>Accept The Legend of Stalvan
---     .goto Duskwood,73.57,46.85
---     .turnin 80 >>Turn in The Legend of Stalvan
---     .accept 97 >>Accept The Legend of Stalvan
---     .goto Duskwood,72.53,46.85
---     .target Commander Althea Ebonlocke
---     .target Clerk Daltry
--- step
---     .goto Duskwood,73.57,46.85
---     >>Talk to |cRXP_FRIENDLY_Althea|r
---     .turnin 97 >>Turn in The Legend of Stalvan
---     .accept 98 >> Accept The Legend of Stalvan
---     .target Commander Althea Ebonlocke
+step
+    #label Haggard
+    .goto Elwynn Forest,84.61,69.37
+    >>Talk to |cRXP_FRIENDLY_Haggard|r
+    .turnin 74 >>Turn in The Legend of Stalvan
+    .accept 75 >>Accept The Legend of Stalvan
+    .target Marshal Haggard
+step
+    .goto Elwynn Forest,85.13,69.69,12,0
+    .goto Elwynn Forest,85.20,69.15,8,0
+    .goto Elwynn Forest,85.70,69.54
+    >>Go inside the house, then upstairs
+    >>Open |cRXP_PICK_Marshal Haggard's Chest|r. Loot it for |cRXP_LOOT_A Faded Journal Page|r
+    >>|cRXP_WARN_This has a 5 second cast time|r
+    >>|cRXP_WARN_This will spawn a |cRXP_ENEMY_Forlon Spirit|r. Get ready to run back outside|r
+    .complete 75,1 
+step
+    .goto Elwynn Forest,84.61,69.37
+    >>Talk to |cRXP_FRIENDLY_Haggard|r
+    .turnin 75 >>Turn in The Legend of Stalvan
+    .accept 78 >>Accept The Legend of Stalvan
+    .target Marshal Haggard
+step
+    .goto Duskwood,74.09,44.71
+    >>Talk to |cRXP_FRIENDLY_Smitts|r inside
+    .turnin 78 >>Turn in The Legend of Stalvan
+    .accept 79 >>Accept The Legend of Stalvan
+    .target Tavernkeep Smitts
+step
+    >>Talk to |cRXP_FRIENDLY_Althea|r and |cRXP_FRIENDLY_Daltry|r
+    .turnin 79 >>Turn in The Legend of Stalvan
+    .accept 80 >>Accept The Legend of Stalvan
+    .goto Duskwood,73.57,46.85
+    .turnin 80 >>Turn in The Legend of Stalvan
+    .accept 97 >>Accept The Legend of Stalvan
+    .goto Duskwood,72.53,46.85
+    .target Commander Althea Ebonlocke
+    .target Clerk Daltry
+step
+    .goto Duskwood,73.57,46.85
+    >>Talk to |cRXP_FRIENDLY_Althea|r
+    .turnin 97 >>Turn in The Legend of Stalvan
+    .accept 98 >> Accept The Legend of Stalvan
+    .target Commander Althea Ebonlocke
 step
     #label endDuskwood2
     .goto Duskwood,77.486,44.287
@@ -1196,8 +1196,10 @@ step
     #completewith next
     .destroy 3898 >>Throw away the |T134939:0|t[Library Scrip]
 step
-    .goto Stranglethorn Vale,27.4,77.8
+    .goto Stranglethorn Vale,26.90,77.10
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFollow the small pathway around the balcony |cRXP_FRIENDLY_Fleet Master Seahorn|r is facing, then talk to |cRXP_FRIENDLY_Gringer|r
     .fp Booty Bay >> Get the Booty Bay Flight Path
+    .target Gringer
 step
     .hs >> Hearth to Ironforge
 step
@@ -2763,6 +2765,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archbishop Benedictus|r
     .accept 3636 >> Accept Bring the Light
     .target Archbishop Benedictus
+step
+    .goto 1453/0,673.58,-8867.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Allison|r
+    .home >> Set your Hearthstone to Stormwind City
+    .vendor >>|cRXP_BUY_Buy food/water if needed|r
+    .target Innkeeper Allison
 ]])
 
 
@@ -2982,7 +2990,7 @@ step
     >>Be careful not to run too close to Stonard on your way there. Avoid fighting any of the higher level dragonkin on the way as well
     .complete 1448,1
 step
-    .hs >> Hearth to Ironforge
+    .hs >> Hearth to Stormwind City
 ]])
 
 
@@ -3005,13 +3013,19 @@ step
     +Riverglades quests to lvl 40
     .xp 40
 step
-    .hs >> Hearth to Ironforge
+    .hs >> Hearth to Stormwind City
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
+    .goto Stormwind City,66.277,62.137
+    .fly Ironforge >> Fly to Ironforge
+    .target Dungar Longdrink
 step << Warlock
     .goto 1455/0,-1117.60,-4615.14,15,0
     .goto 1455/0,-1111.62,-4599.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Briarthorn|r
     .trainer >> Train your class spells
     .accept 4487 >> Accept Summon Felsteed
+    .accept 4965 >> Accept Knowledge of the Orb of Orahil
     .target Briarthorn
 step << Shaman
     .goto 1455,47.334,13.566

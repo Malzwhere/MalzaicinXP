@@ -28,8 +28,10 @@ step
 step
     .zone Stranglethorn Vale >> Take the boat to Booty Bay
 step
-    .goto Stranglethorn Vale,27.4,77.8
+    .goto Stranglethorn Vale,26.90,77.10
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFollow the small pathway around the balcony |cRXP_FRIENDLY_Fleet Master Seahorn|r is facing, then talk to |cRXP_FRIENDLY_Gringer|r
     .fp Booty Bay >> Get the Booty Bay Flight Path
+    .target Gringer
 step
     .zone The Barrens >> Take the boat to Ratchet
 step
